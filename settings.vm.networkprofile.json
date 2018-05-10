@@ -10,9 +10,15 @@
         "networkProfile": {
             "networkInterfaces": [
                 {
-                    "id": "[resourceId('Microsoft.Network/networkInterfaces',parameters('params').nicName)]",
+                    "id": "[resourceId('Microsoft.Network/networkInterfaces',parameters('params').nic1Name)]",
                     "properties": {
                         "primary": true
+                    }
+                },
+                {
+                    "id": "[resourceId('Microsoft.Network/networkInterfaces',parameters('params').nic2Name)]",
+                    "properties": {
+                        "primary": false
                     }
                 }
             ]
