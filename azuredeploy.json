@@ -61,25 +61,29 @@
         "nic1IpAddresses": {
             "type": "array",
             "minLength": 2,
-            "maxLength": 2,
+            "maxLength": 4,
             "defaultValue": [
+                "",
+                "",
                 "",
                 ""
             ],
             "metadata": {
-                "description": "Array of Virtual Machine static IP addresses for NIC 1. If an address is blank, DHCP will be used"
+                "description": "Array of Virtual Machine IP addresses for NIC 1. If an address is blank, DHCP will be used"
             }
         },
         "nic2IpAddresses": {
             "type": "array",
             "minLength": 2,
-            "maxLength": 2,
+            "maxLength": 4,
             "defaultValue": [
+                "",
+                "",
                 "",
                 ""
             ],
             "metadata": {
-                "description": "Array of Virtual Machine static IP addresses for NIC 2. If an address is blank, DHCP will be used"
+                "description": "Array of Virtual Machine IP addresses for NIC 2. If an address is blank, DHCP will be used"
             }
         }
     },
