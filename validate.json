@@ -85,8 +85,8 @@
         },
         "prefix": "[toLower(concat(variables('locationPrefix')[parameters('location')], '-', variables('subscriptionPrefix')[parameters('subscription')], '-'))]",
         "vmName": "[concat(variables('prefix'), 'sap', parameters('vmDeploymentNumber'), variables('roleNumber')[parameters('vmRole')])]",
-        "nicName": "[concat(variables('vmName'), '-nic-01')]"
-
+        "nic1Name": "[concat(variables('vmName'), '-nic-01')]",
+        "nic2Name": "[concat(variables('vmName'), '-nic-02')]"
     },
     "resources": [],
     "outputs": {
@@ -95,7 +95,8 @@
             "value": {
                 "uniqueDeploymentId": "[parameters('uniqueDeploymentId')]",
                 "vmName": "[variables('vmName')]",
-                "nicName": "[variables('nicName')]",
+                "nic1Name": "[variables('nic1Name')]",
+                "nic2Name": "[variables('nic2Name')]",
                 "location": "[parameters('location')]",
                 "subscription": "[parameters('subscription')]",
                 "vmImage": "[parameters('vmImage')]",
