@@ -80,7 +80,7 @@
         "output": {
             "type": "object",
             "value": {
-                "primary": true,
+                "primary": false,
                 "enableAcceleratedNetworking": "[reference(variables('settings.nic2.enableacceleratednetworking.templatename')).outputs.output.value]",
                 "dnsSettings": "[reference(variables('settings.nic2.dnssettings.templatename')).outputs.output.value]",
                 "ipConfigurations": "[reference(variables('settings.nic2.ipconfigurations.templatename')).outputs.output.value]"
