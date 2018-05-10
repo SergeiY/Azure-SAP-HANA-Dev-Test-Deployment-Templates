@@ -70,7 +70,8 @@
     },
     "variables": {
         "subscriptionPrefix": {
-            "SAP Dev Test": "d"
+            "SAP Dev Test": "d",
+            "Simon Hutson Internal Subscription": "s"
         },
         "locationPrefix": {
             "ukwest":  "azwu"
