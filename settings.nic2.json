@@ -7,22 +7,22 @@
         }
     },
     "variables": {
-        "settings.nic.enableacceleratednetworking.templatename": "[concat('settings.nic.enableacceleratednetworking.', parameters('params').uniqueDeploymentId)]",
-        "settings.nic.enableacceleratednetworking.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic.enableacceleratednetworking.json')]",
-        "settings.nic.dnssettings.templatename": "[concat('settings.nic.dnssettings.', parameters('params').uniqueDeploymentId)]",
-        "settings.nic.dnssettings.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic.dnssettings.json')]",
-        "settings.nic.ipconfigurations.templatename": "[concat('settings.nic.ipconfigurations.', parameters('params').uniqueDeploymentId)]",
-        "settings.nic.ipconfigurations.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic.ipconfigurations.json')]"
+        "settings.nic2.enableacceleratednetworking.templatename": "[concat('settings.nic2.enableacceleratednetworking.', parameters('params').uniqueDeploymentId)]",
+        "settings.nic2.enableacceleratednetworking.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic2.enableacceleratednetworking.json')]",
+        "settings.nic2.dnssettings.templatename": "[concat('settings.nic2.dnssettings.', parameters('params').uniqueDeploymentId)]",
+        "settings.nic2.dnssettings.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic2.dnssettings.json')]",
+        "settings.nic2.ipconfigurations.templatename": "[concat('settings.nic2.ipconfigurations.', parameters('params').uniqueDeploymentId)]",
+        "settings.nic2.ipconfigurations.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic2.ipconfigurations.json')]"
     },
     "resources": [
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('settings.nic.enableacceleratednetworking.templatename')]",
+            "name": "[variables('settings.nic2.enableacceleratednetworking.templatename')]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[variables('settings.nic.enableacceleratednetworking.templateuri')]",
+                    "uri": "[variables('settings.nic2.enableacceleratednetworking.templateuri')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "debugSetting": {
@@ -38,11 +38,11 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('settings.nic.dnssettings.templatename')]",
+            "name": "[variables('settings.nic2.dnssettings.templatename')]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[variables('settings.nic.dnssettings.templateuri')]",
+                    "uri": "[variables('settings.nic2.dnssettings.templateuri')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "debugSetting": {
@@ -58,11 +58,11 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('settings.nic.ipconfigurations.templatename')]",
+            "name": "[variables('settings.nic2.ipconfigurations.templatename')]",
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[variables('settings.nic.ipconfigurations.templateuri')]",
+                    "uri": "[variables('settings.nic2.ipconfigurations.templateuri')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "debugSetting": {
@@ -81,9 +81,9 @@
             "type": "object",
             "value": {
                 "primary": true,
-                "enableAcceleratedNetworking": "[reference(variables('settings.nic.enableacceleratednetworking.templatename')).outputs.output.value]",
-                "dnsSettings": "[reference(variables('settings.nic.dnssettings.templatename')).outputs.output.value]",
-                "ipConfigurations": "[reference(variables('settings.nic.ipconfigurations.templatename')).outputs.output.value]"
+                "enableAcceleratedNetworking": "[reference(variables('settings.nic2.enableacceleratednetworking.templatename')).outputs.output.value]",
+                "dnsSettings": "[reference(variables('settings.nic2.dnssettings.templatename')).outputs.output.value]",
+                "ipConfigurations": "[reference(variables('settings.nic2.ipconfigurations.templatename')).outputs.output.value]"
             }
         }
     }

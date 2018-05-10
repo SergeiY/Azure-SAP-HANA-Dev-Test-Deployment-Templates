@@ -79,12 +79,16 @@
         "settings.tags.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.tags.json')]",
         "settings.vm.templatename": "[concat('settings.vm.', variables('uniqueDeploymentId'))]",
         "settings.vm.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.json')]",
-        "settings.nic.templatename": "[concat('settings.nic.', variables('uniqueDeploymentId'))]",
-        "settings.nic.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic.json')]",
+        "settings.nic1.templatename": "[concat('settings.nic1.', variables('uniqueDeploymentId'))]",
+        "settings.nic1.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic1.json')]",
+        "settings.nic2.templatename": "[concat('settings.nic2.', variables('uniqueDeploymentId'))]",
+        "settings.nic2.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic2.json')]",
         "deploy.vm.templatename": "[concat('deploy.vm.', variables('uniqueDeploymentId'))]",
         "deploy.vm.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.vm.json')]",
-        "deploy.nic.templatename": "[concat('deploy.nic.', variables('uniqueDeploymentId'))]",
-        "deploy.nic.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.nic.json')]"
+        "deploy.nic1.templatename": "[concat('deploy.nic1.', variables('uniqueDeploymentId'))]",
+        "deploy.nic1.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.nic1.json')]",
+        "deploy.nic2.templatename": "[concat('deploy.nic2.', variables('uniqueDeploymentId'))]",
+        "deploy.nic2.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.nic2.json')]"
     },
     "resources": [
         {
@@ -180,14 +184,14 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('settings.nic.templatename')]",
+            "name": "[variables('settings.nic1.templatename')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments/', variables('validate.templatename'))]"
             ],
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[variables('settings.nic.templateuri')]",
+                    "uri": "[variables('settings.nic1.templateuri')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "debugSetting": {
@@ -203,15 +207,38 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('deploy.nic.templatename')]",
+            "name": "[variables('settings.nic2.templatename')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Resources/deployments/', variables('settings.tags.templatename'))]",
-                "[resourceId('Microsoft.Resources/deployments/', variables('settings.nic.templatename'))]"
+                "[resourceId('Microsoft.Resources/deployments/', variables('validate.templatename'))]"
             ],
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[variables('deploy.nic.templateuri')]",
+                    "uri": "[variables('settings.nic2.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[reference(variables('validate.templatename')).outputs.output.value]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('deploy.nic1.templatename')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.tags.templatename'))]",
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.nic1.templatename'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('deploy.nic1.templateuri')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "debugSetting": {
@@ -225,7 +252,37 @@
                         "value": "[reference(variables('settings.tags.templatename')).outputs.output.value]"
                     },
                     "properties": {
-                        "value": "[reference(variables('settings.nic.templatename')).outputs.output.value]"
+                        "value": "[reference(variables('settings.nic1.templatename')).outputs.output.value]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('deploy.nic2.templatename')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.tags.templatename'))]",
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.nic2.templatename'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('deploy.nic1.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[reference(variables('validate.templatename')).outputs.output.value]"
+                    },
+                    "tags":{
+                        "value": "[reference(variables('settings.tags.templatename')).outputs.output.value]"
+                    },
+                    "properties": {
+                        "value": "[reference(variables('settings.nic2.templatename')).outputs.output.value]"
                     }
                 }
             }

@@ -1,0 +1,74 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "params": {
+            "type": "object"
+        }
+    },
+    "variables": {
+        "subnets": {
+            "SAP Dev Test": {
+                "ukwest": {
+                    "ISU": {
+                        "id": "[resourceId('azwu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azwu-vnet-devtest-sap-001', 'azwu-subn-devtest-sap-ukh-isu-001')]"
+                    },
+                    "CRM": {
+                        "id": "[resourceId('azwu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azwu-vnet-devtest-sap-001', 'azwu-subn-devtest-sap-ukh-crm-001')]"
+                    },
+                    "PIC": {
+                        "id": "[resourceId('azwu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azwu-vnet-devtest-sap-001', 'azwu-subn-devtest-sap-ukh-pic-001')]"
+                    },
+                    "BWA": {
+                        "id": "[resourceId('azwu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azwu-vnet-devtest-sap-001', 'azwu-subn-devtest-sap-ukh-bwa-001')]"
+                    },
+                    "MOB": {
+                        "id": "[resourceId('azwu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azwu-vnet-devtest-sap-001', 'azwu-subn-devtest-sap-ukh-mob-001')]"
+                    },
+                    "EWM": {
+                        "id": "[resourceId('azwu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azwu-vnet-devtest-sap-001', 'azwu-subn-devtest-sap-ukh-ewm-001')]"
+                    },
+                    "JVA": {
+                        "id": "[resourceId('azwu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azwu-vnet-devtest-sap-001', 'azwu-subn-devtest-sap-ukh-jva-001')]"
+                    },
+                    "CEV": {
+                        "id": "[resourceId('azwu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azwu-vnet-devtest-sap-001', 'azwu-subn-devtest-sap-ukh-cev-001')]"
+                    },
+                    "PIN": {
+                        "id": "[resourceId('azwu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azwu-vnet-devtest-sap-001', 'azwu-subn-devtest-sap-ukh-pin-001')]"
+                    },
+                    "NGW": {
+                        "id": "[resourceId('azwu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azwu-vnet-devtest-sap-001', 'azwu-subn-devtest-sap-ukh-ngw-001')]"
+                    }
+                }
+            }
+        },
+        "ipConfigurationsObj": {
+            "copy": [
+                {
+                    "name": "ipConfigurations",
+                    "count": "[length(parameters('params').vmIpAddresses)]",
+                    "input": {
+                        "name": "[concat('ipconfig',padLeft(copyIndex('ipConfigurations'),2,'0'))]",
+                        "properties": {
+                            "privateIPAddress": "[if(equals(parameters('params').vmIpAddresses[copyIndex('ipConfigurations')],''),'',parameters('params').vmIpAddresses[copyIndex('ipConfigurations')])]",
+                            "privateIPAllocationMethod": "[if(equals(parameters('params').vmIpAddresses[copyIndex('ipConfigurations')],''),'Dynamic','Static')]",
+                            "privateIpAddressVersion": "IPv4",
+                            "primary": "[if(equals(copyIndex('ipConfigurations'),0),'true','false')]",
+                            "subnet": {
+                                "id": "[variables('subnets')[parameters('params').subscription][parameters('params').location][parameters('params').vmRole].id]"
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    },
+    "resources": [],
+    "outputs": {
+        "output": {
+            "value": "[variables('ipConfigurationsObj')[string('ipConfigurations')]]",
+            "type": "array"
+        }
+    }
+}

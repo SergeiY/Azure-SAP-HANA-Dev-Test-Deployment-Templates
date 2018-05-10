@@ -1,0 +1,90 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "params": {
+            "type": "object"
+        }
+    },
+    "variables": {
+        "settings.nic1.enableacceleratednetworking.templatename": "[concat('settings.nic1.enableacceleratednetworking.', parameters('params').uniqueDeploymentId)]",
+        "settings.nic1.enableacceleratednetworking.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic1.enableacceleratednetworking.json')]",
+        "settings.nic1.dnssettings.templatename": "[concat('settings.nic1.dnssettings.', parameters('params').uniqueDeploymentId)]",
+        "settings.nic1.dnssettings.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic1.dnssettings.json')]",
+        "settings.nic1.ipconfigurations.templatename": "[concat('settings.nic1.ipconfigurations.', parameters('params').uniqueDeploymentId)]",
+        "settings.nic1.ipconfigurations.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic1.ipconfigurations.json')]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.nic1.enableacceleratednetworking.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.nic1.enableacceleratednetworking.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.nic1.dnssettings.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.nic1.dnssettings.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.nic1.ipconfigurations.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.nic1.ipconfigurations.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "output": {
+            "type": "object",
+            "value": {
+                "primary": true,
+                "enableAcceleratedNetworking": "[reference(variables('settings.nic1.enableacceleratednetworking.templatename')).outputs.output.value]",
+                "dnsSettings": "[reference(variables('settings.nic1.dnssettings.templatename')).outputs.output.value]",
+                "ipConfigurations": "[reference(variables('settings.nic1.ipconfigurations.templatename')).outputs.output.value]"
+            }
+        }
+    }
+}
