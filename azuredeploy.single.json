@@ -58,12 +58,20 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
-        "vmIpAddress": {
+        "nic1IpAddress": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
             "metadata": {
-                "description": "Static IP addresses of 2nd IP. If the address is blank, DHCP will be used"
+                "description": "Static IP addresses of 2nd IP of NIC 1. If the address is blank, DHCP will be used"
+            }
+        },
+        "nic2IpAddress": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC 2. If the address is blank, DHCP will be used"
             }
         }
     },
@@ -103,10 +111,16 @@
                     "vmAdminPassword": {
                         "value": "[parameters('vmAdminPassword')]"
                     },
-                    "vmIpAddresses": {
+                    "nic1IpAddresses": {
                         "value": [
                             "",
-                            "[parameters('vmIpAddress')]"
+                            "[parameters('nic1IpAddress')]"
+                        ]
+                    },
+                    "nic2IpAddresses": {
+                        "value": [
+                            "",
+                            "[parameters('nic2IpAddress')]"
                         ]
                     }
                 }
