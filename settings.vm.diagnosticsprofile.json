@@ -1,0 +1,31 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "params": {
+            "type": "object"
+        }
+    },
+    "variables": {
+        "storageUri": {
+            "SAP Dev Test": {
+                "ukwest": {
+                    "uri": "https://azwudsapvmdiags.blob.core.windows.net/"
+                }
+            }
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true,
+                "storageUri": "[variables('storageUri')[parameters('params').subscription][parameters('params').location].uri]"
+            }
+        }
+    },
+    "resources": [],
+    "outputs": {
+        "output": {
+            "value": "[variables('diagnosticsProfile')]",
+            "type": "object"
+        }
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "params": {
+            "type": "object"
+        }
+    },
+    "variables": {
+        "settings.vm.storageprofile.osdisk.templatename": "[concat('settings.vm.storageprofile.osdisk.', parameters('params').uniqueDeploymentId)]",
+        "settings.vm.storageprofile.osdisk.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.storageprofile.osdisk.json')]",
+        "settings.vm.storageprofile.datadisks.templatename": "[concat('settings.vm.storageprofile.datadisks.', parameters('params').uniqueDeploymentId)]",
+        "settings.vm.storageprofile.datadisks.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.storageprofile.datadisks.json')]",
+        "settings.vm.storageprofile.imagereference.templatename": "[concat('settings.vm.storageprofile.imagereference.', parameters('params').uniqueDeploymentId)]",
+        "settings.vm.storageprofile.imagereference.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.storageprofile.imagereference.json')]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.vm.storageprofile.osdisk.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.vm.storageprofile.osdisk.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.vm.storageprofile.datadisks.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.vm.storageprofile.datadisks.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.vm.storageprofile.imagereference.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.vm.storageprofile.imagereference.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "output": {
+            "type": "object",
+            "value": {
+                "imageReference": "[reference(variables('settings.vm.storageprofile.imagereference.templatename')).outputs.output.value]",
+                "osDisk": "[reference(variables('settings.vm.storageprofile.osdisk.templatename')).outputs.output.value]",
+                "dataDisks": "[reference(variables('settings.vm.storageprofile.datadisks.templatename')).outputs.output.value]"
+            }
+        }
+    }
+}

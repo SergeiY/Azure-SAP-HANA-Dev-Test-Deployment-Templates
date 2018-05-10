@@ -1,0 +1,196 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "params": {
+            "type": "object"
+        }
+    },
+    "variables": {
+        "diskSizes": {
+            "SAP Dev Test": {
+                "ISU": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 1023
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "CRM": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 511
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "PIC": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 511
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "BWA": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 511
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "MOB": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "EWM": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "JVA": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "CEV": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 511
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "PIN": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "NGW": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                }
+            }
+        },
+        "dataDisksObj": {
+            "copy": [
+                {
+                    "name": "dataDisks",
+                    "count": "[length(variables('diskSizes')[parameters('params').subscription][parameters('params').vmRole].disks)]",
+                    "input": {
+                        "lun": "[copyIndex('dataDisks')]",
+                        "createOption": "Empty",
+                        "name": "[concat(parameters('params').vmName,'-datadisk-',padLeft(copyIndex('dataDisks'),2,'0'))]",
+                        "diskSizeGB": "[variables('diskSizes')[parameters('params').subscription][parameters('params').vmRole].disks[copyIndex('dataDisks')].diskSizeGB]"
+                    }
+                }
+            ]
+        }
+    },
+    "resources": [],
+    "outputs": {
+        "output": {
+            "value": "[variables('dataDisksObj')[string('dataDisks')]]",
+            "type": "array"
+        }
+    }
+}

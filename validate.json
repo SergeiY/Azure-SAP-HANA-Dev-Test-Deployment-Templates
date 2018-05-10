@@ -1,0 +1,109 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "uniqueDeploymentId": {
+            "type": "string"
+        },
+        "location": {
+            "type": "string",
+            "allowedValues": [
+                "ukwest"
+            ]
+        },
+        "subscription": {
+            "type": "string",
+            "allowedValues": [
+                "SAP Dev Test"
+            ]
+        },
+        "vmDeploymentNumber": {
+            "type": "string"
+        },
+        "vmImage": {
+            "type": "string",
+            "allowedValues": [
+                "Custom Image - RHEL 7.3 BYOS 2018-03-21",
+                "Gallery Image - RHEL 7.2",
+                "Gallery Image - RHEL 7.3",
+                "Gallery Image - SLES SAP 12-SP1",
+                "Gallery Image - SLES SAP BYOS 12-SP1",
+                "Gallery Image - SLES SAP 12-SP2",
+                "Gallery Image - SLES SAP BYOS 12-SP2",
+                "Gallery Image - SLES SAP 12-SP3",
+                "Gallery Image - SLES SAP BYOS 12-SP3",
+                "Gallery Image - Windows Server 2012 Datacenter",
+                "Gallery Image - Windows Server 2012 R2 Datacenter",
+                "Gallery Image - Windows Server 2016 Datacenter",
+                "Gallery Image - Oracle Linux 7.2"
+            ]
+        },
+        "vmRole": {
+            "type": "string",
+            "allowedValues": [
+                "ISU",
+                "CRM",
+                "PIC",
+                "BWA",
+                "MOB",
+                "EWM",
+                "JVA",
+                "CEV",
+                "PIN",
+                "NGW"
+            ]
+        },
+        "vmAdminUserName": {
+            "type": "string",
+            "defaultValue": "azureuser"
+        },
+        "vmAdminPassword": {
+            "type": "securestring"
+        },
+        "vmIpAddresses": {
+            "type": "array"
+        }
+    },
+    "variables": {
+        "subscriptionPrefix": {
+            "SAP Dev Test": "d"
+        },
+        "locationPrefix": {
+            "ukwest":  "azwu"
+        },
+        "roleNumber": {
+            "PIC": "0",
+            "CEV": "1",
+            "ISU": "2",
+            "CRM": "3",
+            "BWA": "4",
+            "MOB": "5",
+            "EWM": "6",
+            "JVA": "7",
+            "NGW": "8",
+            "PIN": "9"
+        },
+        "prefix": "[toLower(concat(variables('locationPrefix')[parameters('location')], '-', variables('subscriptionPrefix')[parameters('subscription')], '-'))]",
+        "vmName": "[concat(variables('prefix'), 'sap', parameters('vmDeploymentNumber'), variables('roleNumber')[parameters('vmRole')])]",
+        "nicName": "[concat(variables('vmName'), '-nic-01')]"
+
+    },
+    "resources": [],
+    "outputs": {
+        "output": {
+            "type": "object",
+            "value": {
+                "uniqueDeploymentId": "[parameters('uniqueDeploymentId')]",
+                "vmName": "[variables('vmName')]",
+                "nicName": "[variables('nicName')]",
+                "location": "[parameters('location')]",
+                "subscription": "[parameters('subscription')]",
+                "vmImage": "[parameters('vmImage')]",
+                "vmRole": "[parameters('vmRole')]",
+                "vmAdminUserName": "[parameters('vmAdminUserName')]",
+                "vmAdminPassword": "[parameters('vmAdminPassword')]",
+                "vmIpAddresses": "[parameters('vmIpAddresses')]"
+            }
+        }
+    }
+}

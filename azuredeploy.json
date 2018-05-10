@@ -1,0 +1,265 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmDeploymentNumber": {
+            "type": "string",
+            "maxLength": 2,
+            "minLength": 2,
+            "metadata": {
+                "description": "Unique, 2-digit deployment number, e.g. 20"
+            }
+        },
+        "vmImage": {
+            "type": "string",
+            "allowedValues": [
+                "Custom Image - RHEL 7.3 BYOS 2018-03-21",
+                "Gallery Image - RHEL 7.2",
+                "Gallery Image - RHEL 7.3",
+                "Gallery Image - SLES SAP 12-SP1",
+                "Gallery Image - SLES SAP BYOS 12-SP1",
+                "Gallery Image - SLES SAP 12-SP2",
+                "Gallery Image - SLES SAP BYOS 12-SP2",
+                "Gallery Image - SLES SAP 12-SP3",
+                "Gallery Image - SLES SAP BYOS 12-SP3",
+                "Gallery Image - Windows Server 2012 Datacenter",
+                "Gallery Image - Windows Server 2012 R2 Datacenter",
+                "Gallery Image - Windows Server 2016 Datacenter",
+                "Gallery Image - Oracle Linux 7.2"
+            ],
+            "defaultValue": "Custom Image - RHEL 7.3 BYOS 2018-03-21",
+            "metadata": {
+                "description": "The Virtual Machine operating system you want to deploy"
+            }
+        },
+        "vmRole": {
+            "type": "string",
+            "allowedValues": [
+                "ISU",
+                "CRM",
+                "PIC",
+                "BWA",
+                "MOB",
+                "EWM",
+                "JVA",
+                "CEV",
+                "PIN",
+                "NGW"
+            ],
+            "defaultValue": "ISU",
+            "metadata": {
+                "description": "The Virtual Machine role you want to deploy"
+            }
+        },
+        "vmAdminUserName": {
+            "type": "string",
+            "defaultValue": "azureuser"
+        },
+        "vmAdminPassword": {
+            "type": "securestring"
+        },
+        "vmIpAddresses": {
+            "type": "array",
+            "minLength": 2,
+            "maxLength": 2,
+            "defaultValue": [
+                "",
+                ""
+            ],
+            "metadata": {
+                "description": "Array of Virtual Machine static IP addresses. If an address is blank, DHCP will be used"
+            }
+        }
+    },
+    "variables": {
+        "uniqueDeploymentId": "[concat(parameters('vmDeploymentNumber'), '.', parameters('vmRole'))]",
+        "validate.templatename": "[concat('validate.', variables('uniqueDeploymentId'))]",
+        "validate.templateuri": "[uri(deployment().properties.templateLink.uri, 'validate.json')]",
+        "settings.tags.templatename": "[concat('settings.tags.', variables('uniqueDeploymentId'))]",
+        "settings.tags.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.tags.json')]",
+        "settings.vm.templatename": "[concat('settings.vm.', variables('uniqueDeploymentId'))]",
+        "settings.vm.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.json')]",
+        "settings.nic.templatename": "[concat('settings.nic.', variables('uniqueDeploymentId'))]",
+        "settings.nic.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic.json')]",
+        "deploy.vm.templatename": "[concat('deploy.vm.', variables('uniqueDeploymentId'))]",
+        "deploy.vm.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.vm.json')]",
+        "deploy.nic.templatename": "[concat('deploy.nic.', variables('uniqueDeploymentId'))]",
+        "deploy.nic.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.nic.json')]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('validate.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('validate.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "uniqueDeploymentId": {
+                        "value": "[variables('uniqueDeploymentId')]"
+                    },
+                    "location": {
+                        "value": "[resourceGroup().location]"
+                    },
+                    "subscription": {
+                        "value": "[subscription().displayName]"
+                    },
+                    "vmDeploymentNumber": {
+                        "value": "[parameters('vmDeploymentNumber')]"
+                    },
+                    "vmImage": {
+                        "value": "[parameters('vmImage')]"
+                    },
+                    "vmRole": {
+                        "value": "[parameters('vmRole')]"
+                    },
+                    "vmAdminUserName": {
+                        "value": "[parameters('vmAdminUserName')]"
+                    },
+                    "vmAdminPassword": {
+                        "value": "[parameters('vmAdminPassword')]"
+                    },
+                    "vmIpAddresses": {
+                        "value": "[parameters('vmIpAddresses')]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.tags.templatename')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments/', variables('validate.templatename'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.tags.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[reference(variables('validate.templatename')).outputs.output.value]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.vm.templatename')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments/', variables('validate.templatename'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.vm.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[reference(variables('validate.templatename')).outputs.output.value]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.nic.templatename')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments/', variables('validate.templatename'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.nic.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[reference(variables('validate.templatename')).outputs.output.value]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('deploy.nic.templatename')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.tags.templatename'))]",
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.nic.templatename'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('deploy.nic.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[reference(variables('validate.templatename')).outputs.output.value]"
+                    },
+                    "tags":{
+                        "value": "[reference(variables('settings.tags.templatename')).outputs.output.value]"
+                    },
+                    "properties": {
+                        "value": "[reference(variables('settings.nic.templatename')).outputs.output.value]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('deploy.vm.templatename')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.tags.templatename'))]",
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.vm.templatename'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('deploy.vm.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[reference(variables('validate.templatename')).outputs.output.value]"
+                    },
+                    "tags":{
+                        "value": "[reference(variables('settings.tags.templatename')).outputs.output.value]"
+                    },
+                    "properties": {
+                        "value": "[reference(variables('settings.vm.templatename')).outputs.output.value]"
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}

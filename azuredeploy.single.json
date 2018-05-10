@@ -1,0 +1,117 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmDeploymentNumber": {
+            "type": "string",
+            "maxLength": 2,
+            "minLength": 2,
+            "metadata": {
+                "description": "Unique, 2-digit deployment number, e.g. 20"
+            }
+        },
+        "vmImage": {
+            "type": "string",
+            "allowedValues": [
+                "Custom Image - RHEL 7.3 BYOS 2018-03-21",
+                "Gallery Image - RHEL 7.2",
+                "Gallery Image - RHEL 7.3",
+                "Gallery Image - SLES SAP 12-SP1",
+                "Gallery Image - SLES SAP BYOS 12-SP1",
+                "Gallery Image - SLES SAP 12-SP2",
+                "Gallery Image - SLES SAP BYOS 12-SP2",
+                "Gallery Image - SLES SAP 12-SP3",
+                "Gallery Image - SLES SAP BYOS 12-SP3",
+                "Gallery Image - Windows Server 2012 Datacenter",
+                "Gallery Image - Windows Server 2012 R2 Datacenter",
+                "Gallery Image - Windows Server 2016 Datacenter",
+                "Gallery Image - Oracle Linux 7.2"
+            ],
+            "defaultValue": "Custom Image - RHEL 7.3 BYOS 2018-03-21",
+            "metadata": {
+                "description": "The Virtual Machine operating system you want to deploy"
+            }
+        },
+        "vmRole": {
+            "type": "string",
+            "allowedValues": [
+                "ISU",
+                "CRM",
+                "PIC",
+                "BWA",
+                "MOB",
+                "EWM",
+                "JVA",
+                "CEV",
+                "PIN",
+                "NGW"
+            ],
+            "defaultValue": "ISU",
+            "metadata": {
+                "description": "The Virtual Machine role you want to deploy"
+            }
+        },
+        "vmAdminUserName": {
+            "type": "string",
+            "defaultValue": "azureuser"
+        },
+        "vmAdminPassword": {
+            "type": "securestring"
+        },
+        "vmIpAddress": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP. If the address is blank, DHCP will be used"
+            }
+        }
+    },
+    "variables": {
+        "uniqueDeploymentId": "[concat(parameters('vmDeploymentNumber'), '.')]",
+        "azuredeploy.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId'), parameters('vmRole'))]",
+        "azuredeploy.templateuri": "[uri(deployment().properties.templateLink.uri, 'azuredeploy.json')]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('azuredeploy.templatename')]",
+            "dependsOn": [],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('azuredeploy.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "vmDeploymentNumber": {
+                        "value": "[parameters('vmDeploymentNumber')]"
+                    },
+                    "vmImage": {
+                        "value": "[parameters('vmImage')]"
+                    },
+                    "vmRole": {
+                        "value": "[parameters('vmRole')]"
+                    },
+                    "vmAdminUserName": {
+                        "value": "[parameters('vmAdminUserName')]"
+                    },
+                    "vmAdminPassword": {
+                        "value": "[parameters('vmAdminPassword')]"
+                    },
+                    "vmIpAddresses": {
+                        "value": [
+                            "",
+                            "[parameters('vmIpAddress')]"
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {}
+}

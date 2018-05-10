@@ -1,0 +1,62 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "params": {
+            "type": "object"
+        }
+    },
+    "variables": {
+        "tagServiceNames": {
+            "ISU": {
+                "tagServiceName": "BGR & BGS - BILLING (SAP)"
+            },
+            "CRM": {
+                "tagServiceName": "BGR & BGS - CRM (SAP)"
+            },
+            "PIC": {
+                "tagServiceName": "SOA PI"
+            },
+            "BWA": {
+                "tagServiceName": "BGR - BILLING BUSINESS WAREHOUSE (SAP)"
+            },
+            "MOB": {
+                "tagServiceName": "SAP BGSM MOBILE"
+            },
+            "EWM": {
+                "tagServiceName": "EWM-CDC"
+            },
+            "JVA": {
+                "tagServiceName": "SAP IPC (INTERNET PRICING AND CONFIGURATOR)"
+            },
+            "CEV": {
+                "tagServiceName": "SOA CE"
+            },
+            "PIN": {
+                "tagServiceName": "SOA PI"
+            },
+            "NGW": {
+                "tagServiceName": "SAP NETWEAVER GATEWAY"
+            }
+        },
+        "tagEnvironments": {
+            "SAP Dev Test": {
+                "tagEnvironment": "SAP Dev Test"
+            }
+        }
+    },
+    "resources": [],
+    "outputs": {
+        "output": {
+            "type": "object",
+            "value": {
+                "Cost Code ID": "D.4534-02-R01",
+                "Environment": "[variables('tagEnvironments')[parameters('params').subscription].tagEnvironment]",
+                "Service Name": "[variables('tagServiceNames')[parameters('params').vmRole].tagServiceName]",
+                "Service Owner": "David Blowers",
+                "Service Ticket Request ID": "CirrusPrj",
+                "Source": "servicenow]"
+            }
+        }
+    }
+}

@@ -1,0 +1,135 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "params": {
+            "type": "object"
+        }
+    },
+    "variables": {
+        "settings.vm.osprofile.templatename": "[concat('settings.vm.osprofile.', parameters('params').uniqueDeploymentId)]",
+        "settings.vm.osprofile.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.osprofile.json')]",
+        "settings.vm.storageprofile.templatename": "[concat('settings.vm.storageprofile.', parameters('params').uniqueDeploymentId)]",
+        "settings.vm.storageprofile.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.storageprofile.json')]",
+        "settings.vm.diagnosticsprofile.templatename": "[concat('settings.vm.diagnosticsprofile.', parameters('params').uniqueDeploymentId)]",
+        "settings.vm.diagnosticsprofile.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.diagnosticsprofile.json')]",
+        "settings.vm.hardwareProfile.templatename": "[concat('settings.vm.hardwareprofile.', parameters('params').uniqueDeploymentId)]",
+        "settings.vm.hardwareProfile.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.hardwareprofile.json')]",
+        "settings.vm.networkProfile.templatename": "[concat('settings.vm.networkprofile.', parameters('params').uniqueDeploymentId)]",
+        "settings.vm.networkProfile.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.networkprofile.json')]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.vm.osprofile.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.vm.osprofile.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.vm.storageprofile.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.vm.storageprofile.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.vm.diagnosticsprofile.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.vm.diagnosticsprofile.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.vm.hardwareProfile.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.vm.hardwareProfile.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.vm.networkProfile.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.vm.networkProfile.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "output": {
+            "type": "object",
+            "value": {
+                "hardwareProfile": "[reference(variables('settings.vm.hardwareprofile.templatename')).outputs.output.value]",
+                "storageProfile": "[reference(variables('settings.vm.storageprofile.templatename')).outputs.output.value]",
+                "osProfile": "[reference(variables('settings.vm.osprofile.templatename')).outputs.output.value]",
+                "diagnosticsProfile": "[reference(variables('settings.vm.diagnosticsprofile.templatename')).outputs.output.value]",
+                "networkProfile": "[reference(variables('settings.vm.networkProfile.templatename')).outputs.output.value]"
+            }
+        }
+    }
+}
