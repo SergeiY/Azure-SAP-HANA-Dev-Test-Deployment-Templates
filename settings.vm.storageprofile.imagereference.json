@@ -107,14 +107,14 @@
             "SAP Dev Test": {
                 "ukwest": {
                     "Custom Image - RHEL 7.3 BYOS 2018-03-21": {
-                        "id": "[resourceId('azwu-rg-sapdevtest-vmcustomimages', 'Microsoft.Compute/images', 'azwu-vmimage-redhat-rhel-7.3-byos-2018-03-21')]"
+                        "id": ""
                     }
                 }
             },
             "Simon Hutson Internal Subscription": {
                 "ukwest": {
                     "Custom Image - RHEL 7.3 BYOS 2018-03-21": {
-                        "id": "[resourceId('azwu-rg-sapdevtest-vmcustomimages', 'Microsoft.Compute/images', 'azwu-vmimage-redhat-rhel-7.3-byos-2018-03-21')]"
+                        "id": ""
                     }
                 }
             }
