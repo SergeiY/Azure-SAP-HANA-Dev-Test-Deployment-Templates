@@ -86,9 +86,9 @@
         "deploy.vm.templatename": "[concat('deploy.vm.', variables('uniqueDeploymentId'))]",
         "deploy.vm.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.vm.json')]",
         "deploy.nic1.templatename": "[concat('deploy.nic1.', variables('uniqueDeploymentId'))]",
-        "deploy.nic1.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.nic1.json')]",
+        "deploy.nic1.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.nic.json')]",
         "deploy.nic2.templatename": "[concat('deploy.nic2.', variables('uniqueDeploymentId'))]",
-        "deploy.nic2.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.nic2.json')]"
+        "deploy.nic2.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.nic.json')]"
     },
     "resources": [
         {
