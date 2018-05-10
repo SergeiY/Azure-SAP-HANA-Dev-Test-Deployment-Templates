@@ -1,4 +1,4 @@
-<h1>Azure SAP ETE Deployment Template</h1>
+<h1>Azure SAP HANA Deployment Template</h1>
 <p>This template takes a minimum amount of parameters and deploys one or more VMs, customized for use with 2-tier SAP NetWeaver, using a variety of custom and gallery operating system images. Each VM is configured with a single NIC, with two IP Addresses (one with a DHCP assigned IP Address and the second with a Static IP Address).</p>
 <p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsimonhutson%2FARMTest%2Fmaster%2Fazuredeploy.single.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png" />
