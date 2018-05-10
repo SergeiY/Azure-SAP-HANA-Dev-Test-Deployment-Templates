@@ -41,6 +41,40 @@
                         "id": "[resourceId('azwu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azwu-vnet-devtest-sap-001', 'azwu-subn-devtest-sap-ukh-ngw-001')]"
                     }
                 }
+            },
+            "Simon Hutson Internal Subscription": {
+                "ukwest": {
+                    "ISU": {
+                        "id": "[resourceId('SRH-NETWORKS', 'Microsoft.Network/virtualNetworks/subnets', 'SRH-VNET-UKWEST', 'SAP-1')]"
+                    },
+                    "CRM": {
+                        "id": "[resourceId('SRH-NETWORKS', 'Microsoft.Network/virtualNetworks/subnets', 'SRH-VNET-UKWEST', 'SAP-1')]"
+                    },
+                    "PIC": {
+                        "id": "[resourceId('SRH-NETWORKS', 'Microsoft.Network/virtualNetworks/subnets', 'SRH-VNET-UKWEST', 'SAP-1')]"
+                    },
+                    "BWA": {
+                        "id": "[resourceId('SRH-NETWORKS', 'Microsoft.Network/virtualNetworks/subnets', 'SRH-VNET-UKWEST', 'SAP-1')]"
+                    },
+                    "MOB": {
+                        "id": "[resourceId('SRH-NETWORKS', 'Microsoft.Network/virtualNetworks/subnets', 'SRH-VNET-UKWEST', 'SAP-1')]"
+                    },
+                    "EWM": {
+                        "id": "[resourceId('SRH-NETWORKS', 'Microsoft.Network/virtualNetworks/subnets', 'SRH-VNET-UKWEST', 'SAP-1')]"
+                    },
+                    "JVA": {
+                        "id": "[resourceId('SRH-NETWORKS', 'Microsoft.Network/virtualNetworks/subnets', 'SRH-VNET-UKWEST', 'SAP-1')]"
+                    },
+                    "CEV": {
+                        "id": "[resourceId('SRH-NETWORKS', 'Microsoft.Network/virtualNetworks/subnets', 'SRH-VNET-UKWEST', 'SAP-1')]"
+                    },
+                    "PIN": {
+                        "id": "[resourceId('SRH-NETWORKS', 'Microsoft.Network/virtualNetworks/subnets', 'SRH-VNET-UKWEST', 'SAP-1')]"
+                    },
+                    "NGW": {
+                        "id": "[resourceId('SRH-NETWORKS', 'Microsoft.Network/virtualNetworks/subnets', 'SRH-VNET-UKWEST', 'SAP-1')]"
+                    }
+                }
             }
         },
         "ipConfigurationsObj": {

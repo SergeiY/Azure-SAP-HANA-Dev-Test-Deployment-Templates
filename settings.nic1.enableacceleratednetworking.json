@@ -19,6 +19,18 @@
                 "CEV": false,
                 "PIN": false,
                 "NGW": false
+            },
+            "Simon Hutson Internal Subscription": {
+                "ISU": false,
+                "CRM": false,
+                "PIC": false,
+                "BWA": false,
+                "MOB": false,
+                "EWM": false,
+                "JVA": false,
+                "CEV": false,
+                "PIN": false,
+                "NGW": false
             }
         }
     },

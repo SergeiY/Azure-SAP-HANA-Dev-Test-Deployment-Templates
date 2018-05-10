@@ -169,6 +169,168 @@
                         }
                     ]
                 }
+            },
+            "Simon Hutson Internal Subscription": {
+                "ISU": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 1023
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "CRM": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 511
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "PIC": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 511
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "BWA": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 511
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "MOB": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "EWM": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "JVA": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "CEV": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 511
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "PIN": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "NGW": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                }
             }
         },
         "dataDisksObj": {

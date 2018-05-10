@@ -14,7 +14,8 @@
         "subscription": {
             "type": "string",
             "allowedValues": [
-                "SAP Dev Test"
+                "SAP Dev Test",
+                "Simon Hutson Internal Subscription"
             ]
         },
         "vmDeploymentNumber": {

@@ -19,6 +19,18 @@
                 "CEV": "Standard_E2s_v3",
                 "PIN": "Standard_E2s_v3",
                 "NGW": "Standard_E2s_v3"
+            },
+            "Simon Hutson Internal Subscription": {
+                "ISU": "Standard_E4s_v3",
+                "CRM": "Standard_E4s_v3",
+                "PIC": "Standard_D4s_v3",
+                "BWA": "Standard_D4s_v3",
+                "MOB": "Standard_E2s_v3",
+                "EWM": "Standard_E2s_v3",
+                "JVA": "Standard_E2s_v3",
+                "CEV": "Standard_E2s_v3",
+                "PIN": "Standard_E2s_v3",
+                "NGW": "Standard_E2s_v3"
             }
         },
         "hardwareProfile": {

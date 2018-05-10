@@ -12,6 +12,11 @@
                 "ukwest": {
                     "uri": "https://azwudsapvmdiags.blob.core.windows.net/"
                 }
+            },
+            "Simon Hutson Internal Subscription": {
+                "ukwest": {
+                    "uri": "https://srhsaukwest.blob.core.windows.net/"
+                }
             }
         },
         "diagnosticsProfile": {

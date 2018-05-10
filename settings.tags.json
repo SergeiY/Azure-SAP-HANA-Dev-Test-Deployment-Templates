@@ -42,6 +42,9 @@
         "tagEnvironments": {
             "SAP Dev Test": {
                 "tagEnvironment": "SAP Dev Test"
+            },
+            "Simon Hutson Internal Subscription": {
+                "tagEnvironment": "Simon Hutson Internal Subscription"
             }
         }
     },
