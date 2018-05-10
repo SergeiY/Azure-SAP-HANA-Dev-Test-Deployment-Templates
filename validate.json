@@ -60,7 +60,10 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
-        "vmIpAddresses": {
+        "nic1IpAddresses": {
+            "type": "array"
+        },
+        "nic2IpAddresses": {
             "type": "array"
         }
     },
@@ -103,7 +106,8 @@
                 "vmRole": "[parameters('vmRole')]",
                 "vmAdminUserName": "[parameters('vmAdminUserName')]",
                 "vmAdminPassword": "[parameters('vmAdminPassword')]",
-                "vmIpAddresses": "[parameters('vmIpAddresses')]"
+                "nic1IpAddresses": "[parameters('nic1IpAddresses')]",
+                "nic2IpAddresses": "[parameters('nic2IpAddresses')]"
             }
         }
     }

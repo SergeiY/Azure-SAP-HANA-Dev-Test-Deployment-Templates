@@ -47,12 +47,12 @@
             "copy": [
                 {
                     "name": "ipConfigurations",
-                    "count": "[length(parameters('params').vmIpAddresses)]",
+                    "count": "[length(parameters('params').nic2IpAddresses)]",
                     "input": {
                         "name": "[concat('ipconfig',padLeft(copyIndex('ipConfigurations'),2,'0'))]",
                         "properties": {
-                            "privateIPAddress": "[if(equals(parameters('params').vmIpAddresses[copyIndex('ipConfigurations')],''),'',parameters('params').vmIpAddresses[copyIndex('ipConfigurations')])]",
-                            "privateIPAllocationMethod": "[if(equals(parameters('params').vmIpAddresses[copyIndex('ipConfigurations')],''),'Dynamic','Static')]",
+                            "privateIPAddress": "[if(equals(parameters('params').vmIpAddresses[copyIndex('ipConfigurations')],''),'',parameters('params').nic2IpAddresses[copyIndex('ipConfigurations')])]",
+                            "privateIPAllocationMethod": "[if(equals(parameters('params').nic2IpAddresses[copyIndex('ipConfigurations')],''),'Dynamic','Static')]",
                             "privateIpAddressVersion": "IPv4",
                             "primary": "[if(equals(copyIndex('ipConfigurations'),0),'true','false')]",
                             "subnet": {
