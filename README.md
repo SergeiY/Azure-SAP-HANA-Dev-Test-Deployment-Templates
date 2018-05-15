@@ -26,51 +26,51 @@ Deploy a CORE SAP Environment (5 VMs - ISU, CRM, PIC, JVA, NGW)</p>
 	<tr>
 		<td>ISU</td>
 		<td>E4s_v3</td>
-		<td>1xP6 1xP30 1xP4 1xP6</td>
+		<td>1xP6 (64GB), 1xP30 (1,024GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>CRM</td>
 		<td>E4s_v3</td>
-		<td>1xP6 1xP20 1xP4 1xP6</td>
+		<td>1xP6 (64GB), 1xP20 (512GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>PIC</td>
 		<td>D4s_v3</td>
-		<td>1xP6 1xP20 1xP4 1xP6</td>
+		<td>1xP6 (64GB), 1xP20 (512GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>BWA</td>
 		<td>D4s_v3</td>
-		<td>1xP6 1xP20 1xP4 1xP6</td>
+		<td>1xP6 (64GB), 1xP20 (512GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>MOB</td>
 		<td>E2s_v3</td>
-		<td>1xP6 1xP6 1xP4 1xP6</td>
+		<td>1xP6 (64GB), 1xP6 (64GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>EWM</td>
 		<td>E2s_v3</td>
-		<td>1xP6 1xP10 1xP4 1xP6</td>
+		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>JVA</td>
 		<td>E2s_v3</td>
-		<td>1xP6 1xP6 1xP4 1xP6</td>
+		<td>1xP6 (64GB), 1xP6 (64GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>CEV</td>
 		<td>E2s_v3</td>
-		<td>1xP6 1xP20 1xP4 1xP6</td>
+		<td>1xP6 (64GB), 1xP20 (512GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>PIN</td>
 		<td>E2s_v3</td>
-		<td>1xP6 1xP6 1xP4 1xP6</td>
+		<td>1xP6 (64GB), 1xP6 (64GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>NGW</td>
 		<td>E2s_v3</td>
-		<td>1xP6 1xP10 1xP4 1xP6</td>
+		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 </table>
