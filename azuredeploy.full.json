@@ -27,7 +27,7 @@
                 "Gallery Image - Windows Server 2016 Datacenter",
                 "Gallery Image - Oracle Linux 7.2"
             ],
-            "defaultValue": "Custom Image - RHEL 7.3 BYOS 2018-03-21",
+            "defaultValue": "Gallery Image - SLES SAP 12-SP3",
             "metadata": {
                 "description": "The Virtual Machine operating system you want to deploy"
             }

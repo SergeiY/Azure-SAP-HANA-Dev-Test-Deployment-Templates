@@ -4,7 +4,7 @@
     "parameters": {
         "params": {
             "type": "object"
-        }
+        }   
     },
     "variables": {},
     "resources": [],
