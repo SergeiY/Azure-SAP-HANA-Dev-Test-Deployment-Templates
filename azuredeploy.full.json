@@ -39,84 +39,164 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
-        "vmIpAddressISU": {
+        "nic1IpAddressISU": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
             "metadata": {
-                "description": "Static IP addresses of 2nd IP. If the address is blank, DHCP will be used"
+                "description": "Static IP addresses of 2nd IP of NIC 1. If the address is blank, DHCP will be used"
             }
         },
-        "vmIpAddressCRM": {
+        "nic2IpAddressISU": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
             "metadata": {
-                "description": "Static IP addresses of 2nd IP. If the address is blank, DHCP will be used"
+                "description": "Static IP addresses of 2nd IP of NIC 2. If the address is blank, DHCP will be used"
             }
         },
-        "vmIpAddressPIC": {
+        "nic1IpAddressCRM": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
             "metadata": {
-                "description": "Static IP addresses of 2nd IP. If the address is blank, DHCP will be used"
+                "description": "Static IP addresses of 2nd IP of NIC 1. If the address is blank, DHCP will be used"
             }
         },
-        "vmIpAddressBWA": {
+        "nic2IpAddressCRM": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
             "metadata": {
-                "description": "Static IP addresses of 2nd IP. If the address is blank, DHCP will be used"
+                "description": "Static IP addresses of 2nd IP of NIC 2. If the address is blank, DHCP will be used"
             }
         },
-        "vmIpAddressMOB": {
+        "nic1IpAddressPIC": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
             "metadata": {
-                "description": "Static IP addresses of 2nd IP. If the address is blank, DHCP will be used"
+                "description": "Static IP addresses of 2nd IP of NIC 1. If the address is blank, DHCP will be used"
             }
         },
-        "vmIpAddressEWM": {
+        "nic2IpAddressPIC": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
             "metadata": {
-                "description": "Static IP addresses of 2nd IP. If the address is blank, DHCP will be used"
+                "description": "Static IP addresses of 2nd IP of NIC 2. If the address is blank, DHCP will be used"
             }
         },
-        "vmIpAddressJVA": {
+        "nic1IpAddressBWA": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
             "metadata": {
-                "description": "Static IP addresses of 2nd IP. If the address is blank, DHCP will be used"
+                "description": "Static IP addresses of 2nd IP of NIC 1. If the address is blank, DHCP will be used"
             }
         },
-        "vmIpAddressCEV": {
+        "nic2IpAddressBWA": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
             "metadata": {
-                "description": "Static IP addresses of 2nd IP. If the address is blank, DHCP will be used"
+                "description": "Static IP addresses of 2nd IP of NIC 2. If the address is blank, DHCP will be used"
             }
         },
-        "vmIpAddressPIN": {
+        "nic1IpAddressMOB": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
             "metadata": {
-                "description": "Static IP addresses of 2nd IP. If the address is blank, DHCP will be used"
+                "description": "Static IP addresses of 2nd IP of NIC 1. If the address is blank, DHCP will be used"
             }
         },
-        "vmIpAddressNGW": {
+        "nic2IpAddressMOB": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
             "metadata": {
-                "description": "Static IP addresses of 2nd IP. If the address is blank, DHCP will be used"
+                "description": "Static IP addresses of 2nd IP of NIC 2. If the address is blank, DHCP will be used"
+            }
+        },
+        "nic1IpAddressEWM": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC 1. If the address is blank, DHCP will be used"
+            }
+        },
+        "nic2IpAddressEWM": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC 2. If the address is blank, DHCP will be used"
+            }
+        },
+        "nic1IpAddressJVA": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC 1. If the address is blank, DHCP will be used"
+            }
+        },
+        "nic2IpAddressJVA": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC 2. If the address is blank, DHCP will be used"
+            }
+        },
+        "nic1IpAddressCEV": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC 1. If the address is blank, DHCP will be used"
+            }
+        },
+        "nic2IpAddressCEV": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC 2. If the address is blank, DHCP will be used"
+            }
+        },
+        "nic1IpAddressPIN": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC 1. If the address is blank, DHCP will be used"
+            }
+        },
+        "nic2IpAddressPIN": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC 2. If the address is blank, DHCP will be used"
+            }
+        },
+        "nic1IpAddressNGW": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC 1. If the address is blank, DHCP will be used"
+            }
+        },
+        "nic2IpAddressNGW": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC 2. If the address is blank, DHCP will be used"
             }
         }
     },
@@ -174,10 +254,16 @@
                     "vmAdminPassword": {
                         "value": "[parameters('vmAdminPassword')]"
                     },
-                    "vmIpAddresses": {
+                    "nic1IpAddresses": {
                         "value": [
                             "",
-                            "[parameters('vmIpAddressISU')]"
+                            "[parameters('nic1IpAddressISU')]"
+                        ]
+                    },
+                    "nic2IpAddresses": {
+                        "value": [
+                            "",
+                            "[parameters('nic2IpAddressISU')]"
                         ]
                     }
                 }
@@ -213,10 +299,16 @@
                     "vmAdminPassword": {
                         "value": "[parameters('vmAdminPassword')]"
                     },
-                    "vmIpAddresses": {
+                    "nic1IpAddresses": {
                         "value": [
                             "",
-                            "[parameters('vmIpAddressCRM')]"
+                            "[parameters('nic1IpAddressCRM')]"
+                        ]
+                    },
+                    "nic2IpAddresses": {
+                        "value": [
+                            "",
+                            "[parameters('nic2IpAddressCRM')]"
                         ]
                     }
                 }
@@ -252,10 +344,16 @@
                     "vmAdminPassword": {
                         "value": "[parameters('vmAdminPassword')]"
                     },
-                    "vmIpAddresses": {
+                    "nic1IpAddresses": {
                         "value": [
                             "",
-                            "[parameters('vmIpAddressPIC')]"
+                            "[parameters('nic1IpAddressPIC')]"
+                        ]
+                    },
+                    "nic2IpAddresses": {
+                        "value": [
+                            "",
+                            "[parameters('nic2IpAddressPIC')]"
                         ]
                     }
                 }
@@ -291,10 +389,16 @@
                     "vmAdminPassword": {
                         "value": "[parameters('vmAdminPassword')]"
                     },
-                    "vmIpAddresses": {
+                    "nic1IpAddresses": {
                         "value": [
                             "",
-                            "[parameters('vmIpAddressBWA')]"
+                            "[parameters('nic1IpAddressBWA')]"
+                        ]
+                    },
+                    "nic2IpAddresses": {
+                        "value": [
+                            "",
+                            "[parameters('nic2IpAddressBWA')]"
                         ]
                     }
                 }
@@ -330,10 +434,16 @@
                     "vmAdminPassword": {
                         "value": "[parameters('vmAdminPassword')]"
                     },
-                    "vmIpAddresses": {
+                    "nic1IpAddresses": {
                         "value": [
                             "",
-                            "[parameters('vmIpAddressMOB')]"
+                            "[parameters('nic1IpAddressMOB')]"
+                        ]
+                    },
+                    "nic2IpAddresses": {
+                        "value": [
+                            "",
+                            "[parameters('nic2IpAddressMOB')]"
                         ]
                     }
                 }
@@ -369,10 +479,16 @@
                     "vmAdminPassword": {
                         "value": "[parameters('vmAdminPassword')]"
                     },
-                    "vmIpAddresses": {
+                    "nic1IpAddresses": {
                         "value": [
                             "",
-                            "[parameters('vmIpAddressEWM')]"
+                            "[parameters('nic1IpAddressEWM')]"
+                        ]
+                    },
+                    "nic2IpAddresses": {
+                        "value": [
+                            "",
+                            "[parameters('nic2IpAddressEWM')]"
                         ]
                     }
                 }
@@ -408,10 +524,16 @@
                     "vmAdminPassword": {
                         "value": "[parameters('vmAdminPassword')]"
                     },
-                    "vmIpAddresses": {
+                    "nic1IpAddresses": {
                         "value": [
                             "",
-                            "[parameters('vmIpAddressJVA')]"
+                            "[parameters('nic1IpAddressJVA')]"
+                        ]
+                    },
+                    "nic2IpAddresses": {
+                        "value": [
+                            "",
+                            "[parameters('nic2IpAddressJVA')]"
                         ]
                     }
                 }
@@ -447,10 +569,16 @@
                     "vmAdminPassword": {
                         "value": "[parameters('vmAdminPassword')]"
                     },
-                    "vmIpAddresses": {
+                    "nic1IpAddresses": {
                         "value": [
                             "",
-                            "[parameters('vmIpAddressCEV')]"
+                            "[parameters('nic1IpAddressCEV')]"
+                        ]
+                    },
+                    "nic2IpAddresses": {
+                        "value": [
+                            "",
+                            "[parameters('nic2IpAddressCEV')]"
                         ]
                     }
                 }
@@ -486,10 +614,16 @@
                     "vmAdminPassword": {
                         "value": "[parameters('vmAdminPassword')]"
                     },
-                    "vmIpAddresses": {
+                    "nic1IpAddresses": {
                         "value": [
                             "",
-                            "[parameters('vmIpAddressPIN')]"
+                            "[parameters('nic1IpAddressPIN')]"
+                        ]
+                    },
+                    "nic2IpAddresses": {
+                        "value": [
+                            "",
+                            "[parameters('nic2IpAddressPIN')]"
                         ]
                     }
                 }
@@ -525,10 +659,16 @@
                     "vmAdminPassword": {
                         "value": "[parameters('vmAdminPassword')]"
                     },
-                    "vmIpAddresses": {
+                    "nic1IpAddresses": {
                         "value": [
                             "",
-                            "[parameters('vmIpAddressNGW')]"
+                            "[parameters('nic1IpAddressNGW')]"
+                        ]
+                    },
+                    "nic2IpAddresses": {
+                        "value": [
+                            "",
+                            "[parameters('nic2IpAddressNGW')]"
                         ]
                     }
                 }
