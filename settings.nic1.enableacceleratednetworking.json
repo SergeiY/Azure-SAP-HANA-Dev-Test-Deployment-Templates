@@ -9,28 +9,22 @@
     "variables": {
         "acceleratedNetworking": {
             "SAP Dev Test": {
-                "ISU": false,
-                "CRM": false,
-                "PIC": false,
-                "BWA": false,
-                "MOB": false,
-                "EWM": false,
-                "JVA": false,
-                "CEV": false,
-                "PIN": false,
-                "NGW": false
-            },
-            "Simon Hutson Internal Subscription": {
-                "ISU": false,
-                "CRM": false,
-                "PIC": false,
-                "BWA": false,
-                "MOB": false,
-                "EWM": false,
-                "JVA": false,
-                "CEV": false,
-                "PIN": false,
-                "NGW": false
+                "App - NetWeaver Gateway": false,
+                "App - SAP PO": false,
+                "App - Gateway FES": false,
+                "App - SAP BW": false,
+                "App - S/4HANA Utilities": false,
+                "App - Convergent Charging": false,
+                "App - Convergent Invoicing": false,
+                "App - SOM (CRM ABAP)": false,
+                "App - SOM (CRM JAVA)": false,
+                "App - Cloud Connector": false,
+                "DB - NetWeaver Gateway": true,
+                "DB - SAP PO": true,
+                "DB - Gateway FES": true,
+                "DB - SAP BW": true,
+                "DB - S/4HANA Utilities": true,
+                "DB - S/4HANA Hybris Billing": true
             }
         }
     },

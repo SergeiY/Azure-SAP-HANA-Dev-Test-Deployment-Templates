@@ -10,14 +10,6 @@
                 "description": "Unique, 2-digit deployment number, e.g. 20"
             }
         },
-        "vmInstanceNumber": {
-            "type": "string",
-            "maxLength": 1,
-            "minLength": 1,
-            "metadata": {
-                "description": "Unique, 1-digit VM Instance number, e.g. 4"
-            }
-        },
         "vmImage": {
             "type": "string",
             "allowedValues": [
@@ -30,31 +22,6 @@
                 "description": "The Virtual Machine operating system you want to deploy"
             }
         },
-        "vmRole": {
-            "type": "string",
-            "allowedValues": [
-                "App - NetWeaver Gateway",
-                "App - SAP PO",
-                "App - Gateway FES",
-                "App - SAP BW",
-                "App - S/4HANA Utilities",
-                "App - Convergent Charging",
-                "App - Convergent Invoicing",
-                "App - SOM (CRM ABAP)",
-                "App - SOM (CRM JAVA)",
-                "App - Cloud Connector",
-                "DB - NetWeaver Gateway",
-                "DB - SAP PO",
-                "DB - Gateway FES",
-                "DB - SAP BW",
-                "DB - S/4HANA Utilities",
-                "DB - S/4HANA Hybris Billing"
-            ],
-            "defaultValue": "App - NetWeaver Gateway",
-            "metadata": {
-                "description": "The Virtual Machine role you want to deploy"
-            }
-        },
         "vmAdminUserName": {
             "type": "string",
             "defaultValue": "azureuser"
@@ -62,7 +29,7 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
-        "NicIpAddress1": {
+        "NicIpAddress1AppNetWeaverGateway": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
@@ -70,7 +37,7 @@
                 "description": "Static IP addresses of 1st IP of NIC. If the address is blank, DHCP will be used"
             }
         },
-        "NicIpAddress2": {
+        "NicIpAddress2AppNetWeaverGateway": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
@@ -78,7 +45,7 @@
                 "description": "Static IP addresses of 2nd IP of NIC. If the address is blank, DHCP will be used"
             }
         },
-        "NicIpAddress3": {
+        "NicIpAddress3AppNetWeaverGateway": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
@@ -86,7 +53,7 @@
                 "description": "Static IP addresses of 3rd IP of NIC. If the address is blank, DHCP will be used"
             }
         },
-        "NicIpAddress4": {
+        "NicIpAddress4AppNetWeaverGateway": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
@@ -94,7 +61,7 @@
                 "description": "Static IP addresses of 4th IP of NIC. If the address is blank, DHCP will be used"
             }
         },
-        "NicSpnIpAddress1": {
+        "NicSpnIpAddress1AppNetWeaverGateway": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
@@ -102,7 +69,7 @@
                 "description": "Static IP addresses of 1st IP of NIC SPN. If the address is blank, DHCP will be used"
             }
         },
-        "NicSpnIpAddress2": {
+        "NicSpnIpAddress2AppNetWeaverGateway": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
@@ -110,7 +77,7 @@
                 "description": "Static IP addresses of 2nd IP of NIC SPN. If the address is blank, DHCP will be used"
             }
         },
-        "NicSpnIpAddress3": {
+        "NicSpnIpAddress3AppNetWeaverGateway": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
@@ -118,25 +85,51 @@
                 "description": "Static IP addresses of 3rd IP of NIC SPN. If the address is blank, DHCP will be used"
             }
         },
-        "NicSpnIpAddress4": {
+        "NicIpAddress1DbNetWeaverGateway": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
             "metadata": {
-                "description": "Static IP addresses of 4th IP of NIC SPN. If the address is blank, DHCP will be used"
+                "description": "Static IP addresses of 1st IP of NIC. If the address is blank, DHCP will be used"
+            }
+        },
+        "NicIpAddress2DbNetWeaverGateway": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC. If the address is blank, DHCP will be used"
+            }
+        },
+        "NicSpnIpAddress1DbNetWeaverGateway": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 1st IP of NIC SPN. If the address is blank, DHCP will be used"
+            }
+        },
+        "NicSpnIpAddress2DbNetWeaverGateway": {
+            "type": "string",
+            "maxLength": 15,
+            "defaultValue": "",
+            "metadata": {
+                "description": "Static IP addresses of 2nd IP of NIC SPN. If the address is blank, DHCP will be used"
             }
         }
     },
     "variables": {
-        "uniqueDeploymentId": "[concat(parameters('vmDeploymentNumber'), '.')]",
-        "azuredeploy.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId'), parameters('vmRole'))]",
+        "uniqueDeploymentId.AppNetWeaverGateway.0": "[concat(parameters('vmDeploymentNumber'), '.AppNetWeaverGateway.0')]",
+        "azuredeploy.AppNetWeaverGateway.0.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.AppNetWeaverGateway.0'))]",
+        "uniqueDeploymentId.DbNetWeaverGateway.0": "[concat(parameters('vmDeploymentNumber'), '.DbNetWeaverGateway.0')]",
+        "azuredeploy.DbNetWeaverGateway.0.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.DbNetWeaverGateway.0'))]",
         "azuredeploy.templateuri": "[uri(deployment().properties.templateLink.uri, 'azuredeploy.json')]"
     },
     "resources": [
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.templatename')]",
+            "name": "[variables('azuredeploy.AppNetWeaverGateway.0.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
@@ -152,13 +145,13 @@
                         "value": "[parameters('vmDeploymentNumber')]"
                     },
                     "vmInstanceNumber": {
-                        "value": "[parameters('vmInstanceNumber')]"
+                        "value": "0"
                     },
                     "vmImage": {
                         "value": "[parameters('vmImage')]"
                     },
                     "vmRole": {
-                        "value": "[parameters('vmRole')]"
+                        "value": "App - NetWeaver Gateway"
                     },
                     "vmAdminUserName": {
                         "value": "[parameters('vmAdminUserName')]"
@@ -168,18 +161,62 @@
                     },
                     "nic1IpAddresses": {
                         "value": [
-                            "[parameters('NicIpAddress1')]",
-                            "[parameters('NicIpAddress2')]",
-                            "[parameters('NicIpAddress3')]",
-                            "[parameters('NicIpAddress4')]"
+                            "[parameters('NicIpAddress1AppNetWeaverGateway')]",
+                            "[parameters('NicIpAddress2AppNetWeaverGateway')]",
+                            "[parameters('NicIpAddress3AppNetWeaverGateway')]",
+                            "[parameters('NicIpAddress4AppNetWeaverGateway')]"
                         ]
                     },
                     "nic2IpAddresses": {
                         "value": [
-                            "[parameters('NicSpnIpAddress1')]",
-                            "[parameters('NicSpnIpAddress2')]",
-                            "[parameters('NicSpnIpAddress3')]",
-                            "[parameters('NicSpnIpAddress4')]"
+                            "[parameters('NicSpnIpAddress1AppNetWeaverGateway')]",
+                            "[parameters('NicSpnIpAddress2AppNetWeaverGateway')]",
+                            "[parameters('NicSpnIpAddress3AppNetWeaverGateway')]"
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('azuredeploy.DbNetWeaverGateway.0.templatename')]",
+            "dependsOn": [],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('azuredeploy.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "vmDeploymentNumber": {
+                        "value": "[parameters('vmDeploymentNumber')]"
+                    },
+                    "vmImage": {
+                        "value": "[parameters('vmImage')]"
+                    },
+                    "vmRole": {
+                        "value": "CRM"
+                    },
+                    "vmAdminUserName": {
+                        "value": "[parameters('vmAdminUserName')]"
+                    },
+                    "vmAdminPassword": {
+                        "value": "[parameters('vmAdminPassword')]"
+                    },
+                    "nic1IpAddresses": {
+                        "value": [
+                            "[parameters('NicIpAddress1DbNetWeaverGateway')]",
+                            "[parameters('NicIpAddress2DbNetWeaverGateway')]"
+                        ]
+                    },
+                    "nic2IpAddresses": {
+                        "value": [
+                            "[parameters('NicSpnIpAddress1DbNetWeaverGateway')]",
+                            "[parameters('NicSpnIpAddress2DbNetWeaverGateway')]"
                         ]
                     }
                 }

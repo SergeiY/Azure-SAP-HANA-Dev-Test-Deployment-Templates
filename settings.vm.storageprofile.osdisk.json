@@ -7,51 +7,7 @@
         }
     },
     "variables": {
-        "Gallery Image - RHEL 7.2": {
-            "osDisk": {
-                "osType": "Linux",
-                "name": "[concat(parameters('params').vmName, '-osdisk')]",
-                "caching": "ReadWrite",
-                "createOption": "FromImage",
-                "managedDisk": {
-                    "storageAccountType": "Premium_LRS"
-                }
-            }
-        },
-        "Gallery Image - RHEL 7.3": {
-            "osDisk": {
-                "osType": "Linux",
-                "name": "[concat(parameters('params').vmName, '-osdisk')]",
-                "caching": "ReadWrite",
-                "createOption": "FromImage",
-                "managedDisk": {
-                    "storageAccountType": "Premium_LRS"
-                }
-            }
-        },
-        "Gallery Image - SLES SAP 12-SP1": {
-            "osDisk": {
-                "osType": "Linux",
-                "name": "[concat(parameters('params').vmName, '-osdisk')]",
-                "caching": "ReadWrite",
-                "createOption": "FromImage",
-                "managedDisk": {
-                    "storageAccountType": "Premium_LRS"
-                }
-            }
-        },
         "Gallery Image - SLES SAP BYOS 12-SP1": {
-            "osDisk": {
-                "osType": "Linux",
-                "name": "[concat(parameters('params').vmName, '-osdisk')]",
-                "caching": "ReadWrite",
-                "createOption": "FromImage",
-                "managedDisk": {
-                    "storageAccountType": "Premium_LRS"
-                }
-            }
-        },
-        "Gallery Image - SLES SAP 12-SP2": {
             "osDisk": {
                 "osType": "Linux",
                 "name": "[concat(parameters('params').vmName, '-osdisk')]",
@@ -73,73 +29,7 @@
                 }
             }
         },
-        "Gallery Image - SLES SAP 12-SP3": {
-            "osDisk": {
-                "osType": "Linux",
-                "name": "[concat(parameters('params').vmName, '-osdisk')]",
-                "caching": "ReadWrite",
-                "createOption": "FromImage",
-                "managedDisk": {
-                    "storageAccountType": "Premium_LRS"
-                }
-            }
-        },
         "Gallery Image - SLES SAP BYOS 12-SP3": {
-            "osDisk": {
-                "osType": "Linux",
-                "name": "[concat(parameters('params').vmName, '-osdisk')]",
-                "caching": "ReadWrite",
-                "createOption": "FromImage",
-                "managedDisk": {
-                    "storageAccountType": "Premium_LRS"
-                }
-            }
-        },
-        "Gallery Image - Windows Server 2012 Datacenter": {
-            "osDisk": {
-                "osType": "Windows",
-                "name": "[concat(parameters('params').vmName, '-osdisk')]",
-                "caching": "ReadWrite",
-                "createOption": "FromImage",
-                "managedDisk": {
-                    "storageAccountType": "Premium_LRS"
-                }
-            }
-        },
-        "Gallery Image - Windows Server 2012 R2 Datacenter": {
-            "osDisk": {
-                "osType": "Windows",
-                "name": "[concat(parameters('params').vmName, '-osdisk')]",
-                "caching": "ReadWrite",
-                "createOption": "FromImage",
-                "managedDisk": {
-                    "storageAccountType": "Premium_LRS"
-                }
-            }
-        },
-        "Gallery Image - Windows Server 2016 Datacenter": {
-            "osDisk": {
-                "osType": "Windows",
-                "name": "[concat(parameters('params').vmName, '-osdisk')]",
-                "caching": "ReadWrite",
-                "createOption": "FromImage",
-                "managedDisk": {
-                    "storageAccountType": "Premium_LRS"
-                }
-            }
-        },
-        "Gallery Image - Oracle Linux 7.2": {
-            "osDisk": {
-                "osType": "Linux",
-                "name": "[concat(parameters('params').vmName, '-osdisk')]",
-                "caching": "ReadWrite",
-                "createOption": "FromImage",
-                "managedDisk": {
-                    "storageAccountType": "Premium_LRS"
-                }
-            }
-        },
-        "Custom Image - RHEL 7.3 BYOS 2018-03-21": {
             "osDisk": {
                 "osType": "Linux",
                 "name": "[concat(parameters('params').vmName, '-osdisk')]",

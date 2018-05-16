@@ -8,43 +8,58 @@
     },
     "variables": {
         "tagServiceNames": {
-            "ISU": {
-                "tagServiceName": "BGR & BGS - BILLING (SAP)"
+            "App - NetWeaver Gateway": {
+                "tagServiceName": "App - NetWeaver Gateway"
             },
-            "CRM": {
-                "tagServiceName": "BGR & BGS - CRM (SAP)"
+            "App - SAP PO": {
+                "tagServiceName": "App - SAP PO"
             },
-            "PIC": {
-                "tagServiceName": "SOA PI"
+            "App - Gateway FES": {
+                "tagServiceName": "App - Gateway FES"
             },
-            "BWA": {
-                "tagServiceName": "BGR - BILLING BUSINESS WAREHOUSE (SAP)"
+            "App - SAP BW": {
+                "tagServiceName": "App - SAP BW"
             },
-            "MOB": {
-                "tagServiceName": "SAP BGSM MOBILE"
+            "App - S/4HANA Utilities": {
+                "tagServiceName": "App - S/4HANA Utilities"
             },
-            "EWM": {
-                "tagServiceName": "EWM-CDC"
+            "App - Convergent Charging": {
+                "tagServiceName": "App - Convergent Charging"
             },
-            "JVA": {
-                "tagServiceName": "SAP IPC (INTERNET PRICING AND CONFIGURATOR)"
+            "App - Convergent Invoicing": {
+                "tagServiceName": "App - Convergent Invoicing"
             },
-            "CEV": {
-                "tagServiceName": "SOA CE"
+            "App - SOM (CRM ABAP)": {
+                "tagServiceName": "App - SOM (CRM ABAP)"
             },
-            "PIN": {
-                "tagServiceName": "SOA PI"
+            "App - SOM (CRM JAVA)": {
+                "tagServiceName": "App - SOM (CRM JAVA)"
             },
-            "NGW": {
-                "tagServiceName": "SAP NETWEAVER GATEWAY"
+            "App - Cloud Connector": {
+                "tagServiceName": "App - Cloud Connector"
+            },
+            "DB - NetWeaver Gateway": {
+                "tagServiceName": "DB - NetWeaver Gateway"
+            },
+            "DB - SAP PO": {
+                "tagServiceName": "DB - SAP PO"
+            },
+            "DB - Gateway FES": {
+                "tagServiceName": "DB - Gateway FES"
+            },
+            "DB - SAP BW": {
+                "tagServiceName": "DB - SAP BW"
+            },
+            "DB - S/4HANA Utilities": {
+                "tagServiceName": "DB - S/4HANA Utilities"
+            },
+            "DB - S/4HANA Hybris Billing": {
+                "tagServiceName": "DB - S/4HANA Hybris Billing"
             }
         },
         "tagEnvironments": {
             "SAP Dev Test": {
                 "tagEnvironment": "SAP Dev Test"
-            },
-            "Simon Hutson Internal Subscription": {
-                "tagEnvironment": "Simon Hutson Internal Subscription"
             }
         }
     },
@@ -57,8 +72,8 @@
                 "Environment": "[variables('tagEnvironments')[parameters('params').subscription].tagEnvironment]",
                 "Service Name": "[variables('tagServiceNames')[parameters('params').vmRole].tagServiceName]",
                 "Service Owner": "David Blowers",
-                "Service Ticket Request ID": "CirrusPrj",
-                "Source": "servicenow]"
+                "Service Ticket Request ID": "NewCoPrj",
+                "Source": "ARMTemplate"
             }
         }
     }

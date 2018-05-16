@@ -9,28 +9,22 @@
     "variables": {
         "vmSize": {
             "SAP Dev Test": {
-                "ISU": "Standard_E4s_v3",
-                "CRM": "Standard_E4s_v3",
-                "PIC": "Standard_D4s_v3",
-                "BWA": "Standard_D4s_v3",
-                "MOB": "Standard_E2s_v3",
-                "EWM": "Standard_E2s_v3",
-                "JVA": "Standard_E2s_v3",
-                "CEV": "Standard_E2s_v3",
-                "PIN": "Standard_E2s_v3",
-                "NGW": "Standard_E2s_v3"
-            },
-            "Simon Hutson Internal Subscription": {
-                "ISU": "Standard_E4s_v3",
-                "CRM": "Standard_E4s_v3",
-                "PIC": "Standard_D4s_v3",
-                "BWA": "Standard_D4s_v3",
-                "MOB": "Standard_E2s_v3",
-                "EWM": "Standard_E2s_v3",
-                "JVA": "Standard_E2s_v3",
-                "CEV": "Standard_E2s_v3",
-                "PIN": "Standard_E2s_v3",
-                "NGW": "Standard_E2s_v3"
+                "App - NetWeaver Gateway": "Standard_E4s_v3",
+                "App - SAP PO": "Standard_E4s_v3",
+                "App - Gateway FES": "Standard_E4s_v3",
+                "App - SAP BW": "Standard_E4s_v3",
+                "App - S/4HANA Utilities": "Standard_E4s_v3",
+                "App - Convergent Charging": "Standard_E4s_v3",
+                "App - Convergent Invoicing": "Standard_E4s_v3",
+                "App - SOM (CRM ABAP)": "Standard_E4s_v3",
+                "App - SOM (CRM JAVA)": "Standard_E4s_v3",
+                "App - Cloud Connector": "Standard_E4s_v3",
+                "DB - NetWeaver Gateway": "Standard_E8s_v3",
+                "DB - SAP PO": "Standard_E8s_v3",
+                "DB - Gateway FES": "Standard_E8s_v3",
+                "DB - SAP BW": "Standard_E8s_v3",
+                "DB - S/4HANA Utilities": "Standard_E8s_v3",
+                "DB - S/4HANA Hybris Billing": "Standard_E32s_v3"
             }
         },
         "hardwareProfile": {

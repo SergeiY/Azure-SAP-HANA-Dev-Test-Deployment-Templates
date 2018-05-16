@@ -7,42 +7,10 @@
         }
     },
     "variables": {
-        "Gallery Image - RHEL 7.2": {
-            "imageReference": {
-                "sku": "7.2",
-                "offer": "RHEL",
-                "publisher": "RedHat",
-                "version": "latest"
-            }
-        },
-        "Gallery Image - RHEL 7.3": {
-            "imageReference": {
-                "sku": "7.3",
-                "offer": "RHEL",
-                "publisher": "RedHat",
-                "version": "latest"
-            }
-        },
-        "Gallery Image - SLES SAP 12-SP1": {
-            "imageReference": {
-                "sku": "12-SP1",
-                "offer": "SLES-SAP",
-                "publisher": "SUSE",
-                "version": "latest"
-            }
-        },
         "Gallery Image - SLES SAP BYOS 12-SP1": {
             "imageReference": {
                 "sku": "12-SP1",
                 "offer": "SLES-SAP-BYOS",
-                "publisher": "SUSE",
-                "version": "latest"
-            }
-        },
-        "Gallery Image - SLES SAP 12-SP2": {
-            "imageReference": {
-                "sku": "12-SP2",
-                "offer": "SLES-SAP",
                 "publisher": "SUSE",
                 "version": "latest"
             }
@@ -55,73 +23,12 @@
                 "version": "latest"
             }
         },
-        "Gallery Image - SLES SAP 12-SP3": {
-            "imageReference": {
-                "sku": "12-SP3",
-                "offer": "SLES-SAP",
-                "publisher": "SUSE",
-                "version": "latest"
-            }
-        },
         "Gallery Image - SLES SAP BYOS 12-SP3": {
             "imageReference": {
                 "sku": "12-SP3",
                 "offer": "SLES-SAP-BYOS",
                 "publisher": "SUSE",
                 "version": "latest"
-            }
-        },
-        "Gallery Image - Windows Server 2012 Datacenter": {
-            "imageReference": {
-                "sku": "2012-Datacenter",
-                "offer": "WindowsServer",
-                "publisher": "MicrosoftWindowsServer",
-                "version": "latest"
-            }
-        },
-        "Gallery Image - Windows Server 2012 R2 Datacenter": {
-            "imageReference": {
-                "sku": "2012-R2-Datacenter",
-                "offer": "WindowsServer",
-                "publisher": "MicrosoftWindowsServer",
-                "version": "latest"
-            }
-        },
-        "Gallery Image - Windows Server 2016 Datacenter": {
-            "imageReference": {
-                "sku": "2016-Datacenter",
-                "offer": "WindowsServer",
-                "publisher": "MicrosoftWindowsServer",
-                "version": "latest"
-            }
-        },
-        "Gallery Image - Oracle Linux 7.2": {
-            "imageReference": {
-                "sku": "7.2",
-                "offer": "Oracle-Linux",
-                "publisher": "Oracle",
-                "version": "latest"
-            }
-        },
-        "customImage": {
-            "SAP Dev Test": {
-                "ukwest": {
-                    "Custom Image - RHEL 7.3 BYOS 2018-03-21": {
-                        "id": ""
-                    }
-                }
-            },
-            "Simon Hutson Internal Subscription": {
-                "ukwest": {
-                    "Custom Image - RHEL 7.3 BYOS 2018-03-21": {
-                        "id": ""
-                    }
-                }
-            }
-        },
-        "Custom Image - RHEL 7.3 BYOS 2018-03-21": {
-            "imageReference": {
-                "id": "[variables('customImage')[parameters('params').subscription][parameters('params').location][string('Custom Image - RHEL 7.3 BYOS 2018-03-21')].id]"
             }
         }
     },

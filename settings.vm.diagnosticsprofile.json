@@ -9,13 +9,8 @@
     "variables": {
         "storageUri": {
             "SAP Dev Test": {
-                "ukwest": {
-                    "uri": "https://azwudsapvmdiags.blob.core.windows.net/"
-                }
-            },
-            "Simon Hutson Internal Subscription": {
-                "ukwest": {
-                    "uri": "https://srhsaukwest.blob.core.windows.net/"
+                "uksouth": {
+                    "uri": "https://azsudsapvmdiags.blob.core.windows.net/"
                 }
             }
         },

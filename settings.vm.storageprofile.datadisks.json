@@ -9,7 +9,7 @@
     "variables": {
         "diskSizes": {
             "SAP Dev Test": {
-                "ISU": {
+                "App - NetWeaver Gateway": {
                     "disks": [
                         {
                             "diskSizeGB": 63
@@ -25,7 +25,7 @@
                         }
                     ]
                 },
-                "CRM": {
+                "App - SAP PO": {
                     "disks": [
                         {
                             "diskSizeGB": 63
@@ -41,7 +41,7 @@
                         }
                     ]
                 },
-                "PIC": {
+                "App - Gateway FES": {
                     "disks": [
                         {
                             "diskSizeGB": 63
@@ -57,7 +57,7 @@
                         }
                     ]
                 },
-                "BWA": {
+                "App - SAP BW": {
                     "disks": [
                         {
                             "diskSizeGB": 63
@@ -73,7 +73,7 @@
                         }
                     ]
                 },
-                "MOB": {
+                "App - S/4HANA Utilities": {
                     "disks": [
                         {
                             "diskSizeGB": 63
@@ -89,7 +89,7 @@
                         }
                     ]
                 },
-                "EWM": {
+                "App - Convergent Charging": {
                     "disks": [
                         {
                             "diskSizeGB": 63
@@ -105,7 +105,7 @@
                         }
                     ]
                 },
-                "JVA": {
+                "App - Convergent Invoicing": {
                     "disks": [
                         {
                             "diskSizeGB": 63
@@ -121,7 +121,7 @@
                         }
                     ]
                 },
-                "CEV": {
+                "App - SOM (CRM ABAP)": {
                     "disks": [
                         {
                             "diskSizeGB": 63
@@ -137,7 +137,7 @@
                         }
                     ]
                 },
-                "PIN": {
+                "App - SOM (CRM JAVA)": {
                     "disks": [
                         {
                             "diskSizeGB": 63
@@ -153,105 +153,7 @@
                         }
                     ]
                 },
-                "NGW": {
-                    "disks": [
-                        {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 127
-                        },
-                        {
-                            "diskSizeGB": 31
-                        },
-                        {
-                            "diskSizeGB": 63
-                        }
-                    ]
-                }
-            },
-            "Simon Hutson Internal Subscription": {
-                "ISU": {
-                    "disks": [
-                        {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 1023
-                        },
-                        {
-                            "diskSizeGB": 31
-                        },
-                        {
-                            "diskSizeGB": 63
-                        }
-                    ]
-                },
-                "CRM": {
-                    "disks": [
-                        {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 511
-                        },
-                        {
-                            "diskSizeGB": 31
-                        },
-                        {
-                            "diskSizeGB": 63
-                        }
-                    ]
-                },
-                "PIC": {
-                    "disks": [
-                        {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 511
-                        },
-                        {
-                            "diskSizeGB": 31
-                        },
-                        {
-                            "diskSizeGB": 63
-                        }
-                    ]
-                },
-                "BWA": {
-                    "disks": [
-                        {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 511
-                        },
-                        {
-                            "diskSizeGB": 31
-                        },
-                        {
-                            "diskSizeGB": 63
-                        }
-                    ]
-                },
-                "MOB": {
-                    "disks": [
-                        {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 31
-                        },
-                        {
-                            "diskSizeGB": 63
-                        }
-                    ]
-                },
-                "EWM": {
+                "App - Cloud Connector": {
                     "disks": [
                         {
                             "diskSizeGB": 63
@@ -267,7 +169,7 @@
                         }
                     ]
                 },
-                "JVA": {
+                "DB - NetWeaver Gateway": {
                     "disks": [
                         {
                             "diskSizeGB": 63
@@ -283,23 +185,7 @@
                         }
                     ]
                 },
-                "CEV": {
-                    "disks": [
-                        {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 511
-                        },
-                        {
-                            "diskSizeGB": 31
-                        },
-                        {
-                            "diskSizeGB": 63
-                        }
-                    ]
-                },
-                "PIN": {
+                "DB - SAP PO": {
                     "disks": [
                         {
                             "diskSizeGB": 63
@@ -315,13 +201,61 @@
                         }
                     ]
                 },
-                "NGW": {
+                "DB - Gateway FES": {
                     "disks": [
                         {
                             "diskSizeGB": 63
                         },
                         {
-                            "diskSizeGB": 127
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "DB - SAP BW": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "DB - S/4HANA Utilities": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 63
+                        }
+                    ]
+                },
+                "DB - S/4HANA Hybris Billing": {
+                    "disks": [
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 63
                         },
                         {
                             "diskSizeGB": 31

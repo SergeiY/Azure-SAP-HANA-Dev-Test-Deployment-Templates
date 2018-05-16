@@ -8,50 +8,48 @@
         "location": {
             "type": "string",
             "allowedValues": [
-                "ukwest"
+                "uksouth"
             ]
         },
         "subscription": {
             "type": "string",
             "allowedValues": [
-                "SAP Dev Test",
-                "Simon Hutson Internal Subscription"
+                "SAP Dev Test"
             ]
         },
         "vmDeploymentNumber": {
             "type": "string"
         },
+        "vmInstanceNumber": {
+            "type": "string"
+        },
         "vmImage": {
             "type": "string",
             "allowedValues": [
-                "Custom Image - RHEL 7.3 BYOS 2018-03-21",
-                "Gallery Image - RHEL 7.2",
-                "Gallery Image - RHEL 7.3",
-                "Gallery Image - SLES SAP 12-SP1",
                 "Gallery Image - SLES SAP BYOS 12-SP1",
-                "Gallery Image - SLES SAP 12-SP2",
                 "Gallery Image - SLES SAP BYOS 12-SP2",
-                "Gallery Image - SLES SAP 12-SP3",
-                "Gallery Image - SLES SAP BYOS 12-SP3",
-                "Gallery Image - Windows Server 2012 Datacenter",
-                "Gallery Image - Windows Server 2012 R2 Datacenter",
-                "Gallery Image - Windows Server 2016 Datacenter",
-                "Gallery Image - Oracle Linux 7.2"
+                "Gallery Image - SLES SAP BYOS 12-SP3"
             ]
         },
         "vmRole": {
             "type": "string",
             "allowedValues": [
-                "ISU",
-                "CRM",
-                "PIC",
-                "BWA",
-                "MOB",
-                "EWM",
-                "JVA",
-                "CEV",
-                "PIN",
-                "NGW"
+                "App - NetWeaver Gateway",
+                "App - SAP PO",
+                "App - Gateway FES",
+                "App - SAP BW",
+                "App - S/4HANA Utilities",
+                "App - Convergent Charging",
+                "App - Convergent Invoicing",
+                "App - SOM (CRM ABAP)",
+                "App - SOM (CRM JAVA)",
+                "App - Cloud Connector",
+                "DB - NetWeaver Gateway",
+                "DB - SAP PO",
+                "DB - Gateway FES",
+                "DB - SAP BW",
+                "DB - S/4HANA Utilities",
+                "DB - S/4HANA Hybris Billing"
             ]
         },
         "vmAdminUserName": {
@@ -70,28 +68,33 @@
     },
     "variables": {
         "subscriptionPrefix": {
-            "SAP Dev Test": "d",
-            "Simon Hutson Internal Subscription": "s"
+            "SAP Dev Test": "d"
         },
         "locationPrefix": {
-            "ukwest":  "azwu"
+            "uksouth":  "azsu"
         },
-        "roleNumber": {
-            "PIC": "0",
-            "CEV": "1",
-            "ISU": "2",
-            "CRM": "3",
-            "BWA": "4",
-            "MOB": "5",
-            "EWM": "6",
-            "JVA": "7",
-            "NGW": "8",
-            "PIN": "9"
+        "roleName": {
+            "App - NetWeaver Gateway": "sap",
+            "App - SAP PO": "sap",
+            "App - Gateway FES": "sap",
+            "App - SAP BW": "sap",
+            "App - S/4HANA Utilities": "sap",
+            "App - Convergent Charging": "sap",
+            "App - Convergent Invoicing": "sap",
+            "App - SOM (CRM ABAP)": "sap",
+            "App - SOM (CRM JAVA)": "sap",
+            "App - Cloud Connector": "sap",
+            "DB - NetWeaver Gateway": "han",
+            "DB - SAP PO": "han",
+            "DB - Gateway FES": "han",
+            "DB - SAP BW": "han",
+            "DB - S/4HANA Utilities": "han",
+            "DB - S/4HANA Hybris Billing": "han"
         },
         "prefix": "[toLower(concat(variables('locationPrefix')[parameters('location')], '-', variables('subscriptionPrefix')[parameters('subscription')], '-'))]",
-        "vmName": "[concat(variables('prefix'), 'sap', parameters('vmDeploymentNumber'), variables('roleNumber')[parameters('vmRole')])]",
-        "nic1Name": "[concat(variables('vmName'), '-nic-01')]",
-        "nic2Name": "[concat(variables('vmName'), '-nic-02')]"
+        "vmName": "[toLower(concat(variables('prefix'), variables('roleName')[parameters('vmRole')], parameters('vmDeploymentNumber'), parameters('vmInstanceNumber')))]",
+        "nic1Name": "[toLower(concat(variables('vmName'), '-nic'))]",
+        "nic2Name": "[toLower(concat(variables('vmName'), '-nic-spn'))]"
     },
     "resources": [],
     "outputs": {
