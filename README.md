@@ -4,18 +4,11 @@
     <img src="http://azuredeploy.net/deploybutton.png" />
 </a>
 Deploly SINGLE SAP VM</p>
-<p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsimonhutson%2FAzure-SAP-HANA-Deployment-Templates%2Fmaster%2Fazuredeploy.full.json" target="_blank">
+<p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsimonhutson%2FAzure-SAP-HANA-Deployment-Templates%2Fmaster%2Fazuredeploy.netweavergateway.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png" />
 </a>
-Deploy a FULL SAP Environment (10 VMs - ISU, CRM, PIC, BWA, JVA, NGW, MOB, EWM, CEV, PIN)</p>
-<p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsimonhutson%2FAzure-SAP-HANA-Deployment-Templates%2Fmaster%2Fazuredeploy.functional.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png" />
-</a>
-Deploy a FUNCTIONAL SAP Environment (7 VMs - ISU, CRM, PIC, JVA, NGW, MOB, EWM)</p>
-<p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsimonhutson%2FAzure-SAP-HANA-Deployment-Templates%2Fmaster%2Fazuredeploy.core.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png" />
-</a>
-Deploy a CORE SAP Environment (5 VMs - ISU, CRM, PIC, JVA, NGW)</p>
+Deploy a NetWeaver Gateway Environment (2 VMs - NetWeaver Gateway App, NetWeaver Gateway DB)</p>
+</p>
 <p>The VMs are configured using the following sizes, and data disk configurations</p>
 <table>
 	<tr>
@@ -24,53 +17,83 @@ Deploy a CORE SAP Environment (5 VMs - ISU, CRM, PIC, JVA, NGW)</p>
 		<th>Data Disks</th>
 	</tr>
 	<tr>
-		<td>ISU</td>
+		<td>App - NetWeaver Gateway</td>
 		<td>E4s_v3</td>
-		<td>1xP6 (64GB), 1xP30 (1,024GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
-		<td>CRM</td>
+		<td>App - SAP PO</td>
 		<td>E4s_v3</td>
 		<td>1xP6 (64GB), 1xP20 (512GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
-		<td>PIC</td>
-		<td>D4s_v3</td>
+		<td>App - Gateway FES</td>
+		<td>E4s_v3</td>
 		<td>1xP6 (64GB), 1xP20 (512GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
-		<td>BWA</td>
-		<td>D4s_v3</td>
+		<td>App - SAP BW</td>
+		<td>E4s_v3</td>
 		<td>1xP6 (64GB), 1xP20 (512GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
-		<td>MOB</td>
-		<td>E2s_v3</td>
+		<td>App - S/4HANA Utilities</td>
+		<td>E4s_v3</td>
 		<td>1xP6 (64GB), 1xP6 (64GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
-		<td>EWM</td>
-		<td>E2s_v3</td>
+		<td>App - Convergent Charging</td>
+		<td>E4s_v3</td>
 		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
-		<td>JVA</td>
-		<td>E2s_v3</td>
+		<td>App - Convergent Invoicing</td>
+		<td>E4s_v3</td>
 		<td>1xP6 (64GB), 1xP6 (64GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
-		<td>CEV</td>
-		<td>E2s_v3</td>
+		<td>App - SOM (CRM ABAP)</td>
+		<td>E4s_v3</td>
 		<td>1xP6 (64GB), 1xP20 (512GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
-		<td>PIN</td>
-		<td>E2s_v3</td>
+		<td>App - SOM (CRM JAVA)</td>
+		<td>E4s_v3</td>
 		<td>1xP6 (64GB), 1xP6 (64GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
-		<td>NGW</td>
-		<td>E2s_v3</td>
+		<td>App - Cloud Connector</td>
+		<td>E4s_v3</td>
+		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+	</tr>
+	<tr>
+		<td>DB - NetWeaver Gateway</td>
+		<td>E8s_v3</td>
+		<td>1xP4 (32GB), 1xP10 (128GB), 1xP6 (64GB), 1xP4 (32GB), 1xP6 (64GB), 1xP4 (32GB)</td>
+	</tr>
+	<tr>
+		<td>DB - SAP PO</td>
+		<td>E8s_v3</td>
+		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+	</tr>
+	<tr>
+		<td>DB - Gateway FES</td>
+		<td>E8s_v3</td>
+		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+	</tr>
+	<tr>
+		<td>DB - SAP BW</td>
+		<td>E8s_v3</td>
+		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+	</tr>
+	<tr>
+		<td>DB - S/4HANA Utilities</td>
+		<td>E8s_v3</td>
+		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+	</tr>
+	<tr>
+		<td>DB - S/4HANA Hybris Billing</td>
+		<td>E16s_v3</td>
 		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 </table>
