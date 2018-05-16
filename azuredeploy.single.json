@@ -128,8 +128,8 @@
         }
     },
     "variables": {
-        "uniqueDeploymentId": "[concat(parameters('vmDeploymentNumber'), '.')]",
-        "azuredeploy.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId'), parameters('vmRole'))]",
+        "uniqueDeploymentId": "[concat(parameters('vmDeploymentNumber'), '.', toLower(replace(replace(replace(replace(parameters('vmRole'),' ',''),'/',''),'(',''),')','')))]",
+        "azuredeploy.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId'))]",
         "azuredeploy.templateuri": "[uri(deployment().properties.templateLink.uri, 'azuredeploy.json')]"
     },
     "resources": [
