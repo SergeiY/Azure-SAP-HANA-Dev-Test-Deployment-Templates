@@ -119,9 +119,9 @@
         }
     },
     "variables": {
-        "uniqueDeploymentId.AppNetWeaverGateway.0": "[concat(parameters('vmDeploymentNumber'), '.AppNetWeaverGateway.0')]",
+        "uniqueDeploymentId.AppNetWeaverGateway.0": "[concat(parameters('vmDeploymentNumber'), '.app.0')]",
         "azuredeploy.AppNetWeaverGateway.0.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.AppNetWeaverGateway.0'))]",
-        "uniqueDeploymentId.DbNetWeaverGateway.0": "[concat(parameters('vmDeploymentNumber'), '.DbNetWeaverGateway.0')]",
+        "uniqueDeploymentId.DbNetWeaverGateway.0": "[concat(parameters('vmDeploymentNumber'), '.db.0')]",
         "azuredeploy.DbNetWeaverGateway.0.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.DbNetWeaverGateway.0'))]",
         "azuredeploy.templateuri": "[uri(deployment().properties.templateLink.uri, 'azuredeploy.json')]"
     },

@@ -92,7 +92,7 @@
         }
     },
     "variables": {
-        "uniqueDeploymentId": "[concat(parameters('vmDeploymentNumber'), '.', toLower(replace(replace(replace(replace(parameters('vmRole'),' ',''),'/',''),'(',''),')','')))]",
+        "uniqueDeploymentId": "[concat(parameters('vmDeploymentNumber'), '.', toLower(trim(take(parameters('vmRole'),3))),'.', parameters('vmInstanceNumber'))]",
         "validate.templatename": "[concat('validate.', variables('uniqueDeploymentId'))]",
         "validate.templateuri": "[uri(deployment().properties.templateLink.uri, 'validate.json')]",
         "settings.tags.templatename": "[concat('settings.tags.', variables('uniqueDeploymentId'))]",
