@@ -21,7 +21,10 @@
             "location": "[parameters('params').location]",
             "tags": "[parameters('tags')]",
             "dependsOn": [],
-            "properties": "[parameters('properties')]"
+            "properties": "[parameters('properties')]",
+            "sku":{
+                "name": "Aligned"
+            }
         }
     ],
     "outputs": {}
