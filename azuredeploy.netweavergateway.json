@@ -195,11 +195,14 @@
                     "vmDeploymentNumber": {
                         "value": "[parameters('vmDeploymentNumber')]"
                     },
+                    "vmInstanceNumber": {
+                        "value": "0"
+                    },
                     "vmImage": {
                         "value": "[parameters('vmImage')]"
                     },
                     "vmRole": {
-                        "value": "CRM"
+                        "value": "DB - NetWeaver Gateway"
                     },
                     "vmAdminUserName": {
                         "value": "[parameters('vmAdminUserName')]"
