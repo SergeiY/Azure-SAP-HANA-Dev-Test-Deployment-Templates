@@ -104,12 +104,16 @@
         "validate.templateuri": "[uri(deployment().properties.templateLink.uri, 'validate.json')]",
         "settings.tags.templatename": "[concat('settings.tags.', variables('uniqueDeploymentId'))]",
         "settings.tags.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.tags.json')]",
+        "settings.availabilityset.templatename": "[concat('settings.availabilityset.', variables('uniqueDeploymentId'))]",
+        "settings.availabilityset.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.availabilityset.json')]",
         "settings.vm.templatename": "[concat('settings.vm.', variables('uniqueDeploymentId'))]",
         "settings.vm.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.json')]",
         "settings.nic1.templatename": "[concat('settings.nic1.', variables('uniqueDeploymentId'))]",
         "settings.nic1.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic1.json')]",
         "settings.nic2.templatename": "[concat('settings.nic2.', variables('uniqueDeploymentId'))]",
         "settings.nic2.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic2.json')]",
+        "deploy.availabilityset.templatename": "[concat('deploy.availabilityset.', variables('uniqueDeploymentId'))]",
+        "deploy.availabilityset.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.availabilityset.json')]",
         "deploy.vm.templatename": "[concat('deploy.vm.', variables('uniqueDeploymentId'))]",
         "deploy.vm.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.vm.json')]",
         "deploy.nic1.templatename": "[concat('deploy.nic1.', variables('uniqueDeploymentId'))]",
@@ -195,6 +199,30 @@
             }
         },
         {
+            "condition": "[parameters('availabilitySet')]",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.availabilityset.templatename')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments/', variables('validate.templatename'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.availabilityset.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[reference(variables('validate.templatename')).outputs.output.value]"
+                    }
+                }
+            }
+        },
+        {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
             "name": "[variables('settings.vm.templatename')]",
@@ -264,12 +292,44 @@
             }
         },
         {
+            "condition": "[parameters('availabilitySet')]",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('deploy.availabilityset.templatename')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.tags.templatename'))]",
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.availabilityset.templatename'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('deploy.availabilityset.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[reference(variables('validate.templatename')).outputs.output.value]"
+                    },
+                    "tags":{
+                        "value": "[reference(variables('settings.tags.templatename')).outputs.output.value]"
+                    },
+                    "properties": {
+                        "value": "[reference(variables('settings.availabilityset.templatename')).outputs.output.value]"
+                    }
+                }
+            }
+        },
+        {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
             "name": "[variables('deploy.nic1.templatename')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments/', variables('settings.tags.templatename'))]",
-                "[resourceId('Microsoft.Resources/deployments/', variables('settings.nic1.templatename'))]"
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.nic1.templatename'))]",
+                "[resourceId('Microsoft.Resources/deployments/', variables('deploy.availabilityset.templatename'))]"
             ],
             "properties": {
                 "mode": "Incremental",
@@ -299,7 +359,8 @@
             "name": "[variables('deploy.nic2.templatename')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments/', variables('settings.tags.templatename'))]",
-                "[resourceId('Microsoft.Resources/deployments/', variables('settings.nic2.templatename'))]"
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.nic2.templatename'))]",
+                "[resourceId('Microsoft.Resources/deployments/', variables('deploy.availabilityset.templatename'))]"
             ],
             "properties": {
                 "mode": "Incremental",
