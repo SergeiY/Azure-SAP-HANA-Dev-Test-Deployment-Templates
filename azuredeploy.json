@@ -351,6 +351,7 @@
             }
         },
         {
+            "condition": "[equals(string(parameters('availabilitySet')), 'true')]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
             "name": "[variables('deploy.availabilityset.templatename')]",
