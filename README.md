@@ -7,7 +7,7 @@ Deploly SINGLE SAP VM</p>
 <p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsimonhutson%2FAzure-SAP-HANA-Deployment-Templates%2Fmaster%2Fazuredeploy.netweavergateway.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png" />
 </a>
-Deploy a NetWeaver Gateway Environment (2 VMs - NetWeaver Gateway App, NetWeaver Gateway DB)</p>
+Deploy a NetWeaver Gateway Environment (1xApp, 1xDB)</p>
 </p>
 <p>The VMs are configured using the following sizes, and data disk configurations</p>
 <table>
