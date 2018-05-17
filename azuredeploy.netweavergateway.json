@@ -196,7 +196,7 @@
                 },
                 "parameters": {
                     "availabilitySet": {
-                        "value": false
+                        "value": true
                     },
                     "vmDeploymentNumber": {
                         "value": "[parameters('vmDeploymentNumber')]"
