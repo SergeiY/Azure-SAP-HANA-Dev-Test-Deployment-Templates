@@ -387,7 +387,6 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments/', variables('settings.tags.templatename'))]",
                 "[resourceId('Microsoft.Resources/deployments/', variables('settings.vm.templatename'))]",
-                "[resourceId('Microsoft.Resources/deployments/', variables('deploy.availabilityset.templatename'))]",
                 "[resourceId('Microsoft.Resources/deployments/', variables('deploy.nic1.templatename'))]",
                 "[resourceId('Microsoft.Resources/deployments/', variables('deploy.nic2.templatename'))]"
             ],
