@@ -31,7 +31,7 @@
                 "Gallery Image - SLES SAP BYOS 12-SP2",
                 "Gallery Image - SLES SAP BYOS 12-SP3"
             ],
-            "defaultValue": "Gallery Image - SLES SAP 12-SP3",
+            "defaultValue": "Gallery Image - SLES SAP BYOS 12-SP2",
             "metadata": {
                 "description": "The Virtual Machine operating system you want to deploy"
             }
