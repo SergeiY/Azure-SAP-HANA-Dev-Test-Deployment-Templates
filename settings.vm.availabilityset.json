@@ -14,7 +14,7 @@
     "resources": [],
     "outputs": {
         "output": {
-            "value": "[if(equals(parameters('params').availabilitySetName, ''), json('null'), variables('availabilitySet'))]",
+            "value": "[variables('availabilitySet')]",
             "type": "object"
         }
     }
