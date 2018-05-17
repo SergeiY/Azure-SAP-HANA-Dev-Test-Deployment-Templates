@@ -16,7 +16,7 @@
     "resources": [
         {
             "type": "Microsoft.Compute/availabilitySets",
-            "apiVersion": "2017-10-01",
+            "apiVersion": "2017-12-01",
             "name": "[parameters('params').availabilitySetName]",
             "location": "[parameters('params').location]",
             "tags": "[parameters('tags')]",
