@@ -16,7 +16,9 @@
         "settings.vm.hardwareProfile.templatename": "[concat('settings.vm.hardwareprofile.', parameters('params').uniqueDeploymentId)]",
         "settings.vm.hardwareProfile.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.hardwareprofile.json')]",
         "settings.vm.networkProfile.templatename": "[concat('settings.vm.networkprofile.', parameters('params').uniqueDeploymentId)]",
-        "settings.vm.networkProfile.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.networkprofile.json')]"
+        "settings.vm.networkProfile.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.networkprofile.json')]",
+        "settings.vm.availabilitySet.templatename": "[concat('settings.vm.availabilitySet.', parameters('params').uniqueDeploymentId)]",
+        "settings.vm.availabilitySet.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.availabilitySet.json')]"
     },
     "resources": [
         {
@@ -118,6 +120,26 @@
                     }
                 }
             }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.vm.availabilitySet.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.vm.availabilitySet.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
         }
     ],
     "outputs": {
@@ -128,7 +150,8 @@
                 "storageProfile": "[reference(variables('settings.vm.storageprofile.templatename')).outputs.output.value]",
                 "osProfile": "[reference(variables('settings.vm.osprofile.templatename')).outputs.output.value]",
                 "diagnosticsProfile": "[reference(variables('settings.vm.diagnosticsprofile.templatename')).outputs.output.value]",
-                "networkProfile": "[reference(variables('settings.vm.networkProfile.templatename')).outputs.output.value]"
+                "networkProfile": "[reference(variables('settings.vm.networkProfile.templatename')).outputs.output.value]",
+                "availabilitySet": "[reference(variables('settings.vm.availabilitySet.templatename')).outputs.output.value]"
             }
         }
     }

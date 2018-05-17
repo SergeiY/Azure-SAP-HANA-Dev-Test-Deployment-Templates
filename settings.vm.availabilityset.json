@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "params": {
+            "type": "object"
+        }
+    },
+    "variables": {
+        "availabilitySet": {
+            "id": "[if(equals(parameters('params').availabilitySetName, ''), json('null'), resourceId('Microsoft.Compute/availabilitySets',parameters('params').availabilitySetName))]"
+        }
+    },
+    "resources": [],
+    "outputs": {
+        "output": {
+            "value": "[if(equals(parameters('params').availabilitySetName, ''), json('null'), variables('availabilitySet'))]",
+            "type": "object"
+        }
+    }
+}

@@ -2,6 +2,12 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "availabilitySetName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the availability set for this VM. If the availability set name is blank, no availability set will be used"
+            }
+        },
         "vmDeploymentNumber": {
             "type": "string",
             "maxLength": 2,
@@ -133,6 +139,9 @@
                     },
                     "subscription": {
                         "value": "[subscription().displayName]"
+                    },
+                    "availabilitySetName": {
+                        "value": "[parameters('availabilitySetName')]"
                     },
                     "vmDeploymentNumber": {
                         "value": "[parameters('vmDeploymentNumber')]"

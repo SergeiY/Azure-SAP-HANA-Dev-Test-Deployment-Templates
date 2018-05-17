@@ -17,6 +17,9 @@
                 "SAP Dev Test"
             ]
         },
+        "availabilitySetName": {
+            "type": "string"
+        },
         "vmDeploymentNumber": {
             "type": "string"
         },
@@ -102,6 +105,7 @@
             "type": "object",
             "value": {
                 "uniqueDeploymentId": "[parameters('uniqueDeploymentId')]",
+                "availabilitySetName": "[parameters('availabilitySetName')]",
                 "vmName": "[variables('vmName')]",
                 "nic1Name": "[variables('nic1Name')]",
                 "nic2Name": "[variables('nic2Name')]",
