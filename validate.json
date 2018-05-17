@@ -113,7 +113,7 @@
             "DB - S/4HANA Hybris Billing": "han"
         },
         "prefix": "[toLower(concat(variables('locationPrefix')[parameters('location')], '-', variables('subscriptionPrefix')[parameters('subscription')], '-'))]",
-        "availabilitySetName": "[toLower(concat(variables('prefix'), 'as-', variables('availabilitySetRoleName')[parameters('vmRole')], parameters('vmDeploymentNumber')))]",
+        "availabilitySetName": "[toLower(concat(variables('prefix'), variables('availabilitySetRoleName')[parameters('vmRole')], parameters('vmDeploymentNumber')))]",
         "vmName": "[toLower(concat(variables('prefix'), variables('vmRoleName')[parameters('vmRole')], parameters('vmDeploymentNumber'), parameters('vmInstanceNumber')))]",
         "nic1Name": "[toLower(concat(variables('vmName'), '-nic'))]",
         "nic2Name": "[toLower(concat(variables('vmName'), '-nic-spn'))]"
