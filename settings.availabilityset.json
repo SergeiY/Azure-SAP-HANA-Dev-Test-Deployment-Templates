@@ -8,8 +8,8 @@
     },
     "variables": {
         "availabilitySet": {
-            "platformUpdateDomainCount": 2,
-            "platformFaultDomainCount": 20
+            "platformUpdateDomainCount": 20,
+            "platformFaultDomainCount": 2
         }
     },
     "resources": [],
