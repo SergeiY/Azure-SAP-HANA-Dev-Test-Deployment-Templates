@@ -17,8 +17,8 @@
         "settings.vm.hardwareProfile.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.hardwareprofile.json')]",
         "settings.vm.networkProfile.templatename": "[concat('settings.vm.networkprofile.', parameters('params').uniqueDeploymentId)]",
         "settings.vm.networkProfile.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.networkprofile.json')]",
-        "settings.vm.availabilitySet.templatename": "[concat('settings.vm.availabilitySet.', parameters('params').uniqueDeploymentId)]",
-        "settings.vm.availabilitySet.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.availabilitySet.json')]"
+        "settings.vm.availabilitySet.templatename": "[concat('settings.vm.availabilityset.', parameters('params').uniqueDeploymentId)]",
+        "settings.vm.availabilitySet.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.vm.availabilityset.json')]"
     },
     "resources": [
         {
