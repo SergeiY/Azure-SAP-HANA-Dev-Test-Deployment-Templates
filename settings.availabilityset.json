@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "params": {
+            "type": "object"
+        }
+    },
+    "variables": {
+        "availabilitySet": {
+            "platformUpdateDomainCount": 2,
+            "platformFaultDomainCount": 20
+        }
+    },
+    "resources": [],
+    "outputs": {
+        "output": {
+            "value": "[variables('availabilitySet')]",
+            "type": "object"
+        }
+    }
+}

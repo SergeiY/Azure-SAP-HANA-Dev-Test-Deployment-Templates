@@ -29,7 +29,7 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
-        "NicIpAddress1AppNetWeaverGateway": {
+        "Nic-Ip-Address-1-App-NetWeaver-Gateway": {
             "type": "string",
             "maxLength": 15,
             "defaultValue": "",
@@ -141,8 +141,8 @@
                     "detailLevel": "requestContent, responseContent"
                 },
                 "parameters": {
-                    "availabilitySetName": {
-                        "value": ""
+                    "availabilitySet": {
+                        "value": false
                     },
                     "vmDeploymentNumber": {
                         "value": "[parameters('vmDeploymentNumber')]"
@@ -164,7 +164,7 @@
                     },
                     "nic1IpAddresses": {
                         "value": [
-                            "[parameters('NicIpAddress1AppNetWeaverGateway')]",
+                            "[parameters('Nic-Ip-Address-1-App-NetWeaver-Gateway')]",
                             "[parameters('NicIpAddress2AppNetWeaverGateway')]",
                             "[parameters('NicIpAddress3AppNetWeaverGateway')]",
                             "[parameters('NicIpAddress4AppNetWeaverGateway')]"
@@ -195,8 +195,8 @@
                     "detailLevel": "requestContent, responseContent"
                 },
                 "parameters": {
-                    "availabilitySetName": {
-                        "value": ""
+                    "availabilitySet": {
+                        "value": false
                     },
                     "vmDeploymentNumber": {
                         "value": "[parameters('vmDeploymentNumber')]"
