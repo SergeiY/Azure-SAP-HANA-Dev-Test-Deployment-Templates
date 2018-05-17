@@ -141,9 +141,6 @@
                     "detailLevel": "requestContent, responseContent"
                 },
                 "parameters": {
-                    "availabilitySet": {
-                        "value": false
-                    },
                     "vmDeploymentNumber": {
                         "value": "[parameters('vmDeploymentNumber')]"
                     },
@@ -195,9 +192,6 @@
                     "detailLevel": "requestContent, responseContent"
                 },
                 "parameters": {
-                    "availabilitySet": {
-                        "value": true
-                    },
                     "vmDeploymentNumber": {
                         "value": "[parameters('vmDeploymentNumber')]"
                     },

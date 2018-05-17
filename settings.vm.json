@@ -151,7 +151,7 @@
                 "osProfile": "[reference(variables('settings.vm.osprofile.templatename')).outputs.output.value]",
                 "diagnosticsProfile": "[reference(variables('settings.vm.diagnosticsprofile.templatename')).outputs.output.value]",
                 "networkProfile": "[reference(variables('settings.vm.networkProfile.templatename')).outputs.output.value]",
-                "availabilitySet": "[if(equals(parameters('params').availabilitySetName, ''), json('null'), reference(variables('settings.vm.availabilitySet.templatename')).outputs.output.value)]"
+                "availabilitySet": "[reference(variables('settings.vm.availabilitySet.templatename')).outputs.output.value]"
             }
         }
     }

@@ -8,7 +8,7 @@
     },
     "variables": {
         "availabilitySet": {
-            "id": "[if(equals(parameters('params').availabilitySetName, ''), json('null'), resourceId('Microsoft.Compute/availabilitySets',parameters('params').availabilitySetName))]"
+            "id": "[resourceId('Microsoft.Compute/availabilitySets',parameters('params').availabilitySetName)]"
         }
     },
     "resources": [],

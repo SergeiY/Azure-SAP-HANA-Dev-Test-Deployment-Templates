@@ -2,13 +2,6 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "availabilitySet": {
-            "type": "bool",
-            "defaultValue": false,
-            "metadata": {
-                "description": "Does this VM require an availability set?"
-            }
-        },
         "vmDeploymentNumber": {
             "type": "string",
             "maxLength": 2,
@@ -144,9 +137,6 @@
                     },
                     "subscription": {
                         "value": "[subscription().displayName]"
-                    },
-                    "availabilitySet": {
-                        "value": "[parameters('availabilitySet')]"
                     },
                     "vmDeploymentNumber": {
                         "value": "[parameters('vmDeploymentNumber')]"
@@ -351,7 +341,6 @@
             }
         },
         {
-            "condition": "[equals(string(parameters('availabilitySet')), 'true')]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
             "name": "[variables('deploy.availabilityset.templatename')]",
@@ -388,6 +377,7 @@
             "dependsOn": [
                 "[resourceId('Microsoft.Resources/deployments/', variables('settings.tags.templatename'))]",
                 "[resourceId('Microsoft.Resources/deployments/', variables('settings.vm.templatename'))]",
+                "[resourceId('Microsoft.Resources/deployments/', variables('deploy.availabilityset.templatename'))]",
                 "[resourceId('Microsoft.Resources/deployments/', variables('deploy.nic1.templatename'))]",
                 "[resourceId('Microsoft.Resources/deployments/', variables('deploy.nic2.templatename'))]"
             ],
