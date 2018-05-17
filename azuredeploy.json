@@ -199,6 +199,7 @@
             }
         },
         {
+            "condition": "[equals(string(parameters('availabilitySet')),'true')]",
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
             "name": "[variables('settings.availabilityset.templatename')]",
@@ -311,7 +312,7 @@
                     "params": {
                         "value": "[reference(variables('validate.templatename')).outputs.output.value]"
                     },
-                    "tags":{
+                    "tags": {
                         "value": "[reference(variables('settings.tags.templatename')).outputs.output.value]"
                     },
                     "properties": {
@@ -341,7 +342,7 @@
                     "params": {
                         "value": "[reference(variables('validate.templatename')).outputs.output.value]"
                     },
-                    "tags":{
+                    "tags": {
                         "value": "[reference(variables('settings.tags.templatename')).outputs.output.value]"
                     },
                     "properties": {
@@ -373,7 +374,7 @@
                     "params": {
                         "value": "[reference(variables('validate.templatename')).outputs.output.value]"
                     },
-                    "tags":{
+                    "tags": {
                         "value": "[reference(variables('settings.tags.templatename')).outputs.output.value]"
                     },
                     "properties": {
