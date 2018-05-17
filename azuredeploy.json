@@ -352,6 +352,37 @@
             }
         },
         {
+            "condition": "[equals(string(parameters('availabilitySet')),'true')]",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('deploy.availabilityset.templatename')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.tags.templatename'))]",
+                "[resourceId('Microsoft.Resources/deployments/', variables('settings.availabilityset.templatename'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('deploy.availabilityset.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[reference(variables('validate.templatename')).outputs.output.value]"
+                    },
+                    "tags": {
+                        "value": "[reference(variables('settings.tags.templatename')).outputs.output.value]"
+                    },
+                    "properties": {
+                        "value": "[reference(variables('settings.availabilityset.templatename')).outputs.output.value]"
+                    }
+                }
+            }
+        },
+        {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
             "name": "[variables('deploy.vm.templatename')]",
