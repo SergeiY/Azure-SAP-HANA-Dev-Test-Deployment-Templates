@@ -62,68 +62,22 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
-        "NicIpAddress1": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
+        "Nic-1": {
+            "type": "array",
+            "minLength": 1,
+            "maxLength": 4,
+            "defaultValue": ["","","",""],
             "metadata": {
-                "description": "Static IP addresses of 1st IP of NIC. If the address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for Nic-1. If any address is blank, DHCP will be used"
             }
         },
-        "NicIpAddress2": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
+        "Nic-2": {
+            "type": "array",
+            "minLength": 1,
+            "maxLength": 4,
+            "defaultValue": ["","","",""],
             "metadata": {
-                "description": "Static IP addresses of 2nd IP of NIC. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicIpAddress3": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 3rd IP of NIC. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicIpAddress4": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 4th IP of NIC. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicSpnIpAddress1": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 1st IP of NIC SPN. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicSpnIpAddress2": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 2nd IP of NIC SPN. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicSpnIpAddress3": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 3rd IP of NIC SPN. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicSpnIpAddress4": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 4th IP of NIC SPN. If the address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for Nic-2. If any address is blank, DHCP will be used"
             }
         }
     },
@@ -167,20 +121,10 @@
                         "value": "[parameters('vmAdminPassword')]"
                     },
                     "nic1IpAddresses": {
-                        "value": [
-                            "[parameters('NicIpAddress1')]",
-                            "[parameters('NicIpAddress2')]",
-                            "[parameters('NicIpAddress3')]",
-                            "[parameters('NicIpAddress4')]"
-                        ]
+                        "value": "[parameters('Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": [
-                            "[parameters('NicSpnIpAddress1')]",
-                            "[parameters('NicSpnIpAddress2')]",
-                            "[parameters('NicSpnIpAddress3')]",
-                            "[parameters('NicSpnIpAddress4')]"
-                        ]
+                        "value": "[parameters('Nic-2')]"
                     }
                 }
             }

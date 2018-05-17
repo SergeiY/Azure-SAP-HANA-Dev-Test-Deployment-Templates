@@ -25,7 +25,6 @@
                 "Gallery Image - SLES SAP BYOS 12-SP2",
                 "Gallery Image - SLES SAP BYOS 12-SP3"
             ],
-            "defaultValue": "Gallery Image - SLES SAP BYOS 12-SP2",
             "metadata": {
                 "description": "The Virtual Machine operating system you want to deploy"
             }
@@ -50,7 +49,6 @@
                 "DB - S/4HANA Utilities",
                 "DB - S/4HANA Hybris Billing"
             ],
-            "defaultValue": "App - NetWeaver Gateway",
             "metadata": {
                 "description": "The Virtual Machine role you want to deploy"
             }
@@ -64,30 +62,18 @@
         },
         "nic1IpAddresses": {
             "type": "array",
-            "minLength": 2,
+            "minLength": 1,
             "maxLength": 4,
-            "defaultValue": [
-                "",
-                "",
-                "",
-                ""
-            ],
             "metadata": {
-                "description": "Array of Virtual Machine IP addresses for NIC 1. If an address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for Nic 1. If any address is blank, DHCP will be used"
             }
         },
         "nic2IpAddresses": {
             "type": "array",
-            "minLength": 2,
+            "minLength": 1,
             "maxLength": 4,
-            "defaultValue": [
-                "",
-                "",
-                "",
-                ""
-            ],
             "metadata": {
-                "description": "Array of Virtual Machine IP addresses for NIC 2. If an address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for Nic 2. If any address is blank, DHCP will be used"
             }
         }
     },

@@ -29,92 +29,40 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
-        "Nic-Ip-Address-1-App-NetWeaver-Gateway": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
+        "App-0-Nic-1": {
+            "type": "array",
+            "minLength": 1,
+            "maxLength": 4,
+            "defaultValue": ["","","",""],
             "metadata": {
-                "description": "Static IP addresses of 1st IP of NIC. If the address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for App-0-Nic-1. If any address is blank, DHCP will be used"
             }
         },
-        "NicIpAddress2AppNetWeaverGateway": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
+        "App-0-Nic-2": {
+            "type": "array",
+            "minLength": 1,
+            "maxLength": 4,
+            "defaultValue": ["","","",""],
             "metadata": {
-                "description": "Static IP addresses of 2nd IP of NIC. If the address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for App-0-Nic-2. If any address is blank, DHCP will be used"
             }
         },
-        "NicIpAddress3AppNetWeaverGateway": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
+        "Db-0-Nic-1": {
+            "type": "array",
+            "minLength": 1,
+            "maxLength": 4,
+            "defaultValue": ["","","",""],
             "metadata": {
-                "description": "Static IP addresses of 3rd IP of NIC. If the address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for Db-0-Nic-1. If any address is blank, DHCP will be used"
             }
         },
-        "NicIpAddress4AppNetWeaverGateway": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
+        "Db-0-Nic-2": {
+            "type": "array",
+            "minLength": 1,
+            "maxLength": 4,
+            "defaultValue": ["","","",""],
             "metadata": {
-                "description": "Static IP addresses of 4th IP of NIC. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicSpnIpAddress1AppNetWeaverGateway": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 1st IP of NIC SPN. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicSpnIpAddress2AppNetWeaverGateway": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 2nd IP of NIC SPN. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicSpnIpAddress3AppNetWeaverGateway": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 3rd IP of NIC SPN. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicIpAddress1DbNetWeaverGateway": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 1st IP of NIC. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicIpAddress2DbNetWeaverGateway": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 2nd IP of NIC. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicSpnIpAddress1DbNetWeaverGateway": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 1st IP of NIC SPN. If the address is blank, DHCP will be used"
-            }
-        },
-        "NicSpnIpAddress2DbNetWeaverGateway": {
-            "type": "string",
-            "maxLength": 15,
-            "defaultValue": "",
-            "metadata": {
-                "description": "Static IP addresses of 2nd IP of NIC SPN. If the address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for Db-0-Nic-2. If any address is blank, DHCP will be used"
             }
         }
     },
@@ -160,19 +108,10 @@
                         "value": "[parameters('vmAdminPassword')]"
                     },
                     "nic1IpAddresses": {
-                        "value": [
-                            "[parameters('Nic-Ip-Address-1-App-NetWeaver-Gateway')]",
-                            "[parameters('NicIpAddress2AppNetWeaverGateway')]",
-                            "[parameters('NicIpAddress3AppNetWeaverGateway')]",
-                            "[parameters('NicIpAddress4AppNetWeaverGateway')]"
-                        ]
+                        "value": "[parameters('App-0-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": [
-                            "[parameters('NicSpnIpAddress1AppNetWeaverGateway')]",
-                            "[parameters('NicSpnIpAddress2AppNetWeaverGateway')]",
-                            "[parameters('NicSpnIpAddress3AppNetWeaverGateway')]"
-                        ]
+                        "value": "[parameters('App-0-Nic-2')]"
                     }
                 }
             }
@@ -211,16 +150,10 @@
                         "value": "[parameters('vmAdminPassword')]"
                     },
                     "nic1IpAddresses": {
-                        "value": [
-                            "[parameters('NicIpAddress1DbNetWeaverGateway')]",
-                            "[parameters('NicIpAddress2DbNetWeaverGateway')]"
-                        ]
+                        "value": "[parameters('Db-0-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": [
-                            "[parameters('NicSpnIpAddress1DbNetWeaverGateway')]",
-                            "[parameters('NicSpnIpAddress2DbNetWeaverGateway')]"
-                        ]
+                        "value": "[parameters('Db-0-Nic-2')]"
                     }
                 }
             }
