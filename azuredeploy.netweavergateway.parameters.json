@@ -5,23 +5,23 @@
         "vmDeploymentNumber": {
             "value": "00"
         },
-        "vmInstanceNumber": {
-            "value": "0"
-        },
         "vmImage": {
             "value": "Gallery Image - SLES SAP BYOS 12-SP2"
-        },
-        "vmRole": {
-            "value": "App - NetWeaver Gateway"
         },
         "vmAdminUserName": {
             "value": "azureuser"
         },
-        "Nic-1": {
+        "App-0-Nic-1": {
             "value": ["","","",""]
         },
-        "Nic-2": {
+        "App-0-Nic-2": {
             "value": ["","",""]
+        },
+        "Db-0-Nic-1": {
+            "value": ["",""]
+        },
+        "Db-0-Nic-2": {
+            "defaultValue": ["",""]
         }
     }
 }
