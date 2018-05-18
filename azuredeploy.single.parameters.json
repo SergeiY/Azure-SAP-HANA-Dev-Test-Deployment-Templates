@@ -1,0 +1,27 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vmDeploymentNumber": {
+            "value": "90"
+        },
+        "vmInstanceNumber": {
+            "value": "1"
+        },
+        "vmImage": {
+            "value": "Gallery Image - SLES SAP BYOS 12-SP2"
+        },
+        "vmRole": {
+            "value": "App - NetWeaver Gateway"
+        },
+        "vmAdminUserName": {
+            "value": "azureuser"
+        },
+        "Nic-1": {
+            "value": ["10.71.69.180","10.71.69.181","10.71.69.182","10.71.69.183"]
+        },
+        "Nic-2": {
+            "value": ["10.71.65.180","10.71.65.181","10.71.65.182"]
+        }
+    }
+}
