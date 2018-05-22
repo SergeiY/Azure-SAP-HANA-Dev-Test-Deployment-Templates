@@ -11,17 +11,17 @@
         "vmAdminUserName": {
             "value": "azureuser"
         },
-        "App-0-Nic-1": {
+        "App-Nic-1": {
             "value": ["","","",""]
         },
-        "App-0-Nic-2": {
+        "App-Nic-2": {
             "value": ["","",""]
         },
-        "Db-0-Nic-1": {
+        "Db-Nic-1": {
             "value": ["",""]
         },
-        "Db-0-Nic-2": {
-            "defaultValue": ["",""]
+        "Db-Nic-2": {
+            "value": ["",""]
         }
     }
 }

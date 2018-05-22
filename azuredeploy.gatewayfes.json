@@ -67,17 +67,17 @@
         }
     },
     "variables": {
-        "uniqueDeploymentId.AppNetWeaverGateway.2": "[concat(parameters('vmDeploymentNumber'), '.appnetweavergateway.2')]",
-        "azuredeploy.AppNetWeaverGateway.2.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.AppNetWeaverGateway.2'))]",
-        "uniqueDeploymentId.DbNetWeaverGateway.2": "[concat(parameters('vmDeploymentNumber'), '.dbnetweavergateway.2')]",
-        "azuredeploy.DbNetWeaverGateway.2.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.DbNetWeaverGateway.2'))]",
+        "uniqueDeploymentId.AppGatewayFES.1": "[concat(parameters('vmDeploymentNumber'), '.appgatewayfes.1')]",
+        "azuredeploy.AppGatewayFES.1.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.AppGatewayFES.1'))]",
+        "uniqueDeploymentId.DbGatewayFES.1": "[concat(parameters('vmDeploymentNumber'), '.dbgatewayfes.0')]",
+        "azuredeploy.DbGatewayFES.1.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.DbGatewayFES.1'))]",
         "azuredeploy.templateuri": "[uri(deployment().properties.templateLink.uri, 'azuredeploy.json')]"
     },
     "resources": [
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.AppNetWeaverGateway.2.templatename')]",
+            "name": "[variables('azuredeploy.AppGatewayFES.1.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
@@ -93,13 +93,13 @@
                         "value": "[parameters('vmDeploymentNumber')]"
                     },
                     "vmInstanceNumber": {
-                        "value": "2"
+                        "value": "1"
                     },
                     "vmImage": {
                         "value": "[parameters('vmImage')]"
                     },
                     "vmRole": {
-                        "value": "App - NetWeaver Gateway"
+                        "value": "App - Gateway FES"
                     },
                     "vmAdminUserName": {
                         "value": "[parameters('vmAdminUserName')]"
@@ -119,7 +119,7 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.DbNetWeaverGateway.2.templatename')]",
+            "name": "[variables('azuredeploy.DbGatewayFES.1.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
@@ -135,13 +135,13 @@
                         "value": "[parameters('vmDeploymentNumber')]"
                     },
                     "vmInstanceNumber": {
-                        "value": "2"
+                        "value": "1"
                     },
                     "vmImage": {
                         "value": "[parameters('vmImage')]"
                     },
                     "vmRole": {
-                        "value": "DB - NetWeaver Gateway"
+                        "value": "DB - Gateway FES"
                     },
                     "vmAdminUserName": {
                         "value": "[parameters('vmAdminUserName')]"

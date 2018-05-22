@@ -46,38 +46,18 @@
             "metadata": {
                 "description": "Array of static IP addresses for App-Nic-2. If any address is blank, DHCP will be used"
             }
-        },
-        "Db-Nic-1": {
-            "type": "array",
-            "minLength": 1,
-            "maxLength": 4,
-            "defaultValue": ["","","",""],
-            "metadata": {
-                "description": "Array of static IP addresses for Db-Nic-1. If any address is blank, DHCP will be used"
-            }
-        },
-        "Db-Nic-2": {
-            "type": "array",
-            "minLength": 1,
-            "maxLength": 4,
-            "defaultValue": ["","","",""],
-            "metadata": {
-                "description": "Array of static IP addresses for Db-Nic-2. If any address is blank, DHCP will be used"
-            }
         }
     },
     "variables": {
-        "uniqueDeploymentId.AppNetWeaverGateway.2": "[concat(parameters('vmDeploymentNumber'), '.appnetweavergateway.2')]",
-        "azuredeploy.AppNetWeaverGateway.2.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.AppNetWeaverGateway.2'))]",
-        "uniqueDeploymentId.DbNetWeaverGateway.2": "[concat(parameters('vmDeploymentNumber'), '.dbnetweavergateway.2')]",
-        "azuredeploy.DbNetWeaverGateway.2.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.DbNetWeaverGateway.2'))]",
+        "uniqueDeploymentId.AppCloudConnector.9": "[concat(parameters('vmDeploymentNumber'), '.appcloudconnector.9')]",
+        "azuredeploy.AppCloudConnector.9.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.AppCloudConnector.9'))]",
         "azuredeploy.templateuri": "[uri(deployment().properties.templateLink.uri, 'azuredeploy.json')]"
     },
     "resources": [
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.AppNetWeaverGateway.2.templatename')]",
+            "name": "[variables('azuredeploy.AppCloudConnector.9.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
@@ -93,13 +73,13 @@
                         "value": "[parameters('vmDeploymentNumber')]"
                     },
                     "vmInstanceNumber": {
-                        "value": "2"
+                        "value": "9"
                     },
                     "vmImage": {
                         "value": "[parameters('vmImage')]"
                     },
                     "vmRole": {
-                        "value": "App - NetWeaver Gateway"
+                        "value": "App - Cloud Connector"
                     },
                     "vmAdminUserName": {
                         "value": "[parameters('vmAdminUserName')]"
@@ -112,48 +92,6 @@
                     },
                     "nic2IpAddresses": {
                         "value": "[parameters('App-Nic-2')]"
-                    }
-                }
-            }
-        },
-        {
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.DbNetWeaverGateway.2.templatename')]",
-            "dependsOn": [],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[variables('azuredeploy.templateuri')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "debugSetting": {
-                    "detailLevel": "requestContent, responseContent"
-                },
-                "parameters": {
-                    "vmDeploymentNumber": {
-                        "value": "[parameters('vmDeploymentNumber')]"
-                    },
-                    "vmInstanceNumber": {
-                        "value": "2"
-                    },
-                    "vmImage": {
-                        "value": "[parameters('vmImage')]"
-                    },
-                    "vmRole": {
-                        "value": "DB - NetWeaver Gateway"
-                    },
-                    "vmAdminUserName": {
-                        "value": "[parameters('vmAdminUserName')]"
-                    },
-                    "vmAdminPassword": {
-                        "value": "[parameters('vmAdminPassword')]"
-                    },
-                    "nic1IpAddresses": {
-                        "value": "[parameters('Db-Nic-1')]"
-                    },
-                    "nic2IpAddresses": {
-                        "value": "[parameters('Db-Nic-2')]"
                     }
                 }
             }

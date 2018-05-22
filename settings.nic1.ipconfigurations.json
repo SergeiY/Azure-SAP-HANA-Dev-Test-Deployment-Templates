@@ -14,49 +14,49 @@
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
                     },
                     "App - SAP PO": {
-                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
+                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-pi-an-001')]"
                     },
                     "App - Gateway FES": {
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
                     },
                     "App - SAP BW": {
-                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
+                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-bw-an-001')]"
                     },
                     "App - S/4HANA Utilities": {
-                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
+                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-utilities-an-001')]"
                     },
                     "App - Convergent Charging": {
-                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
+                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-hybris-an-001')]"
                     },
                     "App - Convergent Invoicing": {
-                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
+                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-hybris-an-001')]"
                     },
                     "App - SOM (CRM ABAP)": {
-                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
+                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-hybris-an-001')]"
                     },
                     "App - SOM (CRM JAVA)": {
-                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
+                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-hybris-an-001')]"
                     },
                     "App - Cloud Connector": {
-                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
+                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-cloud-connect-an-001')]"
                     },
                     "DB - NetWeaver Gateway": {
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
                     },
                     "DB - SAP PO": {
-                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
+                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-pi-an-001')]"
                     },
                     "DB - Gateway FES": {
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
                     },
                     "DB - SAP BW": {
-                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
+                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-bw-an-001')]"
                     },
                     "DB - S/4HANA Utilities": {
-                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
+                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-utilities-an-001')]"
                     },
                     "DB - S/4HANA Hybris Billing": {
-                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
+                        "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-hybris-an-001')]"
                     }
                 }
             }
