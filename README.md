@@ -35,7 +35,7 @@ Deploy a Cloud Connector Environment (1xApp)</p>
 <p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsimonhutson%2FAzure-SAP-HANA-Deployment-Templates%2Fmaster%2Fazuredeploy.s4hanahybrisbilling.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png" />
 </a>
-Deploy a S/4HANA Hybris Billing Environment (1xApp, 1xDB)</p>
+Deploy a S/4HANA Hybris Billing Environment (4xApp, 1xDB)</p>
 </p>
 <p>The VMs are configured using the following sizes, and data disk configurations</p>
 <table>
