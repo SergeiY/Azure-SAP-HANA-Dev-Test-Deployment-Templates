@@ -24,10 +24,6 @@ Deploy a SAP BW Environment (1xApp, 1xDB)</p>
     <img src="http://azuredeploy.net/deploybutton.png" />
 </a>
 Deploy a S/4HANA Utilities Environment (1xApp, 1xDB)</p>
-<p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsimonhutson%2FAzure-SAP-HANA-Deployment-Templates%2Fmaster%2Fazuredeploy.netweavergateway.json" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png" />
-</a>
-Deploy a NetWeaver Gateway Environment (1xApp, 1xDB)</p>
 <p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsimonhutson%2FAzure-SAP-HANA-Deployment-Templates%2Fmaster%2Fazuredeploy.cloudconnector.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png" />
 </a>
