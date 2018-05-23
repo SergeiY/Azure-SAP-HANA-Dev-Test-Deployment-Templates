@@ -15,9 +15,9 @@
     "variables": {},
     "resources": [
         {
-            "type": "Microsoft.Network/networkInterfaces",
-            "apiVersion": "2017-10-01",
-            "name": "[parameters('params').nic2name]",
+            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "apiVersion": "2017-12-01",
+            "name": "[parameters('params').customScriptExtensionName]",
             "location": "[parameters('params').location]",
             "tags": "[parameters('tags')]",
             "dependsOn": [],
