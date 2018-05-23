@@ -34,7 +34,7 @@
             "protectedSettings": {
                 "commandToExecute": "[variables('storageAccount')[parameters('params').subscription][parameters('params').location][parameters('params').vmImage].commandToExecute]",
                 "storageAccountName": "[variables('storageAccount')[parameters('params').subscription][parameters('params').location][parameters('params').vmImage].storageAccountName]",
-                "storageAccountKey": "[parameters(parameters('params').customscriptstorageaccountkey)]"
+                "storageAccountKey": "[parameters('params').customscriptstorageaccountkey]"
             }
         }
     },
