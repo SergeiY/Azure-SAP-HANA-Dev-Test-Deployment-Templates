@@ -60,6 +60,9 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
+        "customScriptStorageAccountKey": {
+            "type": "securestring"
+        },
         "nic1IpAddresses": {
             "type": "array",
             "metadata": {
@@ -71,9 +74,6 @@
             "metadata": {
                 "description": "Array of static IP addresses for Nic 2. If any address is blank, DHCP will be used"
             }
-        },
-        "customScriptStorageAccountKey": {
-            "type": "securestring"
         }
     },
     "variables": {

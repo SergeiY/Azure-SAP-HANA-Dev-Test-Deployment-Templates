@@ -93,14 +93,14 @@
                     "vmAdminPassword": {
                         "value": "[parameters('vmAdminPassword')]"
                     },
+                    "customScriptStorageAccountKey": {
+                        "value": "[parameters('customScriptStorageAccountKey')]"
+                    },
                     "nic1IpAddresses": {
                         "value": "[parameters('App-Nic-1')]"
                     },
                     "nic2IpAddresses": {
                         "value": "[parameters('App-Nic-2')]"
-                    },
-                    "customScriptStorageAccountKey": {
-                        "value": "[parameters('customScriptStorageAccountKey')]"
                     }
                 }
             }

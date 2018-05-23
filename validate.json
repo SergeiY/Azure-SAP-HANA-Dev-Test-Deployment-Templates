@@ -59,14 +59,14 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
+        "customScriptStorageAccountKey": {
+            "type": "securestring"
+        },
         "nic1IpAddresses": {
             "type": "array"
         },
         "nic2IpAddresses": {
             "type": "array"
-        },
-        "customScriptStorageAccountKey": {
-            "type": "securestring"
         }
     },
     "variables": {
