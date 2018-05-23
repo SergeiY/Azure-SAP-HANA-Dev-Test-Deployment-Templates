@@ -62,6 +62,12 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
+        "customScriptStorageAccountKey": {
+            "type": "securestring",
+            "metadata": {
+                "description": "Storage account key to access a custom script"
+            }
+        },
         "Nic-1": {
             "type": "array",
             "minLength": 1,
@@ -125,6 +131,9 @@
                     },
                     "nic2IpAddresses": {
                         "value": "[parameters('Nic-2')]"
+                    },
+                    "customScriptStorageAccountKey": {
+                        "value": "[parameters('customScriptStorageAccountKey')]"
                     }
                 }
             }

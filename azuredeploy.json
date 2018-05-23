@@ -71,6 +71,9 @@
             "metadata": {
                 "description": "Array of static IP addresses for Nic 2. If any address is blank, DHCP will be used"
             }
+        },
+        "customScriptStorageAccountKey": {
+            "type": "securestring"
         }
     },
     "variables": {
@@ -87,6 +90,8 @@
         "settings.nic1.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic1.json')]",
         "settings.nic2.templatename": "[concat('settings.nic2.', variables('uniqueDeploymentId'))]",
         "settings.nic2.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.nic2.json')]",
+        "settings.customscriptextension.templatename": "[concat('settings.customscriptextension.', variables('uniqueDeploymentId'))]",
+        "settings.customscriptextension.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.customscriptextension.json')]",
         "deploy.availabilityset.templatename": "[concat('deploy.availabilityset.', variables('uniqueDeploymentId'))]",
         "deploy.availabilityset.templateuri": "[uri(deployment().properties.templateLink.uri, 'deploy.availabilityset.json')]",
         "deploy.vm.templatename": "[concat('deploy.vm.', variables('uniqueDeploymentId'))]",
@@ -143,6 +148,9 @@
                     },
                     "nic2IpAddresses": {
                         "value": "[parameters('nic2IpAddresses')]"
+                    },
+                    "customScriptStorageAccountKey": {
+                        "value": "[parameters('customScriptStorageAccountKey')]"
                     }
                 }
             }
@@ -250,6 +258,29 @@
                 "mode": "Incremental",
                 "templateLink": {
                     "uri": "[variables('settings.nic2.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[reference(variables('validate.templatename')).outputs.output.value]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.customscriptextension.templatename')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments/', variables('validate.templatename'))]"
+            ],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.customscriptextension.templateuri')]",
                     "contentVersion": "1.0.0.0"
                 },
                 "debugSetting": {

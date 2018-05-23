@@ -15,13 +15,16 @@
     "variables": {},
     "resources": [
         {
-            "type": "Microsoft.Compute/virtualMachines/extensions",
+            "type": "Microsoft.Compute/availabilitySets",
             "apiVersion": "2017-12-01",
-            "name": "[parameters('params').customscriptextensionname]",
+            "name": "[parameters('params').availabilitySetName]",
             "location": "[parameters('params').location]",
             "tags": "[parameters('tags')]",
             "dependsOn": [],
-            "properties": "[parameters('properties')]"
+            "properties": "[parameters('properties')]",
+            "sku":{
+                "name": "Aligned"
+            }
         }
     ],
     "outputs": {}

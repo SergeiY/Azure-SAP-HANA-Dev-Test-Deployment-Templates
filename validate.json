@@ -64,6 +64,9 @@
         },
         "nic2IpAddresses": {
             "type": "array"
+        },
+        "customScriptStorageAccountKey": {
+            "type": "securestring"
         }
     },
     "variables": {
@@ -113,7 +116,8 @@
         "availabilitySetName": "[toLower(concat(variables('prefix'), variables('availabilitySetRoleName')[parameters('vmRole')], parameters('vmDeploymentNumber')))]",
         "vmName": "[toLower(concat(variables('prefix'), variables('vmRoleName')[parameters('vmRole')], parameters('vmDeploymentNumber'), parameters('vmInstanceNumber')))]",
         "nic1Name": "[toLower(concat(variables('vmName'), '-nic'))]",
-        "nic2Name": "[toLower(concat(variables('vmName'), '-nic-spn'))]"
+        "nic2Name": "[toLower(concat(variables('vmName'), '-nic-spn'))]",
+        "customScriptExtensionName": "[concat(variables('vmName'), '-script')]"
     },
     "resources": [],
     "outputs": {
@@ -132,7 +136,9 @@
                 "vmAdminUserName": "[parameters('vmAdminUserName')]",
                 "vmAdminPassword": "[parameters('vmAdminPassword')]",
                 "nic1IpAddresses": "[parameters('nic1IpAddresses')]",
-                "nic2IpAddresses": "[parameters('nic2IpAddresses')]"
+                "nic2IpAddresses": "[parameters('nic2IpAddresses')]",
+                "customscriptextensionname": "[variables('customScriptExtensionName')]",
+                "customscriptstorageaccountkey" : "[parameters('customScriptStorageAccountKey')]"
             }
         }
     }

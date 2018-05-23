@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "params": {
+            "type": "object"
+        }
+    },
+    "variables": {
+        "storageAccount": {
+            "SAP Dev Test": {
+                "uksouth": {
+                    "Gallery Image - SLES SAP BYOS 12-SP1": {
+                        "commandToExecute": "noop.sh",
+                        "storageAccountName": "azsussapvmscripts"
+                    },
+                    "Gallery Image - SLES SAP BYOS 12-SP2": {
+                        "commandToExecute": "noop.sh",
+                        "storageAccountName": "azsussapvmscripts"
+                    },
+                    "Gallery Image - SLES SAP BYOS 12-SP3": {
+                        "commandToExecute": "noop.sh",
+                        "storageAccountName": "azsussapvmscripts"
+                    }
+                }
+            }
+        },
+        "customScriptExtension": {
+            "publisher": "Microsoft.Compute",
+            "type": "CustomScriptExtension",
+            "typeHandlerVersion": "1.9",
+            "autoUpgradeMinorVersion": true,
+            "settings": {},
+            "protectedSettings": {
+                "commandToExecute": "[variables('storageAccount')[parameters('params').subscription][parameters('params').location][parameters('params').vmImage].commandToExecute]",
+                "storageAccountName": "[variables('storageAccount')[parameters('params').subscription][parameters('params').location][parameters('params').vmImage].storageAccountName]",
+                "storageAccountKey": "[parameters(parameters('params').vmImage)]"
+            }
+        }
+    },
+    "resources": [],
+    "outputs": {
+        "output": {
+            "value": "[variables('customScriptExtension')]",
+            "type": "object"
+        }
+    }
+}
