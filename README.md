@@ -33,7 +33,7 @@ Deploy a Cloud Connector Environment (1xApp)</p>
 </a>
 Deploy a S/4HANA Hybris Billing Environment (4xApp, 1xDB)</p>
 </p>
-<p>The VMs are configured using the following sizes, and data disk configurations</p>
+<p>The VMs are configured using the following sizes and data disk configurations</p>
 <table>
 	<tr>
 		<th>VM Role</th>
