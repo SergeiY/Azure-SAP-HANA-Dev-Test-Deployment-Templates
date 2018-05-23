@@ -37,7 +37,7 @@
         },
         "App-CC-Nic-1": {
             "type": "array",
-            "minLength": 4,
+            "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -46,8 +46,8 @@
         },
         "App-CC-Nic-2": {
             "type": "array",
-            "minLength": 3,
-            "maxLength": 3,
+            "minLength": 1,
+            "maxLength": 4,
             "defaultValue": ["","",""],
             "metadata": {
                 "description": "Array of static IP addresses for App-CC-Nic-2. If any address is blank, DHCP will be used"
@@ -55,7 +55,7 @@
         },
         "App-CI-Nic-1": {
             "type": "array",
-            "minLength": 4,
+            "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -64,8 +64,8 @@
         },
         "App-CI-Nic-2": {
             "type": "array",
-            "minLength": 3,
-            "maxLength": 3,
+            "minLength": 1,
+            "maxLength": 4,
             "defaultValue": ["","",""],
             "metadata": {
                 "description": "Array of static IP addresses for App-CI-Nic-2. If any address is blank, DHCP will be used"
@@ -73,7 +73,7 @@
         },
         "App-SOMA-Nic-1": {
             "type": "array",
-            "minLength": 4,
+            "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -82,8 +82,8 @@
         },
         "App-SOMA-Nic-2": {
             "type": "array",
-            "minLength": 3,
-            "maxLength": 3,
+            "minLength": 1,
+            "maxLength": 4,
             "defaultValue": ["","",""],
             "metadata": {
                 "description": "Array of static IP addresses for App-SOMA-Nic-2. If any address is blank, DHCP will be used"
@@ -91,7 +91,7 @@
         },
         "App-SOMJ-Nic-1": {
             "type": "array",
-            "minLength": 4,
+            "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -100,8 +100,8 @@
         },
         "App-SOMJ-Nic-2": {
             "type": "array",
-            "minLength": 3,
-            "maxLength": 3,
+            "minLength": 1,
+            "maxLength": 4,
             "defaultValue": ["","",""],
             "metadata": {
                 "description": "Array of static IP addresses for App-SOMJ-Nic-2. If any address is blank, DHCP will be used"
@@ -109,7 +109,7 @@
         },
         "Db-Nic-1": {
             "type": "array",
-            "minLength": 4,
+            "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -118,7 +118,7 @@
         },
         "Db-Nic-2": {
             "type": "array",
-            "minLength": 4,
+            "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {

@@ -37,7 +37,7 @@
         },
         "App-Nic-1": {
             "type": "array",
-            "minLength": 4,
+            "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -46,8 +46,8 @@
         },
         "App-Nic-2": {
             "type": "array",
-            "minLength": 3,
-            "maxLength": 3,
+            "minLength": 1,
+            "maxLength": 4,
             "defaultValue": ["","",""],
             "metadata": {
                 "description": "Array of static IP addresses for App-Nic-2. If any address is blank, DHCP will be used"
