@@ -48,7 +48,7 @@
             "type": "array",
             "minLength": 3,
             "maxLength": 3,
-            "defaultValue": ["",""],
+            "defaultValue": ["","",""],
             "metadata": {
                 "description": "Array of static IP addresses for App-Nic-2. If any address is blank, DHCP will be used"
             }
