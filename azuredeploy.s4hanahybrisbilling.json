@@ -31,7 +31,7 @@
         },
         "App-CC-Nic-1": {
             "type": "array",
-            "minLength": 1,
+            "minLength": 4,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -40,16 +40,16 @@
         },
         "App-CC-Nic-2": {
             "type": "array",
-            "minLength": 1,
-            "maxLength": 4,
-            "defaultValue": ["","","",""],
+            "minLength": 3,
+            "maxLength": 3,
+            "defaultValue": ["","",""],
             "metadata": {
                 "description": "Array of static IP addresses for App-CC-Nic-2. If any address is blank, DHCP will be used"
             }
         },
         "App-CI-Nic-1": {
             "type": "array",
-            "minLength": 1,
+            "minLength": 4,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -58,16 +58,16 @@
         },
         "App-CI-Nic-2": {
             "type": "array",
-            "minLength": 1,
-            "maxLength": 4,
-            "defaultValue": ["","","",""],
+            "minLength": 3,
+            "maxLength": 3,
+            "defaultValue": ["","",""],
             "metadata": {
                 "description": "Array of static IP addresses for App-CI-Nic-2. If any address is blank, DHCP will be used"
             }
         },
         "App-SOMA-Nic-1": {
             "type": "array",
-            "minLength": 1,
+            "minLength": 4,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -76,16 +76,16 @@
         },
         "App-SOMA-Nic-2": {
             "type": "array",
-            "minLength": 1,
-            "maxLength": 4,
-            "defaultValue": ["","","",""],
+            "minLength": 3,
+            "maxLength": 3,
+            "defaultValue": ["","",""],
             "metadata": {
                 "description": "Array of static IP addresses for App-SOMA-Nic-2. If any address is blank, DHCP will be used"
             }
         },
         "App-SOMJ-Nic-1": {
             "type": "array",
-            "minLength": 1,
+            "minLength": 4,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -94,16 +94,16 @@
         },
         "App-SOMJ-Nic-2": {
             "type": "array",
-            "minLength": 1,
-            "maxLength": 4,
-            "defaultValue": ["","","",""],
+            "minLength": 3,
+            "maxLength": 3,
+            "defaultValue": ["","",""],
             "metadata": {
                 "description": "Array of static IP addresses for App-SOMJ-Nic-2. If any address is blank, DHCP will be used"
             }
         },
         "Db-Nic-1": {
             "type": "array",
-            "minLength": 1,
+            "minLength": 4,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -112,7 +112,7 @@
         },
         "Db-Nic-2": {
             "type": "array",
-            "minLength": 1,
+            "minLength": 4,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -121,23 +121,23 @@
         }
     },
     "variables": {
-        "uniqueDeploymentId.AppConvergentCharging.4": "[concat(parameters('vmDeploymentNumber'), '.appconvergentcharging.4')]",
-        "azuredeploy.AppConvergentCharging.4.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.AppConvergentCharging.4'))]",
-        "uniqueDeploymentId.AppConvergentInvoicing.5": "[concat(parameters('vmDeploymentNumber'), '.appconvergentinvoicing.5')]",
-        "azuredeploy.AppConvergentInvoicing.5.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.AppConvergentInvoicing.5'))]",
-        "uniqueDeploymentId.AppSOMCRMABAP.6": "[concat(parameters('vmDeploymentNumber'), '.appsomcrmabap.6')]",
-        "azuredeploy.AppSOMCRMABAP.6.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.AppSOMCRMABAP.6'))]",
-        "uniqueDeploymentId.AppSOMCRMJAVA.7": "[concat(parameters('vmDeploymentNumber'), '.appsomcrmjava.7')]",
-        "azuredeploy.AppSOMCRMJAVA.7.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.AppSOMCRMJAVA.7'))]",
-        "uniqueDeploymentId.DbS4HANAHybrisBilling.4": "[concat(parameters('vmDeploymentNumber'), '.dbs4hanahybrisbilling.4')]",
-        "azuredeploy.DbS4HANAHybrisBilling.4.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.DbS4HANAHybrisBilling.4'))]",
+        "uniqueDeploymentId.App.4": "[concat(parameters('vmDeploymentNumber'), '.app.4')]",
+        "azuredeploy.App.4.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.App.4'))]",
+        "uniqueDeploymentId.App.5": "[concat(parameters('vmDeploymentNumber'), '.app.5')]",
+        "azuredeploy.App.5.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.App.5'))]",
+        "uniqueDeploymentId.App.6": "[concat(parameters('vmDeploymentNumber'), '.app.6')]",
+        "azuredeploy.App.6.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.App.6'))]",
+        "uniqueDeploymentId.App.7": "[concat(parameters('vmDeploymentNumber'), '.app.7')]",
+        "azuredeploy.App.7.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.App.7'))]",
+        "uniqueDeploymentId.Db.4": "[concat(parameters('vmDeploymentNumber'), '.db.4')]",
+        "azuredeploy.Db.4.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.Db.4'))]",
         "azuredeploy.templateuri": "[uri(deployment().properties.templateLink.uri, 'azuredeploy.json')]"
     },
     "resources": [
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.AppConvergentCharging.4.templatename')]",
+            "name": "[variables('azuredeploy.App.4.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
@@ -179,7 +179,7 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.AppConvergentInvoicing.5.templatename')]",
+            "name": "[variables('azuredeploy.App.5.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
@@ -221,7 +221,7 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.AppSOMCRMABAP.6.templatename')]",
+            "name": "[variables('azuredeploy.App.6.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
@@ -263,7 +263,7 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.AppSOMCRMJAVA.7.templatename')]",
+            "name": "[variables('azuredeploy.App.7.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
@@ -305,7 +305,7 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.DbS4HANAHybrisBilling.4.templatename')]",
+            "name": "[variables('azuredeploy.Db.4.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",

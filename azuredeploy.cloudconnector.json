@@ -31,7 +31,7 @@
         },
         "App-Nic-1": {
             "type": "array",
-            "minLength": 1,
+            "minLength": 4,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
@@ -40,24 +40,24 @@
         },
         "App-Nic-2": {
             "type": "array",
-            "minLength": 1,
-            "maxLength": 4,
-            "defaultValue": ["","","",""],
+            "minLength": 3,
+            "maxLength": 3,
+            "defaultValue": ["","",""],
             "metadata": {
                 "description": "Array of static IP addresses for App-Nic-2. If any address is blank, DHCP will be used"
             }
         }
     },
     "variables": {
-        "uniqueDeploymentId.AppCloudConnector.9": "[concat(parameters('vmDeploymentNumber'), '.appcloudconnector.9')]",
-        "azuredeploy.AppCloudConnector.9.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.AppCloudConnector.9'))]",
+        "uniqueDeploymentId.App.9": "[concat(parameters('vmDeploymentNumber'), '.app.9')]",
+        "azuredeploy.App.9.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.App.9'))]",
         "azuredeploy.templateuri": "[uri(deployment().properties.templateLink.uri, 'azuredeploy.json')]"
     },
     "resources": [
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.AppCloudConnector.9.templatename')]",
+            "name": "[variables('azuredeploy.App.9.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
