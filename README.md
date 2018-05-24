@@ -111,30 +111,30 @@ Deploy a S/4HANA Hybris Billing Environment (4xApp, 1xDB)</p>
 		<td>DB - SAP PO</td>
 		<td>E8s_v3</td>
 		<td>64GB</td>
-		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB), 1xP10 (128GB), 1xP6 (64GB), 1xP4 (32GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB)<p>1xP6 (64GB), 1xP10 (128GB), 1xP6 (64GB), 1xP4 (32GB)</td>
 	</tr>
 	<tr>
 		<td>DB - Gateway FES</td>
 		<td>E8s_v3</td>
 		<td>64GB</td>
-		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB), 1xP10 (128GB), 1xP6 (64GB), 1xP4 (32GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB)<p>1xP6 (64GB), 1xP10 (128GB), 1xP6 (64GB), 1xP4 (32GB)</td>
 	</tr>
 	<tr>
 		<td>DB - SAP BW</td>
 		<td>E16s_v3</td>
 		<td>128GB</td>
-		<td>1xP4 (32GB), 1xP4 (32GB), 1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB)<p>1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>DB - S/4HANA Utilities</td>
 		<td>E32s_v3</td>
 		<td>256GB</td>
-		<td>1xP4 (32GB), 1xP4 (32GB), 1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB)<p>1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>DB - S/4HANA Hybris Billing</td>
 		<td>E32s_v3</td>
 		<td>256GB</td>
-		<td>1xP4 (32GB), 1xP4 (32GB), 1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB), 1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB), 1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB)<p>1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)<p>1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)<p>1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)</td>
 	</tr>
 </table>
