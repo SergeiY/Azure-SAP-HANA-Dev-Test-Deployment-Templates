@@ -105,7 +105,7 @@
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
-            "defaultValue": ["","",""],
+            "defaultValue": ["","","",""],
             "metadata": {
                 "description": "Array of static IP addresses for Db-Hybris-Nic-1. If any address is blank, DHCP will be used"
             }
