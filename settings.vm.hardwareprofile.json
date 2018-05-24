@@ -22,8 +22,8 @@
                 "DB - NetWeaver Gateway": "Standard_E8s_v3",
                 "DB - SAP PO": "Standard_E8s_v3",
                 "DB - Gateway FES": "Standard_E8s_v3",
-                "DB - SAP BW": "Standard_E8s_v3",
-                "DB - S/4HANA Utilities": "Standard_E8s_v3",
+                "DB - SAP BW": "Standard_E16s_v3",
+                "DB - S/4HANA Utilities": "Standard_E32s_v3",
                 "DB - S/4HANA Hybris Billing": "Standard_E32s_v3"
             }
         },

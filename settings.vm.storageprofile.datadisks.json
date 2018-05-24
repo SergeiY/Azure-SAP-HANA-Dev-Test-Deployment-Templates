@@ -217,7 +217,7 @@
                             "diskSizeGB": 127
                         },
                         {
-                            "diskSizeGB": 255
+                            "diskSizeGB": 511
                         },
                         {
                             "diskSizeGB": 127
@@ -239,7 +239,7 @@
                             "diskSizeGB": 127
                         },
                         {
-                            "diskSizeGB": 255
+                            "diskSizeGB": 511
                         },
                         {
                             "diskSizeGB": 127

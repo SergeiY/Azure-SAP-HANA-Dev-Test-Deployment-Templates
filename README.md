@@ -48,76 +48,76 @@ Deploy a S/4HANA Hybris Billing Environment (4xApp, 1xDB)</p>
 	<tr>
 		<td>App - SAP PO</td>
 		<td>E4s_v3</td>
-		<td>1xP6 (64GB), 1xP20 (512GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>App - Gateway FES</td>
 		<td>E4s_v3</td>
-		<td>1xP6 (64GB), 1xP20 (512GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>App - SAP BW</td>
 		<td>E4s_v3</td>
-		<td>1xP6 (64GB), 1xP20 (512GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>App - S/4HANA Utilities</td>
 		<td>E4s_v3</td>
-		<td>1xP6 (64GB), 1xP6 (64GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>App - Convergent Charging</td>
 		<td>E4s_v3</td>
-		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>App - Convergent Invoicing</td>
 		<td>E4s_v3</td>
-		<td>1xP6 (64GB), 1xP6 (64GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>App - SOM (CRM ABAP)</td>
 		<td>E4s_v3</td>
-		<td>1xP6 (64GB), 1xP20 (512GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>App - SOM (CRM JAVA)</td>
 		<td>E4s_v3</td>
-		<td>1xP6 (64GB), 1xP6 (64GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>App - Cloud Connector</td>
 		<td>E4s_v3</td>
-		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>DB - NetWeaver Gateway</td>
 		<td>E8s_v3</td>
-		<td>1xP4 (32GB), 1xP10 (128GB), 1xP6 (64GB), 1xP4 (32GB), 1xP6 (64GB), 1xP4 (32GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB), 1xP10 (128GB), 1xP6 (64GB), 1xP4 (32GB)</td>
 	</tr>
 	<tr>
 		<td>DB - SAP PO</td>
 		<td>E8s_v3</td>
-		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB), 1xP10 (128GB), 1xP6 (64GB), 1xP4 (32GB)</td>
 	</tr>
 	<tr>
 		<td>DB - Gateway FES</td>
 		<td>E8s_v3</td>
-		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB), 1xP10 (128GB), 1xP6 (64GB), 1xP4 (32GB)</td>
 	</tr>
 	<tr>
 		<td>DB - SAP BW</td>
-		<td>E8s_v3</td>
-		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>E16s_v3</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>DB - S/4HANA Utilities</td>
-		<td>E8s_v3</td>
-		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>E32s_v3</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)</td>
 	</tr>
 	<tr>
 		<td>DB - S/4HANA Hybris Billing</td>
-		<td>E16s_v3</td>
-		<td>1xP6 (64GB), 1xP10 (128GB), 1xP4 (32GB), 1xP6 (64GB)</td>
+		<td>E32s_v3</td>
+		<td>1xP4 (32GB), 1xP4 (32GB), 1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB), 1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB), 1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)</td>
 	</tr>
 </table>
