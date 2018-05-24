@@ -25,10 +25,7 @@
                 "App - SAP PO": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 511
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
@@ -41,10 +38,7 @@
                 "App - Gateway FES": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 511
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
@@ -57,10 +51,7 @@
                 "App - SAP BW": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 511
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
@@ -73,10 +64,7 @@
                 "App - S/4HANA Utilities": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 63
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
@@ -89,10 +77,7 @@
                 "App - Convergent Charging": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 127
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
@@ -105,10 +90,7 @@
                 "App - Convergent Invoicing": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 63
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
@@ -121,10 +103,7 @@
                 "App - SOM (CRM ABAP)": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 511
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
@@ -137,10 +116,7 @@
                 "App - SOM (CRM JAVA)": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 63
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
@@ -153,10 +129,7 @@
                 "App - Cloud Connector": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 127
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
@@ -172,13 +145,13 @@
                             "diskSizeGB": 31
                         },
                         {
-                            "diskSizeGB": 127
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 63
                         },
                         {
-                            "diskSizeGB": 31
+                            "diskSizeGB": 127
                         },
                         {
                             "diskSizeGB": 63
@@ -191,45 +164,63 @@
                 "DB - SAP PO": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 63
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 31
                         }
                     ]
                 },
                 "DB - Gateway FES": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 63
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 31
                         }
                     ]
                 },
                 "DB - SAP BW": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 63
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 255
+                        },
+                        {
+                            "diskSizeGB": 127
                         },
                         {
                             "diskSizeGB": 63
@@ -239,13 +230,19 @@
                 "DB - S/4HANA Utilities": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 63
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 255
+                        },
+                        {
+                            "diskSizeGB": 127
                         },
                         {
                             "diskSizeGB": 63
@@ -255,13 +252,43 @@
                 "DB - S/4HANA Hybris Billing": {
                     "disks": [
                         {
-                            "diskSizeGB": 63
-                        },
-                        {
-                            "diskSizeGB": 63
+                            "diskSizeGB": 31
                         },
                         {
                             "diskSizeGB": 31
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 255
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 255
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 63
+                        },
+                        {
+                            "diskSizeGB": 127
+                        },
+                        {
+                            "diskSizeGB": 255
+                        },
+                        {
+                            "diskSizeGB": 127
                         },
                         {
                             "diskSizeGB": 63

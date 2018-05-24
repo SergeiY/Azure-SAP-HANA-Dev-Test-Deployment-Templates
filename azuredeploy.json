@@ -61,7 +61,8 @@
             "type": "securestring"
         },
         "customScriptStorageAccountKey": {
-            "type": "securestring"
+            "type": "securestring",
+            "defaultValue": ""
         },
         "nic1IpAddresses": {
             "type": "array",
