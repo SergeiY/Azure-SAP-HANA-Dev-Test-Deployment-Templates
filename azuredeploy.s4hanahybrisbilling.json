@@ -29,7 +29,7 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
-        "App-ConvergentCharging-Nic-1": {
+        "App-CONVERGENTCHARGING-Nic-1": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
@@ -38,7 +38,7 @@
                 "description": "Array of static IP addresses for App-ConvergentCharging-Nic-1. If any address is blank, DHCP will be used"
             }
         },
-        "App-ConvergentCharging-Nic-2": {
+        "App-CONVERGENTCHARGING-Nic-2": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
@@ -47,7 +47,7 @@
                 "description": "Array of static IP addresses for App-ConvergentCharging-Nic-2. If any address is blank, DHCP will be used"
             }
         },
-        "App-ConvergentInvoicing-Nic-1": {
+        "App-CONVERGENTINVOICING-Nic-1": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
@@ -56,7 +56,7 @@
                 "description": "Array of static IP addresses for App-ConvergentInvoicing-Nic-1. If any address is blank, DHCP will be used"
             }
         },
-        "App-ConvergentInvoicing-Nic-2": {
+        "App-CONVERGENTINVOICING-Nic-2": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
@@ -83,7 +83,7 @@
                 "description": "Array of static IP addresses for App-SOMCRMABAP-Nic-2. If any address is blank, DHCP will be used"
             }
         },
-        "App-SOMCRMJava-Nic-1": {
+        "App-SOMCRMJAVA-Nic-1": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
@@ -92,7 +92,7 @@
                 "description": "Array of static IP addresses for App-SOMCRMJava-Nic-1. If any address is blank, DHCP will be used"
             }
         },
-        "App-SOMCRMJava-Nic-2": {
+        "App-SOMCRMJAVA-Nic-2": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
@@ -101,7 +101,7 @@
                 "description": "Array of static IP addresses for App-SOMCRMJava-Nic-2. If any address is blank, DHCP will be used"
             }
         },
-        "Db-Hybris-Nic-1": {
+        "Db-HYBRIS-Nic-1": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
@@ -110,7 +110,7 @@
                 "description": "Array of static IP addresses for Db-Hybris-Nic-1. If any address is blank, DHCP will be used"
             }
         },
-        "Db-Hybris-Nic-2": {
+        "Db-HYBRIS-Nic-2": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
@@ -171,10 +171,10 @@
                         "value": ""
                     },
                     "nic1IpAddresses": {
-                        "value": "[parameters('App-ConvergentCharging-Nic-1')]"
+                        "value": "[parameters('App-CONVERGENTCHARGING-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": "[parameters('App-ConvergentCharging-Nic-2')]"
+                        "value": "[parameters('App-CONVERGENTCHARGING-Nic-2')]"
                     }
                 }
             }
@@ -216,10 +216,10 @@
                         "value": ""
                     },
                     "nic1IpAddresses": {
-                        "value": "[parameters('App-ConvergentInvoicing-Nic-1')]"
+                        "value": "[parameters('App-CONVERGENTINVOICING-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": "[parameters('App-ConvergentInvoicing-Nic-2')]"
+                        "value": "[parameters('App-CONVERGENTINVOICING-Nic-2')]"
                     }
                 }
             }
@@ -306,10 +306,10 @@
                         "value": ""
                     },
                     "nic1IpAddresses": {
-                        "value": "[parameters('App-SOMCRMJava-Nic-1')]"
+                        "value": "[parameters('App-SOMCRMJAVA-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": "[parameters('App-SOMCRMJava-Nic-2')]"
+                        "value": "[parameters('App-SOMCRMJAVA-Nic-2')]"
                     }
                 }
             }
@@ -351,10 +351,10 @@
                         "value": ""
                     },
                     "nic1IpAddresses": {
-                        "value": "[parameters('Db-Hybris-Nic-1')]"
+                        "value": "[parameters('Db-HYBRIS-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": "[parameters('Db-Hybris-Nic-2')]"
+                        "value": "[parameters('Db-HYBRIS-Nic-2')]"
                     }
                 }
             }
