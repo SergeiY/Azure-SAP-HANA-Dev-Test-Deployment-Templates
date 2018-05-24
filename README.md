@@ -105,7 +105,7 @@ Deploy a S/4HANA Hybris Billing Environment (4xApp, 1xDB)</p>
 		<td>DB - NetWeaver Gateway</td>
 		<td>E8s_v3</td>
 		<td>64GB</td>
-		<td>1xP4 (32GB), 1xP4 (32GB), 1xP6 (64GB), 1xP10 (128GB), 1xP6 (64GB), 1xP4 (32GB)</td>
+		<td>1xP4 (32GB), 1xP4 (32GB)<p>1xP6 (64GB), 1xP10 (128GB), 1xP6 (64GB), 1xP4 (32GB)</td>
 	</tr>
 	<tr>
 		<td>DB - SAP PO</td>
