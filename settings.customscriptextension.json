@@ -7,6 +7,8 @@
         }
     },
     "variables": {
+        "settings.customscriptextension.storageaccountkey.templatename": "[concat('settings.customscriptextension.storageaccountkey.', parameters('params').uniqueDeploymentId)]",
+        "settings.customscriptextension.storageaccountkey.templateuri": "[uri(deployment().properties.templateLink.uri, 'settings.customscriptextension.storageaccountkey.json')]",
         "storageAccount": {
             "SAP Dev Test": {
                 "uksouth": {
@@ -24,24 +26,44 @@
                     }
                 }
             }
-        },
-        "customScriptExtension": {
-            "publisher": "Microsoft.Compute",
-            "type": "CustomScriptExtension",
-            "typeHandlerVersion": "1.9",
-            "autoUpgradeMinorVersion": true,
-            "settings": {},
-            "protectedSettings": {
-                "commandToExecute": "[variables('storageAccount')[parameters('params').subscription][parameters('params').location][parameters('params').vmImage].commandToExecute]",
-                "storageAccountName": "[variables('storageAccount')[parameters('params').subscription][parameters('params').location][parameters('params').vmImage].storageAccountName]",
-                "storageAccountKey": "[parameters('params').customscriptstorageaccountkey]"
-            }
         }
     },
-    "resources": [],
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('settings.customscriptextension.storageaccountkey.templatename')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('settings.customscriptextension.storageaccountkey.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "params": {
+                        "value": "[parameters('params')]"
+                    }
+                }
+            }
+        }
+    ],
     "outputs": {
         "output": {
-            "value": "[variables('customScriptExtension')]",
+            "value": {
+                "publisher": "Microsoft.Compute",
+                "type": "CustomScriptExtension",
+                "typeHandlerVersion": "1.9",
+                "autoUpgradeMinorVersion": true,
+                "settings": {},
+                "protectedSettings": {
+                    "commandToExecute": "[variables('storageAccount')[parameters('params').subscription][parameters('params').location][parameters('params').vmImage].commandToExecute]",
+                    "storageAccountName": "[variables('storageAccount')[parameters('params').subscription][parameters('params').location][parameters('params').vmImage].storageAccountName]",
+                    "storageAccountKey": "[reference(variables('settings.customscriptextension.storageaccountkey.templatename')).outputs.output.value]"
+                }
+            },
             "type": "object"
         }
     }
