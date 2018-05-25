@@ -40,8 +40,7 @@
                             "secretName": "[variables('keyVaultSecretName')]"
                         }
                     }
-                },
-                "template": {}
+                }
             }
         }
     ],
