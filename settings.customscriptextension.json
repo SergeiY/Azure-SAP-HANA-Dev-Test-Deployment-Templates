@@ -26,7 +26,19 @@
                     }
                 }
             }
-        }
+        },
+        "keyVault": {
+            "SAP Dev Test": {
+                "uksouth": {
+                    "keyVaultName": "azsudsapstoragekeys",
+                    "keyVaultResourceGroupName": "azsu-rg-sapdevtest-vmstorageaccounts",
+                    "keyVaultSecretName": "storage-account-key1-azsudsapvmscripts"
+                }
+            }
+        },
+        "keyVaultName": "[variables('keyVault')[parameters('params').subscription][parameters('params').location].keyVaultName]",
+        "keyVaultResourceGroupName": "[variables('keyVault')[parameters('params').subscription][parameters('params').location].keyVaultResourceGroupName]",
+        "keyVaultSecretName": "[variables('keyVault')[parameters('params').subscription][parameters('params').location].keyVaultSecretName]"
     },
     "resources": [
         {
@@ -43,8 +55,13 @@
                     "detailLevel": "requestContent, responseContent"
                 },
                 "parameters": {
-                    "params": {
-                        "value": "[parameters('params')]"
+                    "keyVaultSecret": {
+                        "reference": {
+                            "keyVault": {
+                                "id": "[resourceId(subscription().subscriptionId,  variables('keyVaultResourceGroupName'), 'Microsoft.KeyVault/vaults', variables('keyVaultName'))]"
+                            },
+                            "secretName": "[variables('keyVaultSecretName')]"
+                        }
                     }
                 }
             }
