@@ -3,7 +3,7 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "keyVaultSecret": {
-            "type": "securestring"
+            "type": "string"
         }
     },
     "variables": { },
@@ -11,7 +11,7 @@
     "outputs": {
         "output": {
             "value": "[parameters('keyVaultSecret')]",
-            "type": "securestring"
+            "type": "string"
         }
     }
 }
