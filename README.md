@@ -1,5 +1,5 @@
-<h1>Azure SAP HANA Deployment Template</h1>
-<p>This template takes a minimum amount of parameters and deploys one or more VMs, customized for use with 3-tier SAP HANA, using a variety of custom and gallery operating system images. Each VM is configured with two NICs, each with multiple IP addresses.</p>
+<h1>Azure SAP HANA Dev Test Deployment Templates</h1>
+<p>This template takes a minimum amount of parameters and deploys one or more VMs, customized for use with 2-tier SAP HANA, using a variety of custom and gallery operating system images. Each VM is configured with two NICs, each with multiple IP addresses.</p>
 <p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsimonhutson%2FAzure-SAP-HANA-Deployment-Templates%2Fmaster%2Fazuredeploy.single.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png" />
 </a>
