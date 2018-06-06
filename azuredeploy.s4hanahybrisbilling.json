@@ -121,64 +121,19 @@
         }
     },
     "variables": {
-        "uniqueDeploymentId.App.4": "[concat(parameters('vmDeploymentNumber'), '.app.4')]",
-        "azuredeploy.App.4.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.App.4'))]",
         "uniqueDeploymentId.App.5": "[concat(parameters('vmDeploymentNumber'), '.app.5')]",
         "azuredeploy.App.5.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.App.5'))]",
         "uniqueDeploymentId.App.6": "[concat(parameters('vmDeploymentNumber'), '.app.6')]",
         "azuredeploy.App.6.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.App.6'))]",
         "uniqueDeploymentId.App.7": "[concat(parameters('vmDeploymentNumber'), '.app.7')]",
         "azuredeploy.App.7.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.App.7'))]",
-        "uniqueDeploymentId.Db.4": "[concat(parameters('vmDeploymentNumber'), '.db.4')]",
-        "azuredeploy.Db.4.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.Db.4'))]",
+        "uniqueDeploymentId.App.8": "[concat(parameters('vmDeploymentNumber'), '.app.8')]",
+        "azuredeploy.App.8.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.App.8'))]",
+        "uniqueDeploymentId.Db.5": "[concat(parameters('vmDeploymentNumber'), '.db.5')]",
+        "azuredeploy.Db.5.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.Db.5'))]",
         "azuredeploy.templateuri": "[uri(deployment().properties.templateLink.uri, 'azuredeploy.json')]"
     },
     "resources": [
-        {
-            "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.App.4.templatename')]",
-            "dependsOn": [],
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "[variables('azuredeploy.templateuri')]",
-                    "contentVersion": "1.0.0.0"
-                },
-                "debugSetting": {
-                    "detailLevel": "requestContent, responseContent"
-                },
-                "parameters": {
-                    "vmDeploymentNumber": {
-                        "value": "[parameters('vmDeploymentNumber')]"
-                    },
-                    "vmInstanceNumber": {
-                        "value": "4"
-                    },
-                    "vmImage": {
-                        "value": "[parameters('vmImage')]"
-                    },
-                    "vmRole": {
-                        "value": "App - Convergent Charging"
-                    },
-                    "vmAdminUserName": {
-                        "value": "[parameters('vmAdminUserName')]"
-                    },
-                    "vmAdminPassword": {
-                        "value": "[parameters('vmAdminPassword')]"
-                    },
-                    "customScriptStorageAccountKey": {
-                        "value": ""
-                    },
-                    "nic1IpAddresses": {
-                        "value": "[parameters('App-CONVERGENTCHARGING-Nic-1')]"
-                    },
-                    "nic2IpAddresses": {
-                        "value": "[parameters('App-CONVERGENTCHARGING-Nic-2')]"
-                    }
-                }
-            }
-        },
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
@@ -204,7 +159,7 @@
                         "value": "[parameters('vmImage')]"
                     },
                     "vmRole": {
-                        "value": "App - Convergent Invoicing"
+                        "value": "App - Convergent Charging"
                     },
                     "vmAdminUserName": {
                         "value": "[parameters('vmAdminUserName')]"
@@ -216,10 +171,10 @@
                         "value": ""
                     },
                     "nic1IpAddresses": {
-                        "value": "[parameters('App-CONVERGENTINVOICING-Nic-1')]"
+                        "value": "[parameters('App-CONVERGENTCHARGING-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": "[parameters('App-CONVERGENTINVOICING-Nic-2')]"
+                        "value": "[parameters('App-CONVERGENTCHARGING-Nic-2')]"
                     }
                 }
             }
@@ -249,7 +204,7 @@
                         "value": "[parameters('vmImage')]"
                     },
                     "vmRole": {
-                        "value": "App - SOM (CRM ABAP)"
+                        "value": "App - Convergent Invoicing"
                     },
                     "vmAdminUserName": {
                         "value": "[parameters('vmAdminUserName')]"
@@ -261,10 +216,10 @@
                         "value": ""
                     },
                     "nic1IpAddresses": {
-                        "value": "[parameters('App-SOMCRMABAP-Nic-1')]"
+                        "value": "[parameters('App-CONVERGENTINVOICING-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": "[parameters('App-SOMCRMABAP-Nic-2')]"
+                        "value": "[parameters('App-CONVERGENTINVOICING-Nic-2')]"
                     }
                 }
             }
@@ -294,6 +249,51 @@
                         "value": "[parameters('vmImage')]"
                     },
                     "vmRole": {
+                        "value": "App - SOM (CRM ABAP)"
+                    },
+                    "vmAdminUserName": {
+                        "value": "[parameters('vmAdminUserName')]"
+                    },
+                    "vmAdminPassword": {
+                        "value": "[parameters('vmAdminPassword')]"
+                    },
+                    "customScriptStorageAccountKey": {
+                        "value": ""
+                    },
+                    "nic1IpAddresses": {
+                        "value": "[parameters('App-SOMCRMABAP-Nic-1')]"
+                    },
+                    "nic2IpAddresses": {
+                        "value": "[parameters('App-SOMCRMABAP-Nic-2')]"
+                    }
+                }
+            }
+        },
+        {
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2017-05-10",
+            "name": "[variables('azuredeploy.App.8.templatename')]",
+            "dependsOn": [],
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "[variables('azuredeploy.templateuri')]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "debugSetting": {
+                    "detailLevel": "requestContent, responseContent"
+                },
+                "parameters": {
+                    "vmDeploymentNumber": {
+                        "value": "[parameters('vmDeploymentNumber')]"
+                    },
+                    "vmInstanceNumber": {
+                        "value": "8"
+                    },
+                    "vmImage": {
+                        "value": "[parameters('vmImage')]"
+                    },
+                    "vmRole": {
                         "value": "App - SOM (CRM JAVA)"
                     },
                     "vmAdminUserName": {
@@ -317,7 +317,7 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.Db.4.templatename')]",
+            "name": "[variables('azuredeploy.Db.5.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
@@ -333,7 +333,7 @@
                         "value": "[parameters('vmDeploymentNumber')]"
                     },
                     "vmInstanceNumber": {
-                        "value": "4"
+                        "value": "5"
                     },
                     "vmImage": {
                         "value": "[parameters('vmImage')]"

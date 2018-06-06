@@ -67,17 +67,17 @@
         }
     },
     "variables": {
-        "uniqueDeploymentId.App.8": "[concat(parameters('vmDeploymentNumber'), '.app.8')]",
-        "azuredeploy.App.8.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.App.8'))]",
-        "uniqueDeploymentId.Db.8": "[concat(parameters('vmDeploymentNumber'), '.db.8')]",
-        "azuredeploy.Db.8.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.Db.8'))]",
+        "uniqueDeploymentId.App.3": "[concat(parameters('vmDeploymentNumber'), '.app.3')]",
+        "azuredeploy.App.3.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.App.3'))]",
+        "uniqueDeploymentId.Db.3": "[concat(parameters('vmDeploymentNumber'), '.db.3')]",
+        "azuredeploy.Db.3.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.Db.3'))]",
         "azuredeploy.templateuri": "[uri(deployment().properties.templateLink.uri, 'azuredeploy.json')]"
     },
     "resources": [
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.App.8.templatename')]",
+            "name": "[variables('azuredeploy.App.3.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
@@ -93,7 +93,7 @@
                         "value": "[parameters('vmDeploymentNumber')]"
                     },
                     "vmInstanceNumber": {
-                        "value": "8"
+                        "value": "3"
                     },
                     "vmImage": {
                         "value": "[parameters('vmImage')]"
@@ -122,7 +122,7 @@
         {
             "type": "Microsoft.Resources/deployments",
             "apiVersion": "2017-05-10",
-            "name": "[variables('azuredeploy.Db.8.templatename')]",
+            "name": "[variables('azuredeploy.Db.3.templatename')]",
             "dependsOn": [],
             "properties": {
                 "mode": "Incremental",
@@ -138,7 +138,7 @@
                         "value": "[parameters('vmDeploymentNumber')]"
                     },
                     "vmInstanceNumber": {
-                        "value": "8"
+                        "value": "3"
                     },
                     "vmImage": {
                         "value": "[parameters('vmImage')]"
