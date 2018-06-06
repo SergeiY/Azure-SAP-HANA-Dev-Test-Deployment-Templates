@@ -4,6 +4,10 @@
     <img src="http://azuredeploy.net/deploybutton.png" />
 </a>
 Deploly SINGLE SAP VM</p>
+<p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsimonhutson%2FAzure-SAP-HANA-Deployment-Templates%2Fmaster%2Fazuredeploy.full.json" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png" />
+</a>
+Deploly FULL SAP VMs</p>
 <p><a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fsimonhutson%2FAzure-SAP-HANA-Deployment-Templates%2Fmaster%2Fazuredeploy.netweavergateway.json" target="_blank">
     <img src="http://azuredeploy.net/deploybutton.png" />
 </a>
