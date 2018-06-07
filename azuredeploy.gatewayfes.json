@@ -29,40 +29,40 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
-        "App-Nic-1": {
+        "App-GatewayFES-Nic-1": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
-                "description": "Array of static IP addresses for App-Nic-1. If any address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for App-GatewayFES-Nic-1. If any address is blank, DHCP will be used"
             }
         },
-        "App-Nic-2": {
+        "App-GatewayFES-Nic-2": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["","",""],
             "metadata": {
-                "description": "Array of static IP addresses for App-Nic-2. If any address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for App-GatewayFES-Nic-2. If any address is blank, DHCP will be used"
             }
         },
-        "Db-Nic-1": {
+        "Db-GatewayFES-Nic-1": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["",""],
             "metadata": {
-                "description": "Array of static IP addresses for Db-Nic-1. If any address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for Db-GatewayFES-Nic-1. If any address is blank, DHCP will be used"
             }
         },
-        "Db-Nic-2": {
+        "Db-GatewayFES-Nic-2": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["",""],
             "metadata": {
-                "description": "Array of static IP addresses for Db-Nic-2. If any address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for Db-GatewayFES-Nic-2. If any address is blank, DHCP will be used"
             }
         }
     },
@@ -99,7 +99,7 @@
                         "value": "[parameters('vmImage')]"
                     },
                     "vmRole": {
-                        "value": "App - Gateway FES"
+                        "value": "App - Netweaver Gateway FES"
                     },
                     "vmAdminUserName": {
                         "value": "[parameters('vmAdminUserName')]"
@@ -111,10 +111,10 @@
                         "value": ""
                     },
                     "nic1IpAddresses": {
-                        "value": "[parameters('App-Nic-1')]"
+                        "value": "[parameters('App-GatewayFES-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": "[parameters('App-Nic-2')]"
+                        "value": "[parameters('App-GatewayFES-Nic-2')]"
                     }
                 }
             }
@@ -144,7 +144,7 @@
                         "value": "[parameters('vmImage')]"
                     },
                     "vmRole": {
-                        "value": "DB - Gateway FES"
+                        "value": "DB - Netweaver Gateway FES"
                     },
                     "vmAdminUserName": {
                         "value": "[parameters('vmAdminUserName')]"
@@ -156,10 +156,10 @@
                         "value": ""
                     },
                     "nic1IpAddresses": {
-                        "value": "[parameters('Db-Nic-1')]"
+                        "value": "[parameters('Db-GatewayFES-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": "[parameters('Db-Nic-2')]"
+                        "value": "[parameters('Db-GatewayFES-Nic-2')]"
                     }
                 }
             }

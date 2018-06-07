@@ -9,7 +9,7 @@
     "variables": {
         "diskSizes": {
             "SAP Dev Test": {
-                "App - NetWeaver Gateway": {
+                "App - NetWeaver Gateway (IMOS)": {
                     "disks": [
                         {
                             "diskSizeGB": 31
@@ -22,7 +22,7 @@
                         }
                     ]
                 },
-                "App - SAP PO": {
+                "App - SAP PO (IMOS)": {
                     "disks": [
                         {
                             "diskSizeGB": 31
@@ -35,7 +35,7 @@
                         }
                     ]
                 },
-                "App - Gateway FES": {
+                "App - Netweaver Gateway FES": {
                     "disks": [
                         {
                             "diskSizeGB": 31
@@ -139,7 +139,7 @@
                         }
                     ]
                 },
-                "DB - NetWeaver Gateway": {
+                "DB - NetWeaver Gateway (IMOS)": {
                     "disks": [
                         {
                             "diskSizeGB": 31
@@ -161,7 +161,7 @@
                         }
                     ]
                 },
-                "DB - SAP PO": {
+                "DB - SAP PO (IMOS)": {
                     "disks": [
                         {
                             "diskSizeGB": 31
@@ -183,7 +183,7 @@
                         }
                     ]
                 },
-                "DB - Gateway FES": {
+                "DB - Netweaver Gateway FES": {
                     "disks": [
                         {
                             "diskSizeGB": 31

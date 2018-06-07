@@ -29,7 +29,7 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
-        "App-Nic-1": {
+        "App-CloudConnector-Nic-1": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
@@ -38,7 +38,7 @@
                 "description": "Array of static IP addresses for App-Nic-1. If any address is blank, DHCP will be used"
             }
         },
-        "App-Nic-2": {
+        "App-CloudConnector-Nic-2": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
@@ -91,10 +91,10 @@
                         "value": ""
                     },
                     "nic1IpAddresses": {
-                        "value": "[parameters('App-Nic-1')]"
+                        "value": "[parameters('App-CloudConnector-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": "[parameters('App-Nic-2')]"
+                        "value": "[parameters('App-CloudConnector-Nic-2')]"
                     }
                 }
             }

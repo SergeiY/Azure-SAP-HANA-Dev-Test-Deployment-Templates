@@ -8,53 +8,53 @@
     },
     "variables": {
         "tagServiceNames": {
-            "App - NetWeaver Gateway": {
-                "tagServiceName": "App - NetWeaver Gateway"
+            "App - NetWeaver Gateway (IMOS)": {
+                "tagServiceName": "IMOS – EUR"
             },
-            "App - SAP PO": {
-                "tagServiceName": "App - SAP PO"
+            "App - SAP PO (IMOS)": {
+                "tagServiceName": "IMOS – EUR"
             },
-            "App - Gateway FES": {
-                "tagServiceName": "App - Gateway FES"
+            "App - Netweaver Gateway FES": {
+                "tagServiceName": "SAP NETWEAVER GATEWAY - EUR"
             },
             "App - SAP BW": {
-                "tagServiceName": "App - SAP BW"
+                "tagServiceName": "SAP BUSINESS WAREHOUSE - EUR"
             },
             "App - S/4HANA Utilities": {
-                "tagServiceName": "App - S/4HANA Utilities"
+                "tagServiceName": "UTILITIES - EUR"
             },
             "App - Convergent Charging": {
-                "tagServiceName": "App - Convergent Charging"
+                "tagServiceName": "SAP HYBRIS BILLING - EUR"
             },
             "App - Convergent Invoicing": {
-                "tagServiceName": "App - Convergent Invoicing"
+                "tagServiceName": "SAP HYBRIS BILLING - EUR"
             },
             "App - SOM (CRM ABAP)": {
-                "tagServiceName": "App - SOM (CRM ABAP)"
+                "tagServiceName": "SAP HYBRIS BILLING - EUR"
             },
             "App - SOM (CRM JAVA)": {
-                "tagServiceName": "App - SOM (CRM JAVA)"
+                "tagServiceName": "SAP HYBRIS BILLING - EUR"
             },
             "App - Cloud Connector": {
-                "tagServiceName": "App - Cloud Connector"
+                "tagServiceName": "SAP CLOUD CONNECTOR"
             },
-            "DB - NetWeaver Gateway": {
-                "tagServiceName": "DB - NetWeaver Gateway"
+            "DB - NetWeaver Gateway (IMOS)": {
+                "tagServiceName": "IMOS – EUR"
             },
-            "DB - SAP PO": {
-                "tagServiceName": "DB - SAP PO"
+            "DB - SAP PO (IMOS)": {
+                "tagServiceName": "IMOS – EUR"
             },
-            "DB - Gateway FES": {
-                "tagServiceName": "DB - Gateway FES"
+            "DB - Netweaver Gateway FES": {
+                "tagServiceName": "SAP NETWEAVER GATEWAY - EUR"
             },
             "DB - SAP BW": {
-                "tagServiceName": "DB - SAP BW"
+                "tagServiceName": "SAP BUSINESS WAREHOUSE - EUR"
             },
             "DB - S/4HANA Utilities": {
-                "tagServiceName": "DB - S/4HANA Utilities"
+                "tagServiceName": "UTILITIES - EUR"
             },
             "DB - S/4HANA Hybris Billing": {
-                "tagServiceName": "DB - S/4HANA Hybris Billing"
+                "tagServiceName": "SAP HYBRIS BILLING - EUR"
             }
         },
         "tagEnvironments": {

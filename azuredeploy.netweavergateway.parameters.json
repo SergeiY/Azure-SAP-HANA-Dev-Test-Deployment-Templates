@@ -11,16 +11,16 @@
         "vmAdminUserName": {
             "value": "azureuser"
         },
-        "App-Nic-1": {
+        "App-NetWeaverGateway-Nic-1": {
             "value": ["","","",""]
         },
-        "App-Nic-2": {
+        "App-NetWeaverGateway-Nic-2": {
             "value": ["","",""]
         },
-        "Db-Nic-1": {
+        "Db-NetWeaverGateway-Nic-1": {
             "value": ["",""]
         },
-        "Db-Nic-2": {
+        "Db-NetWeaverGateway-Nic-2": {
             "value": ["",""]
         }
     }

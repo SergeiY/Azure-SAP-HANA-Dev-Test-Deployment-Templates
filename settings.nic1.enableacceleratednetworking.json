@@ -9,9 +9,9 @@
     "variables": {
         "acceleratedNetworking": {
             "SAP Dev Test": {
-                "App - NetWeaver Gateway": false,
-                "App - SAP PO": false,
-                "App - Gateway FES": false,
+                "App - NetWeaver Gateway (IMOS)": false,
+                "App - SAP PO (IMOS)": false,
+                "App - Netweaver Gateway FES": false,
                 "App - SAP BW": false,
                 "App - S/4HANA Utilities": false,
                 "App - Convergent Charging": false,
@@ -19,9 +19,9 @@
                 "App - SOM (CRM ABAP)": false,
                 "App - SOM (CRM JAVA)": false,
                 "App - Cloud Connector": false,
-                "DB - NetWeaver Gateway": true,
-                "DB - SAP PO": true,
-                "DB - Gateway FES": true,
+                "DB - NetWeaver Gateway (IMOS)": true,
+                "DB - SAP PO (IMOS)": true,
+                "DB - Netweaver Gateway FES": true,
                 "DB - SAP BW": true,
                 "DB - S/4HANA Utilities": true,
                 "DB - S/4HANA Hybris Billing": true

@@ -9,9 +9,9 @@
     "variables": {
         "vmSize": {
             "SAP Dev Test": {
-                "App - NetWeaver Gateway": "Standard_E4s_v3",
-                "App - SAP PO": "Standard_E4s_v3",
-                "App - Gateway FES": "Standard_E4s_v3",
+                "App - NetWeaver Gateway (IMOS)": "Standard_E4s_v3",
+                "App - SAP PO (IMOS)": "Standard_E4s_v3",
+                "App - Netweaver Gateway FES": "Standard_E4s_v3",
                 "App - SAP BW": "Standard_E4s_v3",
                 "App - S/4HANA Utilities": "Standard_E4s_v3",
                 "App - Convergent Charging": "Standard_E4s_v3",
@@ -19,9 +19,9 @@
                 "App - SOM (CRM ABAP)": "Standard_E4s_v3",
                 "App - SOM (CRM JAVA)": "Standard_E4s_v3",
                 "App - Cloud Connector": "Standard_E4s_v3",
-                "DB - NetWeaver Gateway": "Standard_E8s_v3",
-                "DB - SAP PO": "Standard_E8s_v3",
-                "DB - Gateway FES": "Standard_E8s_v3",
+                "DB - NetWeaver Gateway (IMOS)": "Standard_E8s_v3",
+                "DB - SAP PO (IMOS)": "Standard_E8s_v3",
+                "DB - Netweaver Gateway FES": "Standard_E8s_v3",
                 "DB - SAP BW": "Standard_E16s_v3",
                 "DB - S/4HANA Utilities": "Standard_E32s_v3",
                 "DB - S/4HANA Hybris Billing": "Standard_E32s_v3"

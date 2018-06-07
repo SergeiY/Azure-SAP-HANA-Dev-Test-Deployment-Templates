@@ -32,9 +32,9 @@
         "vmRole": {
             "type": "string",
             "allowedValues": [
-                "App - NetWeaver Gateway",
-                "App - SAP PO",
-                "App - Gateway FES",
+                "App - NetWeaver Gateway (IMOS)",
+                "App - SAP PO (IMOS)",
+                "App - Netweaver Gateway FES",
                 "App - SAP BW",
                 "App - S/4HANA Utilities",
                 "App - Convergent Charging",
@@ -42,9 +42,9 @@
                 "App - SOM (CRM ABAP)",
                 "App - SOM (CRM JAVA)",
                 "App - Cloud Connector",
-                "DB - NetWeaver Gateway",
-                "DB - SAP PO",
-                "DB - Gateway FES",
+                "DB - NetWeaver Gateway (IMOS)",
+                "DB - SAP PO (IMOS)",
+                "DB - Netweaver Gateway FES",
                 "DB - SAP BW",
                 "DB - S/4HANA Utilities",
                 "DB - S/4HANA Hybris Billing"

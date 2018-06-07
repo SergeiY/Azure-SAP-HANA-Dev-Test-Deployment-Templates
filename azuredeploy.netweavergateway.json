@@ -29,40 +29,40 @@
         "vmAdminPassword": {
             "type": "securestring"
         },
-        "App-Nic-1": {
+        "App-NetWeaverGateway-Nic-1": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["","","",""],
             "metadata": {
-                "description": "Array of static IP addresses for App-Nic-1. If any address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for App-NetWeaverGateway-Nic-1. If any address is blank, DHCP will be used"
             }
         },
-        "App-Nic-2": {
+        "App-NetWeaverGateway-Nic-2": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["","",""],
             "metadata": {
-                "description": "Array of static IP addresses for App-Nic-2. If any address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for App-NetWeaverGateway-Nic-2. If any address is blank, DHCP will be used"
             }
         },
-        "Db-Nic-1": {
+        "Db-NetWeaverGateway-Nic-1": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["",""],
             "metadata": {
-                "description": "Array of static IP addresses for Db-Nic-1. If any address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for Db-NetWeaverGateway-Nic-1. If any address is blank, DHCP will be used"
             }
         },
-        "Db-Nic-2": {
+        "Db-NetWeaverGateway-Nic-2": {
             "type": "array",
             "minLength": 1,
             "maxLength": 4,
             "defaultValue": ["",""],
             "metadata": {
-                "description": "Array of static IP addresses for Db-Nic-2. If any address is blank, DHCP will be used"
+                "description": "Array of static IP addresses for Db-NetWeaverGateway-Nic-2. If any address is blank, DHCP will be used"
             }
         }
     },
@@ -111,10 +111,10 @@
                         "value": ""
                     },
                     "nic1IpAddresses": {
-                        "value": "[parameters('App-Nic-1')]"
+                        "value": "[parameters('App-NetWeaverGateway-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": "[parameters('App-Nic-2')]"
+                        "value": "[parameters('App-NetWeaverGateway-Nic-2')]"
                     }
                 }
             }
@@ -156,10 +156,10 @@
                         "value": ""
                     },
                     "nic1IpAddresses": {
-                        "value": "[parameters('Db-Nic-1')]"
+                        "value": "[parameters('Db-NetWeaverGateway-Nic-1')]"
                     },
                     "nic2IpAddresses": {
-                        "value": "[parameters('Db-Nic-2')]"
+                        "value": "[parameters('Db-NetWeaverGateway-Nic-2')]"
                     }
                 }
             }

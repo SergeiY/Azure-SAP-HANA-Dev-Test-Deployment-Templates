@@ -12,7 +12,7 @@
             "value": "Gallery Image - SLES SAP BYOS 12-SP2"
         },
         "vmRole": {
-            "value": "App - NetWeaver Gateway"
+            "value": "App - NetWeaver Gateway (IMOS)"
         },
         "vmAdminUserName": {
             "value": "azureuser"

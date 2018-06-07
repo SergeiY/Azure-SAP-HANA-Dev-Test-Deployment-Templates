@@ -10,13 +10,13 @@
         "subnets": {
             "SAP Dev Test": {
                 "uksouth": {
-                    "App - NetWeaver Gateway": {
+                    "App - NetWeaver Gateway (IMOS)": {
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-001')]"
                     },
-                    "App - SAP PO": {
+                    "App - SAP PO (IMOS)": {
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-pi-001')]"
                     },
-                    "App - Gateway FES": {
+                    "App - Netweaver Gateway FES": {
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-001')]"
                     },
                     "App - SAP BW": {
@@ -40,13 +40,13 @@
                     "App - Cloud Connector": {
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-cloud-connect-001')]"
                     },
-                    "DB - NetWeaver Gateway": {
+                    "DB - NetWeaver Gateway (IMOS)": {
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-001')]"
                     },
-                    "DB - SAP PO": {
+                    "DB - SAP PO (IMOS)": {
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-pi-001')]"
                     },
-                    "DB - Gateway FES": {
+                    "DB - Netweaver Gateway FES": {
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-001')]"
                     },
                     "DB - SAP BW": {

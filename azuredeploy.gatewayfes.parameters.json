@@ -11,10 +11,16 @@
         "vmAdminUserName": {
             "value": "azureuser"
         },
-        "App-Nic-1": {
+        "App-GatewayFES-Nic-1": {
             "value": ["","","",""]
         },
-        "App-Nic-2": {
+        "App-GatewayFES-Nic-2": {
+            "value": ["","",""]
+        },
+        "Db-GatewayFES-Nic-1": {
+            "value": ["","","",""]
+        },
+        "Db-GatewayFES-Nic-2": {
             "value": ["","",""]
         }
     }
