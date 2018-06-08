@@ -142,3 +142,8 @@ Deploy a S/4HANA Hybris Billing Environment (4xApp, 1xDB)</p>
 		<td>1xP4 (32GB), 1xP4 (32GB)<br>1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)<br>1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)<br>1xP10 (128GB), 1xP20 (512GB), 1xP10 (128GB), 1xP6 (64GB)</td>
 	</tr>
 </table>
+<p>
+	<span>
+		<img src="SAPDevTestTemplateDesign.png"/>
+	</span>
+<p>
