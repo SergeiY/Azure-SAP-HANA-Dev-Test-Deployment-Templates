@@ -379,7 +379,7 @@
                         "value": "[parameters('vmImage')]"
                     },
                     "vmRole": {
-                        "value": "App - NetWeaver Gateway"
+                        "value": "App - NetWeaver Gateway (IMOS)"
                     },
                     "vmAdminUserName": {
                         "value": "[parameters('vmAdminUserName')]"
