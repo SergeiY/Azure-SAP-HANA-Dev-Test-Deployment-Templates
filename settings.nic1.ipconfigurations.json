@@ -43,7 +43,7 @@
                     "DB - NetWeaver Gateway (IMOS)": {
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-gateway-an-001')]"
                     },
-                    "DB - SAP PO IMOS)": {
+                    "DB - SAP PO (IMOS)": {
                         "id": "[resourceId('azsu-rg-sap-devtest-defaultnetworking-001', 'Microsoft.Network/virtualNetworks/subnets', 'azsu-vnet-devtest-sap-001', 'azsu-subn-devtest-sap-nw-pi-an-001')]"
                     },
                     "DB - Netweaver Gateway FES": {

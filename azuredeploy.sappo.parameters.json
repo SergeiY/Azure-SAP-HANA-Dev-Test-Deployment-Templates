@@ -11,16 +11,16 @@
         "vmAdminUserName": {
             "value": "azureuser"
         },
-        "App-Nic-1": {
+        "App-SAPPO-Nic-1": {
             "value": ["","","",""]
         },
-        "App-Nic-2": {
+        "App-SAPPO-Nic-2": {
             "value": ["","",""]
         },
-        "Db-Nic-1": {
+        "Db-SAPPO-Nic-1": {
             "value": ["",""]
         },
-        "Db-Nic-2": {
+        "Db-SAPPO-Nic-2": {
             "value": ["",""]
         }
     }
