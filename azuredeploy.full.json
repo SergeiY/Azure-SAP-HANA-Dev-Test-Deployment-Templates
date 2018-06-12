@@ -349,8 +349,8 @@
         "azuredeploy.Db.3.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.Db.3'))]",
         "uniqueDeploymentId.Db.4": "[concat(parameters('vmDeploymentNumber'), '.db.4')]",
         "azuredeploy.Db.4.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.Db.4'))]",
-        "uniqueDeploymentId.Db.8": "[concat(parameters('vmDeploymentNumber'), '.db.8')]",
-        "azuredeploy.Db.5.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.Db.8'))]",
+        "uniqueDeploymentId.Db.5": "[concat(parameters('vmDeploymentNumber'), '.db.4')]",
+        "azuredeploy.Db.5.templatename": "[concat('azuredeploy.', variables('uniqueDeploymentId.Db.5'))]",
         "azuredeploy.templateuri": "[uri(deployment().properties.templateLink.uri, 'azuredeploy.json')]"
     },
     "resources": [
